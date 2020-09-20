@@ -1,0 +1,1469 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>INSERT语句 · MySQL 学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="HHG">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-vs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="UPDATE语句.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../MySQL基础/">
+            
+                <a href="../MySQL基础/">
+            
+                    
+                    MySQL基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../MySQL基础/MySQL介绍.html">
+            
+                <a href="../MySQL基础/MySQL介绍.html">
+            
+                    
+                    MySQL介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../MySQL基础/MySQL书写规范及注释.html">
+            
+                <a href="../MySQL基础/MySQL书写规范及注释.html">
+            
+                    
+                    MySQL书写规范及注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../MySQL基础/创建、查看、切换及删除数据库.html">
+            
+                <a href="../MySQL基础/创建、查看、切换及删除数据库.html">
+            
+                    
+                    创建、查看、切换及删除数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../MySQL基础/修改数据库：ALTER DATABASE.html">
+            
+                <a href="../MySQL基础/修改数据库：ALTER DATABASE.html">
+            
+                    
+                    修改数据库：ALTER DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../MySQL基础/数据表管理.html">
+            
+                <a href="../MySQL基础/数据表管理.html">
+            
+                    
+                    数据表管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../MySQL基础/添加字段.html">
+            
+                <a href="../MySQL基础/添加字段.html">
+            
+                    
+                    添加字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../MySQL基础/数据类型.html">
+            
+                <a href="../MySQL基础/数据类型.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../MySQL基础/MySQL 约束.html">
+            
+                <a href="../MySQL基础/MySQL 约束.html">
+            
+                    
+                    MySQL 约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../MySQL基础/索引的创建与使用.html">
+            
+                <a href="../MySQL基础/索引的创建与使用.html">
+            
+                    
+                    索引的创建与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../MySQL基础/不存在则插入，存在则更新或忽略.html">
+            
+                <a href="../MySQL基础/不存在则插入，存在则更新或忽略.html">
+            
+                    
+                    不存在则插入，存在则更新或忽略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="MySQL 查询执行顺序.html">
+            
+                <a href="MySQL 查询执行顺序.html">
+            
+                    
+                    MySQL 查询执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.2.1" data-path="INSERT语句.html">
+            
+                <a href="INSERT语句.html">
+            
+                    
+                    INSERT语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="UPDATE语句.html">
+            
+                <a href="UPDATE语句.html">
+            
+                    
+                    UPDATE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="SELECT语句.html">
+            
+                <a href="SELECT语句.html">
+            
+                    
+                    SELECT语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="DISTINCT子句.html">
+            
+                <a href="DISTINCT子句.html">
+            
+                    
+                    DISTINCT子句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="LIMIT语句.html">
+            
+                <a href="LIMIT语句.html">
+            
+                    
+                    LIMIT语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="OFFSET FETCH语句.html">
+            
+                <a href="OFFSET FETCH语句.html">
+            
+                    
+                    OFFSET FETCH语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="limit 与 limit，offset连用的区别.html">
+            
+                <a href="limit 与 limit，offset连用的区别.html">
+            
+                    
+                    limit 与 limit，offset连用的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="ORDER BY语句.html">
+            
+                <a href="ORDER BY语句.html">
+            
+                    
+                    ORDER BY语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="WHERE语句.html">
+            
+                <a href="WHERE语句.html">
+            
+                    
+                    WHERE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.10" data-path="GROUP BY语句.html">
+            
+                <a href="GROUP BY语句.html">
+            
+                    
+                    GROUP BY语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.11" data-path="HAVING语句.html">
+            
+                <a href="HAVING语句.html">
+            
+                    
+                    HAVING语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.12" data-path="BETWEEN AND语句.html">
+            
+                <a href="BETWEEN AND语句.html">
+            
+                    
+                    BETWEEN AND语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.13" data-path="LIKE语句.html">
+            
+                <a href="LIKE语句.html">
+            
+                    
+                    LIKE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.14" data-path="IS NULL语句.html">
+            
+                <a href="IS NULL语句.html">
+            
+                    
+                    IS NULL语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.15" data-path="CROSS JOIN语句.html">
+            
+                <a href="CROSS JOIN语句.html">
+            
+                    
+                    CROSS JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.16" data-path="INNER JOIN语句.html">
+            
+                <a href="INNER JOIN语句.html">
+            
+                    
+                    INNER JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.17" data-path="LEFT JOIN语句.html">
+            
+                <a href="LEFT JOIN语句.html">
+            
+                    
+                    LEFT JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.18" data-path="RIGHT JOIN语句.html">
+            
+                <a href="RIGHT JOIN语句.html">
+            
+                    
+                    RIGHT JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.19" data-path="JOIN总结.html">
+            
+                <a href="JOIN总结.html">
+            
+                    
+                    JOIN总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.20" data-path="UNION[ALL]运算符.html">
+            
+                <a href="UNION[ALL]运算符.html">
+            
+                    
+                    UNION[ALL]运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.21" data-path="IN[NOT]IN语句.html">
+            
+                <a href="IN[NOT]IN语句.html">
+            
+                    
+                    IN[NOT] IN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.22" data-path="IN[NOT]EXISTS语句.html">
+            
+                <a href="IN[NOT]EXISTS语句.html">
+            
+                    
+                    IN[NOT] EXISTS语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.23" data-path="REGEXP：正则表达式.html">
+            
+                <a href="REGEXP：正则表达式.html">
+            
+                    
+                    REGEXP：正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.24" data-path="DELETE语句.html">
+            
+                <a href="DELETE语句.html">
+            
+                    
+                    DELETE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.25" data-path="TRUNCATE语句.html">
+            
+                <a href="TRUNCATE语句.html">
+            
+                    
+                    TRUNCATE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.26" data-path="ANY和ALL运算符.html">
+            
+                <a href="ANY和ALL运算符.html">
+            
+                    
+                    ANY和ALL运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.27" data-path="DECLARE定义变量.html">
+            
+                <a href="DECLARE定义变量.html">
+            
+                    
+                    DECLARE定义变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.28" data-path="创建临时表TEMPORARY.html">
+            
+                <a href="创建临时表TEMPORARY.html">
+            
+                    
+                    创建临时表TEMPORARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.29" data-path="创建视图VIEW.html">
+            
+                <a href="创建视图VIEW.html">
+            
+                    
+                    创建视图VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../窗口函数/窗口函数.html">
+            
+                <a href="../窗口函数/窗口函数.html">
+            
+                    
+                    窗口函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../窗口函数/四大排名函数.html">
+            
+                <a href="../窗口函数/四大排名函数.html">
+            
+                    
+                    四大排名函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../窗口函数/分区函数Partition By.html">
+            
+                <a href="../窗口函数/分区函数Partition By.html">
+            
+                    
+                    分区函数Partition By
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../窗口函数/PERCENT_RANK 函数.html">
+            
+                <a href="../窗口函数/PERCENT_RANK 函数.html">
+            
+                    
+                    PERCENT_RANK 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../窗口函数/CUME_DIST函数.html">
+            
+                <a href="../窗口函数/CUME_DIST函数.html">
+            
+                    
+                    CUME_DIST函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../窗口函数/FIRST_VALUE.html">
+            
+                <a href="../窗口函数/FIRST_VALUE.html">
+            
+                    
+                    FIRST_VALUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="../窗口函数/LAST_VALUE.html">
+            
+                <a href="../窗口函数/LAST_VALUE.html">
+            
+                    
+                    LAST_VALUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="../窗口函数/LAG、LEAD函数.html">
+            
+                <a href="../窗口函数/LAG、LEAD函数.html">
+            
+                    
+                    LAG、LEAD函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="../窗口函数/NTH_VALUE函数.html">
+            
+                <a href="../窗口函数/NTH_VALUE函数.html">
+            
+                    
+                    NTH_VALUE函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="../窗口函数/聚合函数作为窗口函数.html">
+            
+                <a href="../窗口函数/聚合函数作为窗口函数.html">
+            
+                    
+                    聚合函数作为窗口函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../函数/函数.html">
+            
+                <a href="../函数/函数.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../函数/日期函数.html">
+            
+                <a href="../函数/日期函数.html">
+            
+                    
+                    日期函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../函数/日期函数timediff.html">
+            
+                <a href="../函数/日期函数timediff.html">
+            
+                    
+                    日期函数timediff
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../函数/日期函数timestampdiff.html">
+            
+                <a href="../函数/日期函数timestampdiff.html">
+            
+                    
+                    日期函数timestampdiff
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../函数/条件表达式.html">
+            
+                <a href="../函数/条件表达式.html">
+            
+                    
+                    条件表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="../函数/聚合函数.html">
+            
+                <a href="../函数/聚合函数.html">
+            
+                    
+                    聚合函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="../函数/case when 与 max等聚合函数联合使用.html">
+            
+                <a href="../函数/case when 与 max等聚合函数联合使用.html">
+            
+                    
+                    case when 与 max等聚合函数联合使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="../函数/数学函数.html">
+            
+                <a href="../函数/数学函数.html">
+            
+                    
+                    数学函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="../函数/GROUP_CONCAT函数.html">
+            
+                <a href="../函数/GROUP_CONCAT函数.html">
+            
+                    
+                    GROUP_CONCAT函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.9" data-path="../函数/CONCAT函数.html">
+            
+                <a href="../函数/CONCAT函数.html">
+            
+                    
+                    CONCAT函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.10" data-path="../函数/CONCAT_WS函数.html">
+            
+                <a href="../函数/CONCAT_WS函数.html">
+            
+                    
+                    CONCAT_WS函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.11" data-path="../函数/substring_index函数.html">
+            
+                <a href="../函数/substring_index函数.html">
+            
+                    
+                    substring_index函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.12" data-path="../函数/convert函数.html">
+            
+                <a href="../函数/convert函数.html">
+            
+                    
+                    convert函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../notebooks/notebooks.html">
+            
+                <a href="../notebooks/notebooks.html">
+            
+                    
+                    notebooks
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../notebooks/WHERE和HAVING、ON有什么区别？.html">
+            
+                <a href="../notebooks/WHERE和HAVING、ON有什么区别？.html">
+            
+                    
+                    WHERE和HAVING、ON有什么区别？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../notebooks/mysql的分组排序和变量赋值顺序.html">
+            
+                <a href="../notebooks/mysql的分组排序和变量赋值顺序.html">
+            
+                    
+                    mysql的分组排序和变量赋值顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../notebooks/累加计算.html">
+            
+                <a href="../notebooks/累加计算.html">
+            
+                    
+                    累加计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../notebooks/MYSQL列转行、行转列.html">
+            
+                <a href="../notebooks/MYSQL列转行、行转列.html">
+            
+                    
+                    MYSQL列转行、行转列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../笔试/笔试题集合.html">
+            
+                <a href="../笔试/笔试题集合.html">
+            
+                    
+                    笔试题集合
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../笔试/阿里数据分析岗的秋招SQL题20190828.html">
+            
+                <a href="../笔试/阿里数据分析岗的秋招SQL题20190828.html">
+            
+                    
+                    阿里数据分析岗的秋招SQL题(2019.8.28)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >INSERT语句</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#insert&#x8BED;&#x53E5;">INSERT&#x8BED;&#x53E5;</a></li><ul><li><a href="#insert&#xFF1A;&#x63D2;&#x5165;&#x6570;&#x636E;&#xFF08;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#xFF09;">INSERT&#xFF1A;&#x63D2;&#x5165;&#x6570;&#x636E;&#xFF08;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#xFF09;</a></li><li><a href="#insertvalues&#x8BED;&#x53E5;">INSERT&#x2026;VALUES&#x8BED;&#x53E5;</a></li><li><a href="#insertset&#x8BED;&#x53E5;">INSERT&#x2026;SET&#x8BED;&#x53E5;</a></li><li><a href="#&#x5411;&#x8868;&#x4E2D;&#x7684;&#x5168;&#x90E8;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x503C;">&#x5411;&#x8868;&#x4E2D;&#x7684;&#x5168;&#x90E8;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x503C;</a></li><li><a href="#&#x5411;&#x8868;&#x4E2D;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x503C;">&#x5411;&#x8868;&#x4E2D;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x503C;</a></li><li><a href="#insert-intofrom-&#x8BED;&#x53E5;&#x590D;&#x5236;&#x8868;&#x6570;&#x636E;">INSERT INTO&#x2026;FROM &#x8BED;&#x53E5;&#x590D;&#x5236;&#x8868;&#x6570;&#x636E;</a></li></ul></ul></div><a href="#insert&#x8BED;&#x53E5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="insert&#x8BED;&#x53E5;"><a name="insert&#x8BED;&#x53E5;" class="anchor-navigation-ex-anchor" href="#insert&#x8BED;&#x53E5;"><i class="fa fa-link" aria-hidden="true"></i></a>INSERT&#x8BED;&#x53E5;</h1>
+<h2 id="insert&#xFF1A;&#x63D2;&#x5165;&#x6570;&#x636E;&#xFF08;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#xFF09;"><a name="insert&#xFF1A;&#x63D2;&#x5165;&#x6570;&#x636E;&#xFF08;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#xFF09;" class="anchor-navigation-ex-anchor" href="#insert&#xFF1A;&#x63D2;&#x5165;&#x6570;&#x636E;&#xFF08;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>INSERT&#xFF1A;&#x63D2;&#x5165;&#x6570;&#x636E;&#xFF08;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#xFF09;</h2>
+<p>&#x6570;&#x636E;&#x5E93;&#x4E0E;&#x8868;&#x521B;&#x5EFA;&#x6210;&#x529F;&#x4EE5;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x5411;&#x6570;&#x636E;&#x5E93;&#x7684;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x6570;&#x636E;&#x3002;&#x5728; <a href="http://c.biancheng.net/mysql/" target="_blank">MySQL</a> &#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; INSERT &#x8BED;&#x53E5;&#x5411;&#x6570;&#x636E;&#x5E93;&#x5DF2;&#x6709;&#x7684;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x4E00;&#x884C;&#x6216;&#x8005;&#x591A;&#x884C;&#x5143;&#x7EC4;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x57FA;&#x672C;&#x8BED;&#x6CD5;</p>
+<p>INSERT &#x8BED;&#x53E5;&#x6709;&#x4E24;&#x79CD;&#x8BED;&#x6CD5;&#x5F62;&#x5F0F;&#xFF0C;&#x5206;&#x522B;&#x662F; INSERT&#x2026;VALUES &#x8BED;&#x53E5;&#x548C; INSERT&#x2026;SET &#x8BED;&#x53E5;&#x3002;</p>
+<h2 id="insertvalues&#x8BED;&#x53E5;"><a name="insertvalues&#x8BED;&#x53E5;" class="anchor-navigation-ex-anchor" href="#insertvalues&#x8BED;&#x53E5;"><i class="fa fa-link" aria-hidden="true"></i></a>INSERT&#x2026;VALUES&#x8BED;&#x53E5;</h2>
+<p>INSERT VALUES &#x7684;&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token operator">&lt;</span>&#x8868;&#x540D;<span class="token operator">&gt;</span> <span class="token punctuation">[</span> <span class="token operator">&lt;</span>&#x5217;&#x540D;<span class="token number">1</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span> <span class="token punctuation">,</span> &#x2026; <span class="token operator">&lt;</span>&#x5217;&#x540D;n<span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token punctuation">]</span>
+<span class="token keyword">VALUES</span> <span class="token punctuation">(</span>&#x503C;<span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">[</span>&#x2026; <span class="token punctuation">,</span> <span class="token punctuation">(</span>&#x503C;n<span class="token punctuation">)</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x8BED;&#x6CD5;&#x8BF4;&#x660E;&#x5982;&#x4E0B;&#x3002;</p>
+<ul>
+<li><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&#x8868;&#x540D;</span><span class="token punctuation">&gt;</span></span></code>&#xFF1A;&#x6307;&#x5B9A;&#x88AB;&#x64CD;&#x4F5C;&#x7684;&#x8868;&#x540D;&#x3002;</li>
+<li><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&#x5217;&#x540D;</span><span class="token punctuation">&gt;</span></span></code>&#xFF1A;&#x6307;&#x5B9A;&#x9700;&#x8981;&#x63D2;&#x5165;&#x6570;&#x636E;&#x7684;&#x5217;&#x540D;&#x3002;&#x82E5;&#x5411;&#x8868;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5217;&#x63D2;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x5168;&#x90E8;&#x7684;&#x5217;&#x540D;&#x5747;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#xFF0C;&#x76F4;&#x63A5;&#x91C7;&#x7528; INSERT&lt;&#x8868;&#x540D;&gt;VALUES(&#x2026;) &#x5373;&#x53EF;&#x3002;</li>
+<li><code>VALUES</code> &#x6216; <code>VALUE</code> &#x5B50;&#x53E5;&#xFF1A;&#x8BE5;&#x5B50;&#x53E5;&#x5305;&#x542B;&#x8981;&#x63D2;&#x5165;&#x7684;&#x6570;&#x636E;&#x6E05;&#x5355;&#x3002;&#x6570;&#x636E;&#x6E05;&#x5355;&#x4E2D;&#x6570;&#x636E;&#x7684;&#x987A;&#x5E8F;&#x8981;&#x548C;&#x5217;&#x7684;&#x987A;&#x5E8F;&#x76F8;&#x5BF9;&#x5E94;&#x3002;</li>
+</ul>
+<h2 id="insertset&#x8BED;&#x53E5;"><a name="insertset&#x8BED;&#x53E5;" class="anchor-navigation-ex-anchor" href="#insertset&#x8BED;&#x53E5;"><i class="fa fa-link" aria-hidden="true"></i></a>INSERT&#x2026;SET&#x8BED;&#x53E5;</h2>
+<p>&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token operator">&lt;</span>&#x8868;&#x540D;<span class="token operator">&gt;</span>
+<span class="token keyword">SET</span> <span class="token operator">&lt;</span>&#x5217;&#x540D;<span class="token number">1</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token operator">&lt;</span>&#x503C;<span class="token number">1</span><span class="token operator">&gt;</span><span class="token punctuation">,</span>
+    <span class="token operator">&lt;</span>&#x5217;&#x540D;<span class="token number">2</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token operator">&lt;</span>&#x503C;<span class="token number">2</span><span class="token operator">&gt;</span><span class="token punctuation">,</span>
+    &#x2026;
+</code></pre>
+<p>&#x6B64;&#x8BED;&#x53E5;&#x7528;&#x4E8E;&#x76F4;&#x63A5;&#x7ED9;&#x8868;&#x4E2D;&#x7684;&#x67D0;&#x4E9B;&#x5217;&#x6307;&#x5B9A;&#x5BF9;&#x5E94;&#x7684;&#x5217;&#x503C;&#xFF0C;&#x5373;&#x8981;&#x63D2;&#x5165;&#x7684;&#x6570;&#x636E;&#x7684;&#x5217;&#x540D;&#x5728; SET &#x5B50;&#x53E5;&#x4E2D;&#x6307;&#x5B9A;&#xFF0C;col_name &#x4E3A;&#x6307;&#x5B9A;&#x7684;&#x5217;&#x540D;&#xFF0C;&#x7B49;&#x53F7;&#x540E;&#x9762;&#x4E3A;&#x6307;&#x5B9A;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x5BF9;&#x4E8E;&#x672A;&#x6307;&#x5B9A;&#x7684;&#x5217;&#xFF0C;&#x5217;&#x503C;&#x4F1A;&#x6307;&#x5B9A;&#x4E3A;&#x8BE5;&#x5217;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
+<p>&#x7531; INSERT &#x8BED;&#x53E5;&#x7684;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF1A;</p>
+<ul>
+<li>&#x4F7F;&#x7528; <code>INSERT&#x2026;VALUES</code> &#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x5411;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x4E00;&#x884C;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x63D2;&#x5165;&#x591A;&#x884C;&#x6570;&#x636E;&#xFF1B;</li>
+<li>&#x4F7F;&#x7528; <code>INSERT&#x2026;SET</code> &#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x63D2;&#x5165;&#x884C;&#x4E2D;&#x6BCF;&#x5217;&#x7684;&#x503C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x90E8;&#x5206;&#x5217;&#x7684;&#x503C;&#xFF1B;</li>
+<li><code>INSERT&#x2026;SELECT</code>&#x8BED;&#x53E5;&#x5411;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x5176;&#x4ED6;&#x8868;&#x7684;&#x6570;&#x636E;&#x3002;</li>
+<li>&#x91C7;&#x7528;<code>INSERT&#x2026;SET</code>&#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x5411;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x90E8;&#x5206;&#x5217;&#x7684;&#x503C;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x66F4;&#x4E3A;&#x7075;&#x6D3B;&#xFF1B;</li>
+<li><code>INSERT&#x2026;VALUES</code> &#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x4E00;&#x6B21;&#x63D2;&#x5165;&#x591A;&#x6761;&#x6570;&#x636E;&#x3002;</li>
+</ul>
+<p>&#x5728; MySQL &#x4E2D;&#xFF0C;&#x7528;&#x5355;&#x6761; INSERT &#x8BED;&#x53E5;&#x5904;&#x7406;&#x591A;&#x4E2A;&#x63D2;&#x5165;&#x8981;&#x6BD4;&#x4F7F;&#x7528;&#x591A;&#x6761; INSERT &#x8BED;&#x53E5;&#x66F4;&#x5FEB;&#x3002;</p>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x5355;&#x6761; INSERT &#x8BED;&#x53E5;&#x63D2;&#x5165;&#x591A;&#x884C;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x6BCF;&#x884C;&#x6570;&#x636E;&#x7528;&#x5706;&#x62EC;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#x5373;&#x53EF;&#x3002;</p>
+<h2 id="&#x5411;&#x8868;&#x4E2D;&#x7684;&#x5168;&#x90E8;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x503C;"><a name="&#x5411;&#x8868;&#x4E2D;&#x7684;&#x5168;&#x90E8;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x503C;" class="anchor-navigation-ex-anchor" href="#&#x5411;&#x8868;&#x4E2D;&#x7684;&#x5168;&#x90E8;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5411;&#x8868;&#x4E2D;&#x7684;&#x5168;&#x90E8;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x503C;</h2>
+<p>&#x5728; test_db &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8BFE;&#x7A0B;&#x4FE1;&#x606F;&#x8868; tb_courses&#xFF0C;&#x5305;&#x542B;&#x8BFE;&#x7A0B;&#x7F16;&#x53F7; course_id&#x3001;&#x8BFE;&#x7A0B;&#x540D;&#x79F0; course_name&#x3001;&#x8BFE;&#x7A0B;&#x5B66;&#x5206; course_grade &#x548C;&#x8BFE;&#x7A0B;&#x5907;&#x6CE8; course_info&#xFF0C;&#x8F93;&#x5165;&#x7684; SQL &#x8BED;&#x53E5;&#x548C;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
+<pre class="language-"><code class="lang-sql">mysql<span class="token operator">&gt;</span> <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> tb_courses
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> course_id <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> course_name <span class="token keyword">CHAR</span><span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> course_grade <span class="token keyword">FLOAT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> course_info <span class="token keyword">CHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>course_id<span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5411;&#x8868;&#x4E2D;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x63D2;&#x5165;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#x4E24;&#x79CD;&#xFF1A;&#x4E00;&#x79CD;&#x662F;&#x6307;&#x5B9A;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x540D;&#xFF1B;&#x53E6;&#x4E00;&#x79CD;&#x662F;&#x5B8C;&#x5168;&#x4E0D;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x540D;&#x3002;</p>
+<p>&#x3010;&#x5B9E;&#x4F8B; 1&#x3011;&#x5728; tb_courses &#x8868;&#x4E2D;&#x63D2;&#x5165;&#x4E00;&#x6761;&#x65B0;&#x8BB0;&#x5F55;&#xFF0C;course_id &#x503C;&#x4E3A; 1&#xFF0C;course_name &#x503C;&#x4E3A;&#x201C;Network&#x201D;&#xFF0C;course_grade &#x503C;&#x4E3A; 3&#xFF0C;info &#x503C;&#x4E3A;&#x201C;Computer Network&#x201D;&#x3002;</p>
+<p>&#x5728;&#x6267;&#x884C;&#x63D2;&#x5165;&#x64CD;&#x4F5C;&#x4E4B;&#x524D;&#xFF0C;&#x67E5;&#x770B; tb_courses &#x8868;&#x7684;SQL&#x8BED;&#x53E5;&#x548C;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
+<pre class="language-"><code class="lang-sql">mysql<span class="token operator">&gt;</span> <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> tb_courses<span class="token punctuation">;</span>
+Empty <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x663E;&#x793A;&#x5F53;&#x524D;&#x8868;&#x5185;&#x5BB9;&#x4E3A;&#x7A7A;&#xFF0C;&#x6CA1;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x6267;&#x884C;&#x63D2;&#x5165;&#x6570;&#x636E;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x8F93;&#x5165;&#x7684; SQL &#x8BED;&#x53E5;&#x548C;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
+<pre class="language-"><code class="lang-sql">mysql<span class="token operator">&gt;</span> <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> tb_courses
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>course_id<span class="token punctuation">,</span>course_name<span class="token punctuation">,</span>course_grade<span class="token punctuation">,</span>course_info<span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">&apos;Network&apos;</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">&apos;Computer Network&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.08</span> sec<span class="token punctuation">)</span>
+mysql<span class="token operator">&gt;</span> <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> tb_courses<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+--------------+------------------+</span>
+<span class="token operator">|</span> course_id <span class="token operator">|</span> course_name <span class="token operator">|</span> course_grade <span class="token operator">|</span> course_info      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+--------------+------------------+</span>
+<span class="token operator">|</span>         <span class="token number">1</span> <span class="token operator">|</span> Network     <span class="token operator">|</span>            <span class="token number">3</span> <span class="token operator">|</span> Computer Network <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+--------------+------------------+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x63D2;&#x5165;&#x8BB0;&#x5F55;&#x6210;&#x529F;&#x3002;&#x5728;&#x63D2;&#x5165;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x6307;&#x5B9A;&#x4E86; tb_courses &#x8868;&#x7684;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#xFF0C;&#x56E0;&#x6B64;&#x5C06;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x503C;&#x3002;</p>
+<p>INSERT &#x8BED;&#x53E5;&#x540E;&#x9762;&#x7684;&#x5217;&#x540D;&#x79F0;&#x987A;&#x5E8F;&#x53EF;&#x4EE5;&#x4E0D;&#x662F; tb_courses &#x8868;&#x5B9A;&#x4E49;&#x65F6;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x5373;&#x63D2;&#x5165;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x6309;&#x7167;&#x8868;&#x5B9A;&#x4E49;&#x7684;&#x987A;&#x5E8F;&#x63D2;&#x5165;&#xFF0C;&#x53EA;&#x8981;&#x4FDD;&#x8BC1;&#x503C;&#x7684;&#x987A;&#x5E8F;&#x4E0E;&#x5217;&#x5B57;&#x6BB5;&#x7684;&#x987A;&#x5E8F;&#x76F8;&#x540C;&#x5C31;&#x53EF;&#x4EE5;&#x3002;</p>
+<p>&#x3010;&#x5B9E;&#x4F8B; 2&#x3011;&#x5728; tb_courses &#x8868;&#x4E2D;&#x63D2;&#x5165;&#x4E00;&#x6761;&#x65B0;&#x8BB0;&#x5F55;&#xFF0C;course_id &#x503C;&#x4E3A; 2&#xFF0C;course_name &#x503C;&#x4E3A;&#x201C;Database&#x201D;&#xFF0C;course_grade &#x503C;&#x4E3A; 3&#xFF0C;info&#x503C;&#x4E3A;&#x201C;MySQL&#x201D;&#x3002;&#x8F93;&#x5165;&#x7684; SQL &#x8BED;&#x53E5;&#x548C;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
+<pre class="language-"><code class="lang-sql">mysql<span class="token operator">&gt;</span> <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> tb_courses
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>course_name<span class="token punctuation">,</span>course_info<span class="token punctuation">,</span>course_id<span class="token punctuation">,</span>course_grade<span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">&apos;Database&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;MySQL&apos;</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.08</span> sec<span class="token punctuation">)</span>
+mysql<span class="token operator">&gt;</span> <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> tb_courses<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+--------------+------------------+</span>
+<span class="token operator">|</span> course_id <span class="token operator">|</span> course_name <span class="token operator">|</span> course_grade <span class="token operator">|</span> course_info      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+--------------+------------------+</span>
+<span class="token operator">|</span>         <span class="token number">1</span> <span class="token operator">|</span> Network     <span class="token operator">|</span>            <span class="token number">3</span> <span class="token operator">|</span> Computer Network <span class="token operator">|</span>
+<span class="token operator">|</span>         <span class="token number">2</span> <span class="token operator">|</span> <span class="token keyword">Database</span>    <span class="token operator">|</span>            <span class="token number">3</span> <span class="token operator">|</span> MySQL            <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+--------------+------------------+</span>
+<span class="token number">2</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x4F7F;&#x7528; INSERT &#x63D2;&#x5165;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x5141;&#x8BB8;&#x5217;&#x540D;&#x79F0;&#x5217;&#x8868; column_list &#x4E3A;&#x7A7A;&#xFF0C;&#x6B64;&#x65F6;&#x503C;&#x5217;&#x8868;&#x4E2D;&#x9700;&#x8981;&#x4E3A;&#x8868;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x6307;&#x5B9A;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x503C;&#x7684;&#x987A;&#x5E8F;&#x5FC5;&#x987B;&#x548C;&#x6570;&#x636E;&#x8868;&#x4E2D;&#x5B57;&#x6BB5;&#x5B9A;&#x4E49;&#x65F6;&#x7684;&#x987A;&#x5E8F;&#x76F8;&#x540C;&#x3002;</p>
+<p>&#x3010;&#x5B9E;&#x4F8B; 3&#x3011;&#x5728; tb_courses &#x8868;&#x4E2D;&#x63D2;&#x5165;&#x4E00;&#x6761;&#x65B0;&#x8BB0;&#x5F55;&#xFF0C;course_id &#x503C;&#x4E3A; 3&#xFF0C;course_name &#x503C;&#x4E3A;&#x201C;<a href="http://c.biancheng.net/java/" target="_blank">Java</a>&#x201D;&#xFF0C;course_grade &#x503C;&#x4E3A; 4&#xFF0C;info &#x503C;&#x4E3A;&#x201C;Jave EE&#x201D;&#x3002;&#x8F93;&#x5165;&#x7684; SQL &#x8BED;&#x53E5;&#x548C;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
+<pre class="language-"><code class="lang-sql">mysql<span class="token operator">&gt;</span> <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> tb_courses
+    <span class="token operator">-</span><span class="token operator">&gt;</span> VLAUES<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">&apos;Java&apos;</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">&apos;Java EE&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.08</span> sec<span class="token punctuation">)</span>
+mysql<span class="token operator">&gt;</span> <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> tb_courses<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+--------------+------------------+</span>
+<span class="token operator">|</span> course_id <span class="token operator">|</span> course_name <span class="token operator">|</span> course_grade <span class="token operator">|</span> course_info      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+--------------+------------------+</span>
+<span class="token operator">|</span>         <span class="token number">1</span> <span class="token operator">|</span> Network     <span class="token operator">|</span>            <span class="token number">3</span> <span class="token operator">|</span> Computer Network <span class="token operator">|</span>
+<span class="token operator">|</span>         <span class="token number">2</span> <span class="token operator">|</span> <span class="token keyword">Database</span>    <span class="token operator">|</span>            <span class="token number">3</span> <span class="token operator">|</span> MySQL            <span class="token operator">|</span>
+<span class="token operator">|</span>         <span class="token number">3</span> <span class="token operator">|</span> Java        <span class="token operator">|</span>            <span class="token number">4</span> <span class="token operator">|</span> Java EE          <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+--------------+------------------+</span>
+<span class="token number">3</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+</code></pre>
+<p>INSERT &#x8BED;&#x53E5;&#x4E2D;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x63D2;&#x5165;&#x5217;&#x8868;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x503C;&#x5217;&#x8868;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x503C;&#x5217;&#x8868;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x5217;&#x6307;&#x5B9A;&#x63D2;&#x5165;&#x7684;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x4E9B;&#x503C;&#x7684;&#x987A;&#x5E8F;&#x5FC5;&#x987B;&#x548C; tb_courses &#x8868;&#x4E2D;&#x5B57;&#x6BB5;&#x5B9A;&#x4E49;&#x7684;&#x987A;&#x5E8F;&#x76F8;&#x540C;&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x867D;&#x7136;&#x4F7F;&#x7528; INSERT &#x63D2;&#x5165;&#x6570;&#x636E;&#x65F6;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#x63D2;&#x5165;&#x6570;&#x636E;&#x7684;&#x5217;&#x540D;&#x79F0;&#xFF0C;&#x82E5;&#x503C;&#x4E0D;&#x5305;&#x542B;&#x5217;&#x540D;&#x79F0;&#xFF0C;&#x5219; VALUES &#x5173;&#x952E;&#x5B57;&#x540E;&#x9762;&#x7684;&#x503C;&#x4E0D;&#x4EC5;&#x8981;&#x6C42;&#x5B8C;&#x6574;&#xFF0C;&#x800C;&#x4E14;&#x987A;&#x5E8F;&#x5FC5;&#x987B;&#x548C;&#x8868;&#x5B9A;&#x4E49;&#x65F6;&#x5217;&#x7684;&#x987A;&#x5E8F;&#x76F8;&#x540C;&#x3002;&#x5982;&#x679C;&#x8868;&#x7684;&#x7ED3;&#x6784;&#x88AB;&#x4FEE;&#x6539;&#xFF0C;&#x5BF9;&#x5217;&#x8FDB;&#x884C;&#x589E;&#x52A0;&#x3001;&#x5220;&#x9664;&#x6216;&#x8005;&#x4F4D;&#x7F6E;&#x6539;&#x53D8;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x5C06;&#x4F7F;&#x5F97;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x63D2;&#x5165;&#x6570;&#x636E;&#x65F6;&#x7684;&#x987A;&#x5E8F;&#x4E5F;&#x540C;&#x65F6;&#x6539;&#x53D8;&#x3002;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x5217;&#x540D;&#x79F0;&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x53D7;&#x5230;&#x8868;&#x7ED3;&#x6784;&#x6539;&#x53D8;&#x7684;&#x5F71;&#x54CD;&#x3002;</p>
+</blockquote>
+<h2 id="&#x5411;&#x8868;&#x4E2D;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x503C;"><a name="&#x5411;&#x8868;&#x4E2D;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x503C;" class="anchor-navigation-ex-anchor" href="#&#x5411;&#x8868;&#x4E2D;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5411;&#x8868;&#x4E2D;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x503C;</h2>
+<p>&#x4E3A;&#x8868;&#x7684;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x63D2;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x662F;&#x5728; INSERT &#x8BED;&#x53E5;&#x4E2D;&#x53EA;&#x5411;&#x90E8;&#x5206;&#x5B57;&#x6BB5;&#x4E2D;&#x63D2;&#x5165;&#x503C;&#xFF0C;&#x800C;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x4E3A;&#x8868;&#x5B9A;&#x4E49;&#x65F6;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
+<p>&#x3010;&#x5B9E;&#x4F8B; 4&#x3011;&#x5728; tb_courses &#x8868;&#x4E2D;&#x63D2;&#x5165;&#x4E00;&#x6761;&#x65B0;&#x8BB0;&#x5F55;&#xFF0C;course_name &#x503C;&#x4E3A;&#x201C;System&#x201D;&#xFF0C;course_grade &#x503C;&#x4E3A; 3&#xFF0C;course_info &#x503C;&#x4E3A;&#x201C;Operating System&#x201D;&#xFF0C;&#x8F93;&#x5165;&#x7684; SQL &#x8BED;&#x53E5;&#x548C;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
+<pre class="language-"><code class="lang-sql">mysql<span class="token operator">&gt;</span> <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> tb_courses
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>course_name<span class="token punctuation">,</span>course_grade<span class="token punctuation">,</span>course_info<span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">&apos;System&apos;</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">&apos;Operation System&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.08</span> sec<span class="token punctuation">)</span>
+mysql<span class="token operator">&gt;</span> <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> tb_courses<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+--------------+------------------+</span>
+<span class="token operator">|</span> course_id <span class="token operator">|</span> course_name <span class="token operator">|</span> course_grade <span class="token operator">|</span> course_info      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+--------------+------------------+</span>
+<span class="token operator">|</span>         <span class="token number">1</span> <span class="token operator">|</span> Network     <span class="token operator">|</span>            <span class="token number">3</span> <span class="token operator">|</span> Computer Network <span class="token operator">|</span>
+<span class="token operator">|</span>         <span class="token number">2</span> <span class="token operator">|</span> <span class="token keyword">Database</span>    <span class="token operator">|</span>            <span class="token number">3</span> <span class="token operator">|</span> MySQL            <span class="token operator">|</span>
+<span class="token operator">|</span>         <span class="token number">3</span> <span class="token operator">|</span> Java        <span class="token operator">|</span>            <span class="token number">4</span> <span class="token operator">|</span> Java EE          <span class="token operator">|</span>
+<span class="token operator">|</span>         <span class="token number">4</span> <span class="token operator">|</span> System      <span class="token operator">|</span>            <span class="token number">3</span> <span class="token operator">|</span> Operating System <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+--------------+------------------+</span>
+<span class="token number">4</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x63D2;&#x5165;&#x8BB0;&#x5F55;&#x6210;&#x529F;&#x3002;&#x5982;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x663E;&#x793A;&#xFF0C;&#x8FD9;&#x91CC;&#x7684; course_id &#x5B57;&#x6BB5;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x503C; 4&#x3002;&#x8FD9;&#x65F6;&#x7684; course_id &#x5B57;&#x6BB5;&#x4E3A;&#x8868;&#x7684;&#x4E3B;&#x952E;&#xFF0C;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&#xFF0C;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x4E3A;&#x8BE5;&#x5B57;&#x6BB5;&#x63D2;&#x5165;&#x81EA;&#x589E;&#x7684;&#x5E8F;&#x5217;&#x503C;&#x3002;&#x5728;&#x63D2;&#x5165;&#x8BB0;&#x5F55;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E9B;&#x5B57;&#x6BB5;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x63D2;&#x5165;&#x503C;&#xFF0C;MySQL &#x5C06;&#x63D2;&#x5165;&#x8BE5;&#x5B57;&#x6BB5;&#x5B9A;&#x4E49;&#x65F6;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
+<h2 id="insert-intofrom-&#x8BED;&#x53E5;&#x590D;&#x5236;&#x8868;&#x6570;&#x636E;"><a name="insert-intofrom-&#x8BED;&#x53E5;&#x590D;&#x5236;&#x8868;&#x6570;&#x636E;" class="anchor-navigation-ex-anchor" href="#insert-intofrom-&#x8BED;&#x53E5;&#x590D;&#x5236;&#x8868;&#x6570;&#x636E;"><i class="fa fa-link" aria-hidden="true"></i></a>INSERT INTO&#x2026;FROM &#x8BED;&#x53E5;&#x590D;&#x5236;&#x8868;&#x6570;&#x636E;</h2>
+<p>INSERT INTO&#x2026;SELECT&#x2026;FROM &#x8BED;&#x53E5;&#x7528;&#x4E8E;&#x5FEB;&#x901F;&#x5730;&#x4ECE;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x8868;&#x4E2D;&#x53D6;&#x51FA;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x5C06;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x4F5C;&#x4E3A;&#x884C;&#x6570;&#x636E;&#x63D2;&#x5165;&#x53E6;&#x4E00;&#x4E2A;&#x8868;&#x4E2D;&#x3002;</p>
+<p>SELECT &#x5B50;&#x53E5;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x96C6;&#xFF0C;INSERT &#x8BED;&#x53E5;&#x5C06;&#x8FD9;&#x4E2A;&#x7ED3;&#x679C;&#x96C6;&#x63D2;&#x5165;&#x6307;&#x5B9A;&#x8868;&#x4E2D;&#xFF0C;&#x7ED3;&#x679C;&#x96C6;&#x4E2D;&#x7684;&#x6BCF;&#x884C;&#x6570;&#x636E;&#x7684;&#x5B57;&#x6BB5;&#x6570;&#x3001;&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x90FD;&#x5FC5;&#x987B;&#x4E0E;&#x88AB;&#x64CD;&#x4F5C;&#x7684;&#x8868;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x3002;</p>
+<p>&#x5728;&#x6570;&#x636E;&#x5E93; test_db &#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E0E; tb_courses &#x8868;&#x7ED3;&#x6784;&#x76F8;&#x540C;&#x7684;&#x6570;&#x636E;&#x8868; tb_courses_new&#xFF0C;&#x521B;&#x5EFA;&#x8868;&#x7684; SQL &#x8BED;&#x53E5;&#x548C;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
+<pre class="language-"><code class="lang-sql">mysql<span class="token operator">&gt;</span> <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> tb_courses_new
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> course_id <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> course_name <span class="token keyword">CHAR</span><span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> course_grade <span class="token keyword">FLOAT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> course_info <span class="token keyword">CHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>course_id<span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+mysql<span class="token operator">&gt;</span> <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> tb_courses_new<span class="token punctuation">;</span>
+Empty <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x3010;&#x5B9E;&#x4F8B; 5&#x3011;&#x4ECE; tb_courses &#x8868;&#x4E2D;&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x63D2;&#x5165; tb_courses_new &#x8868;&#x4E2D;&#x3002;&#x8F93;&#x5165;&#x7684; SQL &#x8BED;&#x53E5;&#x548C;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
+<pre class="language-"><code class="lang-sql">mysql<span class="token operator">&gt;</span> <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> tb_courses_new
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>course_id<span class="token punctuation">,</span>course_name<span class="token punctuation">,</span>course_grade<span class="token punctuation">,</span>course_info<span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token keyword">SELECT</span> course_id<span class="token punctuation">,</span>course_name<span class="token punctuation">,</span>course_grade<span class="token punctuation">,</span>course_info
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token keyword">FROM</span> tb_courses<span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">4</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.17</span> sec<span class="token punctuation">)</span>
+Records: <span class="token number">4</span>  Duplicates: <span class="token number">0</span>  <span class="token keyword">Warnings</span>: <span class="token number">0</span>
+mysql<span class="token operator">&gt;</span> <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> tb_courses_new<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+--------------+------------------+</span>
+<span class="token operator">|</span> course_id <span class="token operator">|</span> course_name <span class="token operator">|</span> course_grade <span class="token operator">|</span> course_info      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+--------------+------------------+</span>
+<span class="token operator">|</span>         <span class="token number">1</span> <span class="token operator">|</span> Network     <span class="token operator">|</span>            <span class="token number">3</span> <span class="token operator">|</span> Computer Network <span class="token operator">|</span>
+<span class="token operator">|</span>         <span class="token number">2</span> <span class="token operator">|</span> <span class="token keyword">Database</span>    <span class="token operator">|</span>            <span class="token number">3</span> <span class="token operator">|</span> MySQL            <span class="token operator">|</span>
+<span class="token operator">|</span>         <span class="token number">3</span> <span class="token operator">|</span> Java        <span class="token operator">|</span>            <span class="token number">4</span> <span class="token operator">|</span> Java EE          <span class="token operator">|</span>
+<span class="token operator">|</span>         <span class="token number">4</span> <span class="token operator">|</span> System      <span class="token operator">|</span>            <span class="token number">3</span> <span class="token operator">|</span> Operating System <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+--------------+------------------+</span>
+<span class="token number">4</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">  </span><span class="footer-modification">Update time&#xFF1A;
+2020-08-18 
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 语句">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="UPDATE语句.html" class="navigation navigation-next " aria-label="Next page: UPDATE语句">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"INSERT语句","level":"2.2.1","depth":2,"next":{"title":"UPDATE语句","level":"2.2.2","depth":2,"path":"MySQL/语句/UPDATE语句.md","ref":"MySQL/语句/UPDATE语句.md","articles":[]},"previous":{"title":"语句","level":"2.2","depth":1,"path":"MySQL/语句/README.md","ref":"MySQL/语句/README.md","articles":[{"title":"INSERT语句","level":"2.2.1","depth":2,"path":"MySQL/语句/INSERT语句.md","ref":"MySQL/语句/INSERT语句.md","articles":[]},{"title":"UPDATE语句","level":"2.2.2","depth":2,"path":"MySQL/语句/UPDATE语句.md","ref":"MySQL/语句/UPDATE语句.md","articles":[]},{"title":"SELECT语句","level":"2.2.3","depth":2,"path":"MySQL/语句/SELECT语句.md","ref":"MySQL/语句/SELECT语句.md","articles":[]},{"title":"DISTINCT子句","level":"2.2.4","depth":2,"path":"MySQL/语句/DISTINCT子句.md","ref":"MySQL/语句/DISTINCT子句.md","articles":[]},{"title":"LIMIT语句","level":"2.2.5","depth":2,"path":"MySQL/语句/LIMIT语句.md","ref":"MySQL/语句/LIMIT语句.md","articles":[]},{"title":"OFFSET FETCH语句","level":"2.2.6","depth":2,"path":"MySQL/语句/OFFSET FETCH语句.md","ref":"MySQL/语句/OFFSET FETCH语句.md","articles":[]},{"title":"limit 与 limit，offset连用的区别","level":"2.2.7","depth":2,"path":"MySQL/语句/limit 与 limit，offset连用的区别.md","ref":"MySQL/语句/limit 与 limit，offset连用的区别.md","articles":[]},{"title":"ORDER BY语句","level":"2.2.8","depth":2,"path":"MySQL/语句/ORDER BY语句.md","ref":"MySQL/语句/ORDER BY语句.md","articles":[]},{"title":"WHERE语句","level":"2.2.9","depth":2,"path":"MySQL/语句/WHERE语句.md","ref":"MySQL/语句/WHERE语句.md","articles":[]},{"title":"GROUP BY语句","level":"2.2.10","depth":2,"path":"MySQL/语句/GROUP BY语句.md","ref":"MySQL/语句/GROUP BY语句.md","articles":[]},{"title":"HAVING语句","level":"2.2.11","depth":2,"path":"MySQL/语句/HAVING语句.md","ref":"MySQL/语句/HAVING语句.md","articles":[]},{"title":"BETWEEN AND语句","level":"2.2.12","depth":2,"path":"MySQL/语句/BETWEEN AND语句.md","ref":"MySQL/语句/BETWEEN AND语句.md","articles":[]},{"title":"LIKE语句","level":"2.2.13","depth":2,"path":"MySQL/语句/LIKE语句.md","ref":"MySQL/语句/LIKE语句.md","articles":[]},{"title":"IS NULL语句","level":"2.2.14","depth":2,"path":"MySQL/语句/IS NULL语句.md","ref":"MySQL/语句/IS NULL语句.md","articles":[]},{"title":"CROSS JOIN语句","level":"2.2.15","depth":2,"path":"MySQL/语句/CROSS JOIN语句.md","ref":"MySQL/语句/CROSS JOIN语句.md","articles":[]},{"title":"INNER JOIN语句","level":"2.2.16","depth":2,"path":"MySQL/语句/INNER JOIN语句.md","ref":"MySQL/语句/INNER JOIN语句.md","articles":[]},{"title":"LEFT JOIN语句","level":"2.2.17","depth":2,"path":"MySQL/语句/LEFT JOIN语句.md","ref":"MySQL/语句/LEFT JOIN语句.md","articles":[]},{"title":"RIGHT JOIN语句","level":"2.2.18","depth":2,"path":"MySQL/语句/RIGHT JOIN语句.md","ref":"MySQL/语句/RIGHT JOIN语句.md","articles":[]},{"title":"JOIN总结","level":"2.2.19","depth":2,"path":"MySQL/语句/JOIN总结.md","ref":"MySQL/语句/JOIN总结.md","articles":[]},{"title":"UNION[ALL]运算符","level":"2.2.20","depth":2,"path":"MySQL/语句/UNION[ALL]运算符.md","ref":"MySQL/语句/UNION[ALL]运算符.md","articles":[]},{"title":"IN[NOT] IN语句","level":"2.2.21","depth":2,"path":"MySQL/语句/IN[NOT]IN语句.md","ref":"MySQL/语句/IN[NOT]IN语句.md","articles":[]},{"title":"IN[NOT] EXISTS语句","level":"2.2.22","depth":2,"path":"MySQL/语句/IN[NOT]EXISTS语句.md","ref":"MySQL/语句/IN[NOT]EXISTS语句.md","articles":[]},{"title":"REGEXP：正则表达式","level":"2.2.23","depth":2,"path":"MySQL/语句/REGEXP：正则表达式.md","ref":"MySQL/语句/REGEXP：正则表达式.md","articles":[]},{"title":"DELETE语句","level":"2.2.24","depth":2,"path":"MySQL/语句/DELETE语句.md","ref":"MySQL/语句/DELETE语句.md","articles":[]},{"title":"TRUNCATE语句","level":"2.2.25","depth":2,"path":"MySQL/语句/TRUNCATE语句.md","ref":"MySQL/语句/TRUNCATE语句.md","articles":[]},{"title":"ANY和ALL运算符","level":"2.2.26","depth":2,"path":"MySQL/语句/ANY和ALL运算符.md","ref":"MySQL/语句/ANY和ALL运算符.md","articles":[]},{"title":"DECLARE定义变量","level":"2.2.27","depth":2,"path":"MySQL/语句/DECLARE定义变量.md","ref":"MySQL/语句/DECLARE定义变量.md","articles":[]},{"title":"创建临时表TEMPORARY","level":"2.2.28","depth":2,"path":"MySQL/语句/创建临时表TEMPORARY.md","ref":"MySQL/语句/创建临时表TEMPORARY.md","articles":[]},{"title":"创建视图VIEW","level":"2.2.29","depth":2,"path":"MySQL/语句/创建视图VIEW.md","ref":"MySQL/语句/创建视图VIEW.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","expandable-chapters","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","advanced-emoji","lightbox","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD "},"prism":{"css":["prism-themes/themes/prism-vs.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"prism-themes":{},"custom-favicon":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HHG","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MySQL 学习记录","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"。"},"file":{"path":"MySQL/语句/INSERT语句.md","mtime":"2020-08-18T12:44:58.954Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-20T03:28:54.336Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

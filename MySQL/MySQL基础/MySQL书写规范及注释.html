@@ -1,0 +1,1391 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MySQL书写规范及注释 · MySQL 学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="HHG">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-vs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="创建、查看、切换及删除数据库.html" />
+    
+    
+    <link rel="prev" href="MySQL介绍.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    MySQL基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="MySQL介绍.html">
+            
+                <a href="MySQL介绍.html">
+            
+                    
+                    MySQL介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="MySQL书写规范及注释.html">
+            
+                <a href="MySQL书写规范及注释.html">
+            
+                    
+                    MySQL书写规范及注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="创建、查看、切换及删除数据库.html">
+            
+                <a href="创建、查看、切换及删除数据库.html">
+            
+                    
+                    创建、查看、切换及删除数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="修改数据库：ALTER DATABASE.html">
+            
+                <a href="修改数据库：ALTER DATABASE.html">
+            
+                    
+                    修改数据库：ALTER DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="数据表管理.html">
+            
+                <a href="数据表管理.html">
+            
+                    
+                    数据表管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="添加字段.html">
+            
+                <a href="添加字段.html">
+            
+                    
+                    添加字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="数据类型.html">
+            
+                <a href="数据类型.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="MySQL 约束.html">
+            
+                <a href="MySQL 约束.html">
+            
+                    
+                    MySQL 约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="索引的创建与使用.html">
+            
+                <a href="索引的创建与使用.html">
+            
+                    
+                    索引的创建与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="不存在则插入，存在则更新或忽略.html">
+            
+                <a href="不存在则插入，存在则更新或忽略.html">
+            
+                    
+                    不存在则插入，存在则更新或忽略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../语句/MySQL 查询执行顺序.html">
+            
+                <a href="../语句/MySQL 查询执行顺序.html">
+            
+                    
+                    MySQL 查询执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../语句/">
+            
+                <a href="../语句/">
+            
+                    
+                    语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../语句/INSERT语句.html">
+            
+                <a href="../语句/INSERT语句.html">
+            
+                    
+                    INSERT语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../语句/UPDATE语句.html">
+            
+                <a href="../语句/UPDATE语句.html">
+            
+                    
+                    UPDATE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../语句/SELECT语句.html">
+            
+                <a href="../语句/SELECT语句.html">
+            
+                    
+                    SELECT语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../语句/DISTINCT子句.html">
+            
+                <a href="../语句/DISTINCT子句.html">
+            
+                    
+                    DISTINCT子句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../语句/LIMIT语句.html">
+            
+                <a href="../语句/LIMIT语句.html">
+            
+                    
+                    LIMIT语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="../语句/OFFSET FETCH语句.html">
+            
+                <a href="../语句/OFFSET FETCH语句.html">
+            
+                    
+                    OFFSET FETCH语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="../语句/limit 与 limit，offset连用的区别.html">
+            
+                <a href="../语句/limit 与 limit，offset连用的区别.html">
+            
+                    
+                    limit 与 limit，offset连用的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="../语句/ORDER BY语句.html">
+            
+                <a href="../语句/ORDER BY语句.html">
+            
+                    
+                    ORDER BY语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="../语句/WHERE语句.html">
+            
+                <a href="../语句/WHERE语句.html">
+            
+                    
+                    WHERE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.10" data-path="../语句/GROUP BY语句.html">
+            
+                <a href="../语句/GROUP BY语句.html">
+            
+                    
+                    GROUP BY语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.11" data-path="../语句/HAVING语句.html">
+            
+                <a href="../语句/HAVING语句.html">
+            
+                    
+                    HAVING语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.12" data-path="../语句/BETWEEN AND语句.html">
+            
+                <a href="../语句/BETWEEN AND语句.html">
+            
+                    
+                    BETWEEN AND语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.13" data-path="../语句/LIKE语句.html">
+            
+                <a href="../语句/LIKE语句.html">
+            
+                    
+                    LIKE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.14" data-path="../语句/IS NULL语句.html">
+            
+                <a href="../语句/IS NULL语句.html">
+            
+                    
+                    IS NULL语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.15" data-path="../语句/CROSS JOIN语句.html">
+            
+                <a href="../语句/CROSS JOIN语句.html">
+            
+                    
+                    CROSS JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.16" data-path="../语句/INNER JOIN语句.html">
+            
+                <a href="../语句/INNER JOIN语句.html">
+            
+                    
+                    INNER JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.17" data-path="../语句/LEFT JOIN语句.html">
+            
+                <a href="../语句/LEFT JOIN语句.html">
+            
+                    
+                    LEFT JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.18" data-path="../语句/RIGHT JOIN语句.html">
+            
+                <a href="../语句/RIGHT JOIN语句.html">
+            
+                    
+                    RIGHT JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.19" data-path="../语句/JOIN总结.html">
+            
+                <a href="../语句/JOIN总结.html">
+            
+                    
+                    JOIN总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.20" data-path="../语句/UNION[ALL]运算符.html">
+            
+                <a href="../语句/UNION[ALL]运算符.html">
+            
+                    
+                    UNION[ALL]运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.21" data-path="../语句/IN[NOT]IN语句.html">
+            
+                <a href="../语句/IN[NOT]IN语句.html">
+            
+                    
+                    IN[NOT] IN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.22" data-path="../语句/IN[NOT]EXISTS语句.html">
+            
+                <a href="../语句/IN[NOT]EXISTS语句.html">
+            
+                    
+                    IN[NOT] EXISTS语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.23" data-path="../语句/REGEXP：正则表达式.html">
+            
+                <a href="../语句/REGEXP：正则表达式.html">
+            
+                    
+                    REGEXP：正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.24" data-path="../语句/DELETE语句.html">
+            
+                <a href="../语句/DELETE语句.html">
+            
+                    
+                    DELETE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.25" data-path="../语句/TRUNCATE语句.html">
+            
+                <a href="../语句/TRUNCATE语句.html">
+            
+                    
+                    TRUNCATE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.26" data-path="../语句/ANY和ALL运算符.html">
+            
+                <a href="../语句/ANY和ALL运算符.html">
+            
+                    
+                    ANY和ALL运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.27" data-path="../语句/DECLARE定义变量.html">
+            
+                <a href="../语句/DECLARE定义变量.html">
+            
+                    
+                    DECLARE定义变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.28" data-path="../语句/创建临时表TEMPORARY.html">
+            
+                <a href="../语句/创建临时表TEMPORARY.html">
+            
+                    
+                    创建临时表TEMPORARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.29" data-path="../语句/创建视图VIEW.html">
+            
+                <a href="../语句/创建视图VIEW.html">
+            
+                    
+                    创建视图VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../窗口函数/窗口函数.html">
+            
+                <a href="../窗口函数/窗口函数.html">
+            
+                    
+                    窗口函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../窗口函数/四大排名函数.html">
+            
+                <a href="../窗口函数/四大排名函数.html">
+            
+                    
+                    四大排名函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../窗口函数/分区函数Partition By.html">
+            
+                <a href="../窗口函数/分区函数Partition By.html">
+            
+                    
+                    分区函数Partition By
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../窗口函数/PERCENT_RANK 函数.html">
+            
+                <a href="../窗口函数/PERCENT_RANK 函数.html">
+            
+                    
+                    PERCENT_RANK 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../窗口函数/CUME_DIST函数.html">
+            
+                <a href="../窗口函数/CUME_DIST函数.html">
+            
+                    
+                    CUME_DIST函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../窗口函数/FIRST_VALUE.html">
+            
+                <a href="../窗口函数/FIRST_VALUE.html">
+            
+                    
+                    FIRST_VALUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="../窗口函数/LAST_VALUE.html">
+            
+                <a href="../窗口函数/LAST_VALUE.html">
+            
+                    
+                    LAST_VALUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="../窗口函数/LAG、LEAD函数.html">
+            
+                <a href="../窗口函数/LAG、LEAD函数.html">
+            
+                    
+                    LAG、LEAD函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="../窗口函数/NTH_VALUE函数.html">
+            
+                <a href="../窗口函数/NTH_VALUE函数.html">
+            
+                    
+                    NTH_VALUE函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="../窗口函数/聚合函数作为窗口函数.html">
+            
+                <a href="../窗口函数/聚合函数作为窗口函数.html">
+            
+                    
+                    聚合函数作为窗口函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../函数/函数.html">
+            
+                <a href="../函数/函数.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../函数/日期函数.html">
+            
+                <a href="../函数/日期函数.html">
+            
+                    
+                    日期函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../函数/日期函数timediff.html">
+            
+                <a href="../函数/日期函数timediff.html">
+            
+                    
+                    日期函数timediff
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../函数/日期函数timestampdiff.html">
+            
+                <a href="../函数/日期函数timestampdiff.html">
+            
+                    
+                    日期函数timestampdiff
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../函数/条件表达式.html">
+            
+                <a href="../函数/条件表达式.html">
+            
+                    
+                    条件表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="../函数/聚合函数.html">
+            
+                <a href="../函数/聚合函数.html">
+            
+                    
+                    聚合函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="../函数/case when 与 max等聚合函数联合使用.html">
+            
+                <a href="../函数/case when 与 max等聚合函数联合使用.html">
+            
+                    
+                    case when 与 max等聚合函数联合使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="../函数/数学函数.html">
+            
+                <a href="../函数/数学函数.html">
+            
+                    
+                    数学函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="../函数/GROUP_CONCAT函数.html">
+            
+                <a href="../函数/GROUP_CONCAT函数.html">
+            
+                    
+                    GROUP_CONCAT函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.9" data-path="../函数/CONCAT函数.html">
+            
+                <a href="../函数/CONCAT函数.html">
+            
+                    
+                    CONCAT函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.10" data-path="../函数/CONCAT_WS函数.html">
+            
+                <a href="../函数/CONCAT_WS函数.html">
+            
+                    
+                    CONCAT_WS函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.11" data-path="../函数/substring_index函数.html">
+            
+                <a href="../函数/substring_index函数.html">
+            
+                    
+                    substring_index函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.12" data-path="../函数/convert函数.html">
+            
+                <a href="../函数/convert函数.html">
+            
+                    
+                    convert函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../notebooks/notebooks.html">
+            
+                <a href="../notebooks/notebooks.html">
+            
+                    
+                    notebooks
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../notebooks/WHERE和HAVING、ON有什么区别？.html">
+            
+                <a href="../notebooks/WHERE和HAVING、ON有什么区别？.html">
+            
+                    
+                    WHERE和HAVING、ON有什么区别？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../notebooks/mysql的分组排序和变量赋值顺序.html">
+            
+                <a href="../notebooks/mysql的分组排序和变量赋值顺序.html">
+            
+                    
+                    mysql的分组排序和变量赋值顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../notebooks/累加计算.html">
+            
+                <a href="../notebooks/累加计算.html">
+            
+                    
+                    累加计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../notebooks/MYSQL列转行、行转列.html">
+            
+                <a href="../notebooks/MYSQL列转行、行转列.html">
+            
+                    
+                    MYSQL列转行、行转列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../笔试/笔试题集合.html">
+            
+                <a href="../笔试/笔试题集合.html">
+            
+                    
+                    笔试题集合
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../笔试/阿里数据分析岗的秋招SQL题20190828.html">
+            
+                <a href="../笔试/阿里数据分析岗的秋招SQL题20190828.html">
+            
+                    
+                    阿里数据分析岗的秋招SQL题(2019.8.28)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >MySQL书写规范及注释</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#mysql&#x4E66;&#x5199;&#x89C4;&#x8303;&#x53CA;&#x6CE8;&#x91CA;">MySQL&#x4E66;&#x5199;&#x89C4;&#x8303;&#x53CA;&#x6CE8;&#x91CA;</a></li><ul><li><a href="#sql-&#x8BED;&#x53E5;&#x8981;&#x4EE5;&#x5206;&#x53F7;&#x7ED3;&#x5C3E;">SQL &#x8BED;&#x53E5;&#x8981;&#x4EE5;&#x5206;&#x53F7;;&#x7ED3;&#x5C3E;</a></li><li><a href="#sql-&#x8BED;&#x53E5;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;">SQL &#x8BED;&#x53E5;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;</a></li><li><a href="#&#x5E38;&#x6570;&#x7684;&#x4E66;&#x5199;&#x65B9;&#x5F0F;&#x662F;&#x56FA;&#x5B9A;&#x7684;">&#x5E38;&#x6570;&#x7684;&#x4E66;&#x5199;&#x65B9;&#x5F0F;&#x662F;&#x56FA;&#x5B9A;&#x7684;</a></li><li><a href="#&#x5355;&#x8BCD;&#x9700;&#x8981;&#x7528;&#x534A;&#x89D2;&#x7A7A;&#x683C;&#x6216;&#x8005;&#x6362;&#x884C;&#x6765;&#x5206;&#x9694;">&#x5355;&#x8BCD;&#x9700;&#x8981;&#x7528;&#x534A;&#x89D2;&#x7A7A;&#x683C;&#x6216;&#x8005;&#x6362;&#x884C;&#x6765;&#x5206;&#x9694;</a></li><li><a href="#&#x6CE8;&#x91CA;&#xFF1A;&#x5355;&#x884C;&#x6CE8;&#x91CA;&#x548C;&#x591A;&#x884C;&#x6CE8;&#x91CA;">&#x6CE8;&#x91CA;&#xFF1A;&#x5355;&#x884C;&#x6CE8;&#x91CA;&#x548C;&#x591A;&#x884C;&#x6CE8;&#x91CA;</a></li><ul><li><a href="#mysql-&#x5355;&#x884C;&#x6CE8;&#x91CA;">MySQL &#x5355;&#x884C;&#x6CE8;&#x91CA;</a></li><li><a href="#mysql-&#x591A;&#x884C;&#x6CE8;&#x91CA;">MySQL &#x591A;&#x884C;&#x6CE8;&#x91CA;</a></li></ul></ul></ul></div><a href="#mysql&#x4E66;&#x5199;&#x89C4;&#x8303;&#x53CA;&#x6CE8;&#x91CA;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="mysql&#x4E66;&#x5199;&#x89C4;&#x8303;&#x53CA;&#x6CE8;&#x91CA;"><a name="mysql&#x4E66;&#x5199;&#x89C4;&#x8303;&#x53CA;&#x6CE8;&#x91CA;" class="anchor-navigation-ex-anchor" href="#mysql&#x4E66;&#x5199;&#x89C4;&#x8303;&#x53CA;&#x6CE8;&#x91CA;"><i class="fa fa-link" aria-hidden="true"></i></a>MySQL&#x4E66;&#x5199;&#x89C4;&#x8303;&#x53CA;&#x6CE8;&#x91CA;</h1>
+<h2 id="sql-&#x8BED;&#x53E5;&#x8981;&#x4EE5;&#x5206;&#x53F7;&#x7ED3;&#x5C3E;"><a name="sql-&#x8BED;&#x53E5;&#x8981;&#x4EE5;&#x5206;&#x53F7;&#x7ED3;&#x5C3E;" class="anchor-navigation-ex-anchor" href="#sql-&#x8BED;&#x53E5;&#x8981;&#x4EE5;&#x5206;&#x53F7;&#x7ED3;&#x5C3E;"><i class="fa fa-link" aria-hidden="true"></i></a>SQL &#x8BED;&#x53E5;&#x8981;&#x4EE5;&#x5206;&#x53F7;;&#x7ED3;&#x5C3E;</h2>
+<p>&#x5728; RDBMS &#xFF08;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#xFF09;&#x5F53;&#x4E2D;&#xFF0C;SQL &#x8BED;&#x53E5;&#x662F;&#x9010;&#x6761;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x4E00;&#x6761; SQL &#x8BED;&#x53E5;&#x4EE3;&#x8868;&#x7740;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x5728;&#x53E5;&#x5B50;&#x7684;&#x53E5;&#x5C3E;&#x52A0;&#x6CE8;&#x6807;&#x70B9;&#x8868;&#x793A;&#x8FD9;&#x53E5;&#x8BDD;&#x7ED3;&#x675F;&#xFF0C;&#x4E2D;&#x6587;&#x53E5;&#x5B50;&#x4EE5;&#x53E5;&#x53F7;<code>&#x3002;</code>&#x7ED3;&#x5C3E;&#xFF0C;&#x82F1;&#x6587;&#x4EE5;&#x70B9;&#x53F7;<code>.</code>&#x7ED3;&#x5C3E;&#xFF0C;&#x800C; SQL &#x8BED;&#x53E5;&#x5219;&#x4F7F;&#x7528;&#x82F1;&#x6587;&#x5206;&#x53F7;<code>;</code>&#x7ED3;&#x5C3E;&#x3002;</p>
+<h2 id="sql-&#x8BED;&#x53E5;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;"><a name="sql-&#x8BED;&#x53E5;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;" class="anchor-navigation-ex-anchor" href="#sql-&#x8BED;&#x53E5;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;"><i class="fa fa-link" aria-hidden="true"></i></a>SQL &#x8BED;&#x53E5;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;</h2>
+<p>SQL &#x4E0D;&#x533A;&#x5206;&#x5173;&#x952E;&#x5B57;&#x7684;&#x5927;&#x5C0F;&#x5199;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E0D;&#x7BA1;&#x5199;&#x6210; SELECT &#x8FD8;&#x662F; select&#xFF0C;&#x89E3;&#x91CA;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;&#x8868;&#x540D;&#x548C;&#x5217;&#x540D;&#x4E5F;&#x662F;&#x5982;&#x6B64;&#x3002;</p>
+<p>&#x63D0;&#x793A;&#xFF1A;&#x5173;&#x952E;&#x5B57;&#x662F;&#x6570;&#x636E;&#x5E93;&#x4E8B;&#x5148;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x6709;&#x7279;&#x522B;&#x610F;&#x4E49;&#x7684;&#x5355;&#x8BCD;&#x3002;</p>
+<p>&#x867D;&#x7136;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4E2A;&#x4EBA;&#x559C;&#x597D;&#x9009;&#x62E9;&#x5927;&#x5199;&#x8FD8;&#x662F;&#x5C0F;&#x5199;&#xFF08;&#x6216;&#x5927;&#x5C0F;&#x5199;&#x6DF7;&#x6742;&#xFF09;&#xFF0C;&#x4F46;&#x4E3A;&#x4E86;&#x7406;&#x89E3;&#x8D77;&#x6765;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#xFF0C;&#x672C;&#x6559;&#x7A0B;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x89C4;&#x5219;&#x6765;&#x4E66;&#x5199; SQL &#x8BED;&#x53E5;&#x3002;</p>
+<ul>
+<li>&#x5173;&#x952E;&#x5B57;&#x5927;&#x5199;</li>
+<li>&#x6570;&#x636E;&#x5E93;&#x540D;&#x3001;&#x8868;&#x540D;&#x548C;&#x5217;&#x540D;&#x7B49;&#x5C0F;&#x5199;</li>
+</ul>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x63D2;&#x5165;&#x5230;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x662F;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x7684;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5411;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x63D2;&#x5165;&#x5355;&#x8BCD; Computer&#x3001;COMPUTER &#x6216; computer&#xFF0C;&#x8FD9;&#x4E09;&#x4E2A;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x6570;&#x636E;</p>
+<h2 id="&#x5E38;&#x6570;&#x7684;&#x4E66;&#x5199;&#x65B9;&#x5F0F;&#x662F;&#x56FA;&#x5B9A;&#x7684;"><a name="&#x5E38;&#x6570;&#x7684;&#x4E66;&#x5199;&#x65B9;&#x5F0F;&#x662F;&#x56FA;&#x5B9A;&#x7684;" class="anchor-navigation-ex-anchor" href="#&#x5E38;&#x6570;&#x7684;&#x4E66;&#x5199;&#x65B9;&#x5F0F;&#x662F;&#x56FA;&#x5B9A;&#x7684;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x6570;&#x7684;&#x4E66;&#x5199;&#x65B9;&#x5F0F;&#x662F;&#x56FA;&#x5B9A;&#x7684;</h2>
+<p>SQL &#x8BED;&#x53E5;&#x5E38;&#x5E38;&#x9700;&#x8981;&#x76F4;&#x63A5;&#x4E66;&#x5199;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x65E5;&#x671F;&#x6216;&#x8005;&#x6570;&#x5B57;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E66;&#x5199;&#x5411;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x65E5;&#x671F;&#x6216;&#x8005;&#x6570;&#x5B57;&#x7B49;&#x6570;&#x636E;&#x7684; SQL &#x8BED;&#x53E5;&#x3002;</p>
+<p>&#x5728; SQL &#x8BED;&#x53E5;&#x4E2D;&#x76F4;&#x63A5;&#x4E66;&#x5199;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x65E5;&#x671F;&#x6216;&#x8005;&#x6570;&#x5B57;&#x7B49;&#x79F0;&#x4E3A;&#x5E38;&#x6570;&#x3002;&#x5E38;&#x6570;&#x7684;&#x4E66;&#x5199;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<ul>
+<li>SQL &#x8BED;&#x53E5;&#x4E2D;&#x542B;&#x6709;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x50CF; &apos;abc&apos; &#x8FD9;&#x6837;&#xFF0C;&#x4F7F;&#x7528;&#x82F1;&#x6587;&#x5355;&#x5F15;&#x53F7;<code>&apos;</code>&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x62EC;&#x8D77;&#x6765;&#xFF0C;&#x7528;&#x6765;&#x6807;&#x8BC6;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</li>
+<li>SQL &#x8BED;&#x53E5;&#x4E2D;&#x542B;&#x6709;&#x65E5;&#x671F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x540C;&#x6837;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x82F1;&#x6587;&#x5355;&#x5F15;&#x53F7;&#x5C06;&#x5176;&#x62EC;&#x8D77;&#x6765;&#x3002;&#x65E5;&#x671F;&#x7684;&#x683C;&#x5F0F;&#x6709;&#x5F88;&#x591A;&#x79CD;&#xFF08;&apos;26 Jan 2010&apos; &#x6216;&#x8005;&apos;10/01/26&apos; &#x7B49;&#xFF09;&#xFF0C;&#x672C;&#x6559;&#x7A0B;&#x7EDF;&#x4E00;&#x4F7F;&#x7528; &apos;2020-01-26&apos; &#x8FD9;&#x79CD;<code>&apos;&#x5E74;-&#x6708;-&#x65E5;&apos;</code>&#x7684;&#x683C;&#x5F0F;&#x3002;</li>
+<li>&#x5728; SQL &#x8BED;&#x53E5;&#x4E2D;&#x4E66;&#x5199;&#x6570;&#x5B57;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x7B26;&#x53F7;&#x6807;&#x8BC6;&#xFF0C;&#x76F4;&#x63A5;&#x5199;&#x6210; 1000 &#x8FD9;&#x6837;&#x7684;&#x6570;&#x5B57;&#x5373;&#x53EF;&#x3002;</li>
+</ul>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5217;&#x540D;&#x4E0D;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x5355;&#x5F15;&#x53F7;&#x3002;&#x5728;<a href="http://c.biancheng.net/mysql/" target="_blank">MySQL</a> &#x4E2D;&#x53EF;&#x4EE5;&#x7528;&#x5012;&#x5F15;&#x53F7;```&#x628A;&#x8868;&#x540D;&#x548C;&#x5217;&#x540D;&#x62EC;&#x8D77;&#x6765;&#x3002;</p>
+<h2 id="&#x5355;&#x8BCD;&#x9700;&#x8981;&#x7528;&#x534A;&#x89D2;&#x7A7A;&#x683C;&#x6216;&#x8005;&#x6362;&#x884C;&#x6765;&#x5206;&#x9694;"><a name="&#x5355;&#x8BCD;&#x9700;&#x8981;&#x7528;&#x534A;&#x89D2;&#x7A7A;&#x683C;&#x6216;&#x8005;&#x6362;&#x884C;&#x6765;&#x5206;&#x9694;" class="anchor-navigation-ex-anchor" href="#&#x5355;&#x8BCD;&#x9700;&#x8981;&#x7528;&#x534A;&#x89D2;&#x7A7A;&#x683C;&#x6216;&#x8005;&#x6362;&#x884C;&#x6765;&#x5206;&#x9694;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5355;&#x8BCD;&#x9700;&#x8981;&#x7528;&#x534A;&#x89D2;&#x7A7A;&#x683C;&#x6216;&#x8005;&#x6362;&#x884C;&#x6765;&#x5206;&#x9694;</h2>
+<p>SQL &#x8BED;&#x53E5;&#x7684;&#x5355;&#x8BCD;&#x4E4B;&#x95F4;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x534A;&#x89D2;&#x7A7A;&#x683C;&#xFF08;&#x82F1;&#x6587;&#x7A7A;&#x683C;&#xFF09;&#x6216;&#x6362;&#x884C;&#x7B26;&#x6765;&#x8FDB;&#x884C;&#x5206;&#x9694;&#x3002;&#x6CA1;&#x6709;&#x5206;&#x9694;&#x7684;&#x8BED;&#x53E5;&#x4F1A;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x5206;&#x9694;&#x548C;&#x672A;&#x5206;&#x9694;&#x7684; SQL &#x8BED;&#x53E5;&#xFF1A;</p>
+<ul>
+<li>CREATE TABLE Product&#xFF08;&#x6B63;&#x786E;&#xFF09;</li>
+<li>CREATETABLE Product&#xFF08;&#x9519;&#x8BEF;&#xFF09;</li>
+<li>CREATE TABLEProduct&#xFF08;&#x9519;&#x8BEF;&#xFF09;</li>
+</ul>
+<p>&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x5168;&#x89D2;&#x7A7A;&#x683C;&#xFF08;&#x4E2D;&#x6587;&#x7A7A;&#x683C;&#xFF09;&#x4F5C;&#x4E3A;&#x5355;&#x8BCD;&#x7684;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x51FA;&#x73B0;&#x65E0;&#x6CD5;&#x9884;&#x671F;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p>SQL &#x8BED;&#x53E5;&#x4E2D;&#x7684;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#x5FC5;&#x987B;&#x90FD;&#x662F;&#x82F1;&#x6587;&#x72B6;&#x6001;&#x4E0B;&#x7684;&#xFF0C;&#x5373;&#x534A;&#x89D2;&#x5B57;&#x3002;</p>
+<h2 id="&#x6CE8;&#x91CA;&#xFF1A;&#x5355;&#x884C;&#x6CE8;&#x91CA;&#x548C;&#x591A;&#x884C;&#x6CE8;&#x91CA;"><a name="&#x6CE8;&#x91CA;&#xFF1A;&#x5355;&#x884C;&#x6CE8;&#x91CA;&#x548C;&#x591A;&#x884C;&#x6CE8;&#x91CA;" class="anchor-navigation-ex-anchor" href="#&#x6CE8;&#x91CA;&#xFF1A;&#x5355;&#x884C;&#x6CE8;&#x91CA;&#x548C;&#x591A;&#x884C;&#x6CE8;&#x91CA;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6CE8;&#x91CA;&#xFF1A;&#x5355;&#x884C;&#x6CE8;&#x91CA;&#x548C;&#x591A;&#x884C;&#x6CE8;&#x91CA;</h2>
+<p>&#x6BCF;&#x4E00;&#x79CD;&#x8BED;&#x8A00;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x6CE8;&#x91CA;&#x65B9;&#x5F0F;&#xFF0C;&#x4EE3;&#x7801;&#x91CF;&#x8D8A;&#x591A;&#xFF0C;&#x4EE3;&#x7801;&#x6CE8;&#x91CA;&#x7684;&#x91CD;&#x8981;&#x6027;&#x4E5F;&#x5C31;&#x8D8A;&#x660E;&#x663E;&#x3002;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6CE8;&#x91CA;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;&#xFF0C;&#x7528;&#x6765;&#x5411;&#x7528;&#x6237;&#x6216;&#x7A0B;&#x5E8F;&#x5458;&#x63D0;&#x793A;&#x6216;&#x89E3;&#x91CA;&#x7A0B;&#x5E8F;&#x7684;&#x529F;&#x80FD;&#x53CA;&#x4F5C;&#x7528;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD; <a href="http://c.biancheng.net/mysql/" target="_blank">MySQL</a> &#x4E2D; SQL &#x8BED;&#x53E5;&#x7684;&#x6CE8;&#x91CA;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x6CE8;&#x91CA;&#x5728; SQL &#x8BED;&#x53E5;&#x4E2D;&#x7528;&#x6765;&#x6807;&#x8BC6;&#x8BF4;&#x660E;&#x6216;&#x8005;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x5BF9; SQL &#x7684;&#x6267;&#x884C;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5F71;&#x54CD;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6CE8;&#x91CA;&#x5185;&#x5BB9;&#x4E2D;&#x65E0;&#x8BBA;&#x662F;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#x8FD8;&#x662F;&#x6C49;&#x5B57;&#x90FD;&#x53EF;&#x4EE5;&#x968F;&#x610F;&#x4F7F;&#x7528;&#x3002;</p>
+<p>MySQL &#x6CE8;&#x91CA;&#x5206;&#x4E3A;&#x5355;&#x884C;&#x6CE8;&#x91CA;&#x548C;&#x591A;&#x884C;&#x6CE8;&#x91CA;&#xFF0C;&#x4E0B;&#x9762;&#x5206;&#x522B;&#x6765;&#x4ECB;&#x7ECD;&#x8FD9;&#x4E24;&#x79CD;&#x6CE8;&#x91CA;&#x3002;</p>
+<h3 id="mysql-&#x5355;&#x884C;&#x6CE8;&#x91CA;"><a name="mysql-&#x5355;&#x884C;&#x6CE8;&#x91CA;" class="anchor-navigation-ex-anchor" href="#mysql-&#x5355;&#x884C;&#x6CE8;&#x91CA;"><i class="fa fa-link" aria-hidden="true"></i></a>MySQL &#x5355;&#x884C;&#x6CE8;&#x91CA;</h3>
+<p>1) &#x5355;&#x884C;&#x6CE8;&#x91CA;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>#</code>&#x6CE8;&#x91CA;&#x7B26;&#xFF0C;<code>#</code>&#x6CE8;&#x91CA;&#x7B26;&#x540E;&#x76F4;&#x63A5;&#x52A0;&#x6CE8;&#x91CA;&#x5185;&#x5BB9;&#x3002;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token comment">#&#x6CE8;&#x91CA;&#x5185;&#x5BB9;</span>
+</code></pre>
+<p>&#x5355;&#x884C;&#x6CE8;&#x91CA;&#x4F7F;&#x7528;&#x6CE8;&#x91CA;&#x7B26;<code>#</code>&#x7684;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token comment">#&#x4ECE;&#x7ED3;&#x679C;&#x4E2D;&#x5220;&#x9664;&#x91CD;&#x590D;&#x884C;</span>
+<span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> product_id<span class="token punctuation">,</span> purchase_price <span class="token keyword">FROM</span> Product<span class="token punctuation">;</span>
+</code></pre>
+<p>2) &#x5355;&#x884C;&#x6CE8;&#x91CA;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>--</code>&#x6CE8;&#x91CA;&#x7B26;&#xFF0C;<code>--</code>&#x6CE8;&#x91CA;&#x7B26;&#x540E;&#x9700;&#x8981;&#x52A0;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#xFF0C;&#x6CE8;&#x91CA;&#x624D;&#x80FD;&#x751F;&#x6548;&#x3002;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token comment">-- &#x6CE8;&#x91CA;&#x5185;&#x5BB9;</span>
+</code></pre>
+<p>&#x5355;&#x884C;&#x6CE8;&#x91CA;&#x4F7F;&#x7528;&#x6CE8;&#x91CA;&#x7B26;<code>--</code>&#x7684;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token comment">-- &#x4ECE;&#x7ED3;&#x679C;&#x4E2D;&#x5220;&#x9664;&#x91CD;&#x590D;&#x884C;</span>
+<span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> product_id<span class="token punctuation">,</span> purchase_price <span class="token keyword">FROM</span> Product<span class="token punctuation">;</span>
+</code></pre>
+<p><code>#</code>&#x548C;<code>--</code>&#x7684;&#x533A;&#x522B;&#x5C31;&#x662F;&#xFF1A;<code>#</code>&#x540E;&#x9762;&#x76F4;&#x63A5;&#x52A0;&#x6CE8;&#x91CA;&#x5185;&#x5BB9;&#xFF0C;&#x800C;<code>--</code>&#x7684;&#x7B2C; 2 &#x4E2A;&#x7834;&#x6298;&#x53F7;&#x540E;&#x9700;&#x8981;&#x8DDF;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#x7B26;&#x5728;&#x52A0;&#x6CE8;&#x91CA;&#x5185;&#x5BB9;&#x3002;</p>
+<h3 id="mysql-&#x591A;&#x884C;&#x6CE8;&#x91CA;"><a name="mysql-&#x591A;&#x884C;&#x6CE8;&#x91CA;" class="anchor-navigation-ex-anchor" href="#mysql-&#x591A;&#x884C;&#x6CE8;&#x91CA;"><i class="fa fa-link" aria-hidden="true"></i></a>MySQL &#x591A;&#x884C;&#x6CE8;&#x91CA;</h3>
+<p>&#x591A;&#x884C;&#x6CE8;&#x91CA;&#x4F7F;&#x7528;<code>/* */</code>&#x6CE8;&#x91CA;&#x7B26;&#x3002;<code>/*</code>&#x7528;&#x4E8E;&#x6CE8;&#x91CA;&#x5185;&#x5BB9;&#x7684;&#x5F00;&#x5934;&#xFF0C;<code>*/</code>&#x7528;&#x4E8E;&#x6CE8;&#x91CA;&#x5185;&#x5BB9;&#x7684;&#x7ED3;&#x5C3E;&#x3002;&#x591A;&#x884C;&#x6CE8;&#x91CA;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token comment">/*
+ &#x7B2C;&#x4E00;&#x884C;&#x6CE8;&#x91CA;&#x5185;&#x5BB9;
+ &#x7B2C;&#x4E8C;&#x884C;&#x6CE8;&#x91CA;&#x5185;&#x5BB9;
+*/</span>
+</code></pre>
+<p>&#x6CE8;&#x91CA;&#x5185;&#x5BB9;&#x5199;&#x5728;<code>/*</code>&#x548C;<code>*/</code>&#x4E4B;&#x95F4;&#xFF0C;&#x53EF;&#x4EE5;&#x8DE8;&#x591A;&#x884C;&#x3002;</p>
+<p>&#x591A;&#x884C;&#x6CE8;&#x91CA;&#x7684;&#x4F7F;&#x7528;&#x793A;&#x4F8B;&#x5982;&#x4E0B;</p>
+<pre class="language-"><code class="lang-sql"><span class="token comment">/*&#x8FD9;&#x6761;SELECT&#x8BED;&#x53E5;&#xFF0C;
+ &#x4F1A;&#x4ECE;&#x7ED3;&#x679C;&#x4E2D;&#x5220;&#x9664;&#x91CD;&#x590D;&#x884C;*/</span>
+<span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> product_id<span class="token punctuation">,</span> purchase_price <span class="token keyword">FROM</span> Product<span class="token punctuation">;</span>
+</code></pre>
+<p>&#x4EFB;&#x4F55;&#x6CE8;&#x91CA;&#xFF08;&#x5355;&#x884C;&#x6CE8;&#x91CA;&#x548C;&#x591A;&#x884C;&#x6CE8;&#x91CA;&#xFF09;&#x90FD;&#x53EF;&#x4EE5;&#x63D2;&#x5728; SQL &#x8BED;&#x53E5;&#x4E2D;&#xFF0C;&#x4E14;&#x6CE8;&#x91CA;&#x53EF;&#x4EE5;&#x653E;&#x5728; SQL &#x8BED;&#x53E5;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>&#x5728; SQL &#x8BED;&#x53E5;&#x4E2D;&#x63D2;&#x5165;&#x5355;&#x884C;&#x6CE8;&#x91CA;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> product_id<span class="token punctuation">,</span> purchase_price<span class="token comment">-- &#x4ECE;&#x7ED3;&#x679C;&#x4E2D;&#x5220;&#x9664;&#x91CD;&#x590D;&#x884C;&#x3002; FROM Product;SELECT DISTINCT product_id, purchase_price#&#x4ECE;&#x7ED3;&#x679C;&#x4E2D;&#x5220;&#x9664;&#x91CD;&#x590D;&#x884C;&#x3002; FROM Product;</span>
+</code></pre>
+<p>&#x5728; SQL &#x8BED;&#x53E5;&#x4E2D;&#x63D2;&#x5165;&#x591A;&#x884C;&#x6CE8;&#x91CA;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> product_id<span class="token punctuation">,</span> purchase_price<span class="token comment">/* &#x8FD9;&#x6761;SELECT&#x8BED;&#x53E5;&#xFF0C;      &#x4F1A;&#x4ECE;&#x7ED3;&#x679C;&#x4E2D;&#x5220;&#x9664;&#x91CD;&#x590D;&#x884C;&#x3002;*/</span>     <span class="token keyword">FROM</span> Product<span class="token punctuation">;</span>
+</code></pre>
+<p>&#x6CE8;&#x91CA;&#x53EF;&#x4EE5;&#x5199;&#x5728;&#x4EFB;&#x4F55; SQL &#x8BED;&#x53E5;&#x5F53;&#x4E2D;&#xFF0C;&#x4E14; SQL &#x8BED;&#x53E5;&#x4E2D;&#x5BF9;&#x6CE8;&#x91CA;&#x7684;&#x6570;&#x91CF;&#x6CA1;&#x6709;&#x9650;&#x5236;&#x3002;</p>
+<p>MySQL &#x6CE8;&#x91CA;&#x80FD;&#x591F;&#x5E2E;&#x52A9;&#x9605;&#x8BFB;&#x8005;&#x66F4;&#x597D;&#x5730;&#x7406;&#x89E3; SQL &#x8BED;&#x53E5;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5728;&#x4F7F;&#x7528;&#x590D;&#x6742;&#x7684; SQL &#x8BED;&#x53E5;&#x65F6;&#xFF0C;&#x6240;&#x4EE5;&#x5927;&#x5BB6;&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x591A;&#x6DFB;&#x52A0;&#x4E00;&#x4E9B;&#x7B80;&#x660E;&#x6613;&#x61C2;&#x7684;&#x6CE8;&#x91CA;&#x3002; </p>
+<footer class="page-footer"><span class="copyright">  </span><span class="footer-modification">Update time&#xFF1A;
+2020-08-18 
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="MySQL介绍.html" class="navigation navigation-prev " aria-label="Previous page: MySQL介绍">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="创建、查看、切换及删除数据库.html" class="navigation navigation-next " aria-label="Next page: 创建、查看、切换及删除数据库">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MySQL书写规范及注释","level":"1.2.2","depth":2,"next":{"title":"创建、查看、切换及删除数据库","level":"1.2.3","depth":2,"path":"MySQL/MySQL基础/创建、查看、切换及删除数据库.md","ref":"MySQL/MySQL基础/创建、查看、切换及删除数据库.md","articles":[]},"previous":{"title":"MySQL介绍","level":"1.2.1","depth":2,"path":"MySQL/MySQL基础/MySQL介绍.md","ref":"MySQL/MySQL基础/MySQL介绍.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","expandable-chapters","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","advanced-emoji","lightbox","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD "},"prism":{"css":["prism-themes/themes/prism-vs.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"prism-themes":{},"custom-favicon":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HHG","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MySQL 学习记录","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"。"},"file":{"path":"MySQL/MySQL基础/MySQL书写规范及注释.md","mtime":"2020-08-18T15:35:05.937Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-20T03:28:54.336Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

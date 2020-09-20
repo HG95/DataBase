@@ -1,0 +1,1427 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>四大排名函数 · MySQL 学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="HHG">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-vs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="分区函数Partition By.html" />
+    
+    
+    <link rel="prev" href="窗口函数.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../MySQL基础/">
+            
+                <a href="../MySQL基础/">
+            
+                    
+                    MySQL基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../MySQL基础/MySQL介绍.html">
+            
+                <a href="../MySQL基础/MySQL介绍.html">
+            
+                    
+                    MySQL介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../MySQL基础/MySQL书写规范及注释.html">
+            
+                <a href="../MySQL基础/MySQL书写规范及注释.html">
+            
+                    
+                    MySQL书写规范及注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../MySQL基础/创建、查看、切换及删除数据库.html">
+            
+                <a href="../MySQL基础/创建、查看、切换及删除数据库.html">
+            
+                    
+                    创建、查看、切换及删除数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../MySQL基础/修改数据库：ALTER DATABASE.html">
+            
+                <a href="../MySQL基础/修改数据库：ALTER DATABASE.html">
+            
+                    
+                    修改数据库：ALTER DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../MySQL基础/数据表管理.html">
+            
+                <a href="../MySQL基础/数据表管理.html">
+            
+                    
+                    数据表管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../MySQL基础/添加字段.html">
+            
+                <a href="../MySQL基础/添加字段.html">
+            
+                    
+                    添加字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../MySQL基础/数据类型.html">
+            
+                <a href="../MySQL基础/数据类型.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../MySQL基础/MySQL 约束.html">
+            
+                <a href="../MySQL基础/MySQL 约束.html">
+            
+                    
+                    MySQL 约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../MySQL基础/索引的创建与使用.html">
+            
+                <a href="../MySQL基础/索引的创建与使用.html">
+            
+                    
+                    索引的创建与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../MySQL基础/不存在则插入，存在则更新或忽略.html">
+            
+                <a href="../MySQL基础/不存在则插入，存在则更新或忽略.html">
+            
+                    
+                    不存在则插入，存在则更新或忽略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../语句/MySQL 查询执行顺序.html">
+            
+                <a href="../语句/MySQL 查询执行顺序.html">
+            
+                    
+                    MySQL 查询执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../语句/">
+            
+                <a href="../语句/">
+            
+                    
+                    语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../语句/INSERT语句.html">
+            
+                <a href="../语句/INSERT语句.html">
+            
+                    
+                    INSERT语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../语句/UPDATE语句.html">
+            
+                <a href="../语句/UPDATE语句.html">
+            
+                    
+                    UPDATE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../语句/SELECT语句.html">
+            
+                <a href="../语句/SELECT语句.html">
+            
+                    
+                    SELECT语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../语句/DISTINCT子句.html">
+            
+                <a href="../语句/DISTINCT子句.html">
+            
+                    
+                    DISTINCT子句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../语句/LIMIT语句.html">
+            
+                <a href="../语句/LIMIT语句.html">
+            
+                    
+                    LIMIT语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="../语句/OFFSET FETCH语句.html">
+            
+                <a href="../语句/OFFSET FETCH语句.html">
+            
+                    
+                    OFFSET FETCH语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="../语句/limit 与 limit，offset连用的区别.html">
+            
+                <a href="../语句/limit 与 limit，offset连用的区别.html">
+            
+                    
+                    limit 与 limit，offset连用的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="../语句/ORDER BY语句.html">
+            
+                <a href="../语句/ORDER BY语句.html">
+            
+                    
+                    ORDER BY语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="../语句/WHERE语句.html">
+            
+                <a href="../语句/WHERE语句.html">
+            
+                    
+                    WHERE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.10" data-path="../语句/GROUP BY语句.html">
+            
+                <a href="../语句/GROUP BY语句.html">
+            
+                    
+                    GROUP BY语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.11" data-path="../语句/HAVING语句.html">
+            
+                <a href="../语句/HAVING语句.html">
+            
+                    
+                    HAVING语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.12" data-path="../语句/BETWEEN AND语句.html">
+            
+                <a href="../语句/BETWEEN AND语句.html">
+            
+                    
+                    BETWEEN AND语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.13" data-path="../语句/LIKE语句.html">
+            
+                <a href="../语句/LIKE语句.html">
+            
+                    
+                    LIKE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.14" data-path="../语句/IS NULL语句.html">
+            
+                <a href="../语句/IS NULL语句.html">
+            
+                    
+                    IS NULL语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.15" data-path="../语句/CROSS JOIN语句.html">
+            
+                <a href="../语句/CROSS JOIN语句.html">
+            
+                    
+                    CROSS JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.16" data-path="../语句/INNER JOIN语句.html">
+            
+                <a href="../语句/INNER JOIN语句.html">
+            
+                    
+                    INNER JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.17" data-path="../语句/LEFT JOIN语句.html">
+            
+                <a href="../语句/LEFT JOIN语句.html">
+            
+                    
+                    LEFT JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.18" data-path="../语句/RIGHT JOIN语句.html">
+            
+                <a href="../语句/RIGHT JOIN语句.html">
+            
+                    
+                    RIGHT JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.19" data-path="../语句/JOIN总结.html">
+            
+                <a href="../语句/JOIN总结.html">
+            
+                    
+                    JOIN总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.20" data-path="../语句/UNION[ALL]运算符.html">
+            
+                <a href="../语句/UNION[ALL]运算符.html">
+            
+                    
+                    UNION[ALL]运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.21" data-path="../语句/IN[NOT]IN语句.html">
+            
+                <a href="../语句/IN[NOT]IN语句.html">
+            
+                    
+                    IN[NOT] IN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.22" data-path="../语句/IN[NOT]EXISTS语句.html">
+            
+                <a href="../语句/IN[NOT]EXISTS语句.html">
+            
+                    
+                    IN[NOT] EXISTS语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.23" data-path="../语句/REGEXP：正则表达式.html">
+            
+                <a href="../语句/REGEXP：正则表达式.html">
+            
+                    
+                    REGEXP：正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.24" data-path="../语句/DELETE语句.html">
+            
+                <a href="../语句/DELETE语句.html">
+            
+                    
+                    DELETE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.25" data-path="../语句/TRUNCATE语句.html">
+            
+                <a href="../语句/TRUNCATE语句.html">
+            
+                    
+                    TRUNCATE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.26" data-path="../语句/ANY和ALL运算符.html">
+            
+                <a href="../语句/ANY和ALL运算符.html">
+            
+                    
+                    ANY和ALL运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.27" data-path="../语句/DECLARE定义变量.html">
+            
+                <a href="../语句/DECLARE定义变量.html">
+            
+                    
+                    DECLARE定义变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.28" data-path="../语句/创建临时表TEMPORARY.html">
+            
+                <a href="../语句/创建临时表TEMPORARY.html">
+            
+                    
+                    创建临时表TEMPORARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.29" data-path="../语句/创建视图VIEW.html">
+            
+                <a href="../语句/创建视图VIEW.html">
+            
+                    
+                    创建视图VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="窗口函数.html">
+            
+                <a href="窗口函数.html">
+            
+                    
+                    窗口函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.3.1" data-path="四大排名函数.html">
+            
+                <a href="四大排名函数.html">
+            
+                    
+                    四大排名函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="分区函数Partition By.html">
+            
+                <a href="分区函数Partition By.html">
+            
+                    
+                    分区函数Partition By
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="PERCENT_RANK 函数.html">
+            
+                <a href="PERCENT_RANK 函数.html">
+            
+                    
+                    PERCENT_RANK 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="CUME_DIST函数.html">
+            
+                <a href="CUME_DIST函数.html">
+            
+                    
+                    CUME_DIST函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="FIRST_VALUE.html">
+            
+                <a href="FIRST_VALUE.html">
+            
+                    
+                    FIRST_VALUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="LAST_VALUE.html">
+            
+                <a href="LAST_VALUE.html">
+            
+                    
+                    LAST_VALUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="LAG、LEAD函数.html">
+            
+                <a href="LAG、LEAD函数.html">
+            
+                    
+                    LAG、LEAD函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="NTH_VALUE函数.html">
+            
+                <a href="NTH_VALUE函数.html">
+            
+                    
+                    NTH_VALUE函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="聚合函数作为窗口函数.html">
+            
+                <a href="聚合函数作为窗口函数.html">
+            
+                    
+                    聚合函数作为窗口函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../函数/函数.html">
+            
+                <a href="../函数/函数.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../函数/日期函数.html">
+            
+                <a href="../函数/日期函数.html">
+            
+                    
+                    日期函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../函数/日期函数timediff.html">
+            
+                <a href="../函数/日期函数timediff.html">
+            
+                    
+                    日期函数timediff
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../函数/日期函数timestampdiff.html">
+            
+                <a href="../函数/日期函数timestampdiff.html">
+            
+                    
+                    日期函数timestampdiff
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../函数/条件表达式.html">
+            
+                <a href="../函数/条件表达式.html">
+            
+                    
+                    条件表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="../函数/聚合函数.html">
+            
+                <a href="../函数/聚合函数.html">
+            
+                    
+                    聚合函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="../函数/case when 与 max等聚合函数联合使用.html">
+            
+                <a href="../函数/case when 与 max等聚合函数联合使用.html">
+            
+                    
+                    case when 与 max等聚合函数联合使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="../函数/数学函数.html">
+            
+                <a href="../函数/数学函数.html">
+            
+                    
+                    数学函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="../函数/GROUP_CONCAT函数.html">
+            
+                <a href="../函数/GROUP_CONCAT函数.html">
+            
+                    
+                    GROUP_CONCAT函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.9" data-path="../函数/CONCAT函数.html">
+            
+                <a href="../函数/CONCAT函数.html">
+            
+                    
+                    CONCAT函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.10" data-path="../函数/CONCAT_WS函数.html">
+            
+                <a href="../函数/CONCAT_WS函数.html">
+            
+                    
+                    CONCAT_WS函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.11" data-path="../函数/substring_index函数.html">
+            
+                <a href="../函数/substring_index函数.html">
+            
+                    
+                    substring_index函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.12" data-path="../函数/convert函数.html">
+            
+                <a href="../函数/convert函数.html">
+            
+                    
+                    convert函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../notebooks/notebooks.html">
+            
+                <a href="../notebooks/notebooks.html">
+            
+                    
+                    notebooks
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../notebooks/WHERE和HAVING、ON有什么区别？.html">
+            
+                <a href="../notebooks/WHERE和HAVING、ON有什么区别？.html">
+            
+                    
+                    WHERE和HAVING、ON有什么区别？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../notebooks/mysql的分组排序和变量赋值顺序.html">
+            
+                <a href="../notebooks/mysql的分组排序和变量赋值顺序.html">
+            
+                    
+                    mysql的分组排序和变量赋值顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../notebooks/累加计算.html">
+            
+                <a href="../notebooks/累加计算.html">
+            
+                    
+                    累加计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../notebooks/MYSQL列转行、行转列.html">
+            
+                <a href="../notebooks/MYSQL列转行、行转列.html">
+            
+                    
+                    MYSQL列转行、行转列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../笔试/笔试题集合.html">
+            
+                <a href="../笔试/笔试题集合.html">
+            
+                    
+                    笔试题集合
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../笔试/阿里数据分析岗的秋招SQL题20190828.html">
+            
+                <a href="../笔试/阿里数据分析岗的秋招SQL题20190828.html">
+            
+                    
+                    阿里数据分析岗的秋招SQL题(2019.8.28)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >四大排名函数</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#&#x56DB;&#x5927;&#x6392;&#x540D;&#x51FD;&#x6570;">&#x56DB;&#x5927;&#x6392;&#x540D;&#x51FD;&#x6570;</a></li><ul><li><a href="#&#x4E00;&#x3001;rank">&#x4E00;&#x3001;RANK</a></li><li><a href="#&#x4E8C;&#x3001;denserank">&#x4E8C;&#x3001;DENSE_RANK</a></li><li><a href="#&#x4E09;&#x3001;rownumber">&#x4E09;&#x3001;ROW_NUMBER</a></li><li><a href="#&#x56DB;&#x3001;ntile">&#x56DB;&#x3001;NTILE</a></li><ul><li><a href="#ntile&#x51FD;&#x6570;&#x7684;&#x5206;&#x7EC4;&#x4F9D;&#x636E;&#xFF08;&#x7EA6;&#x5B9A;&#xFF09;">ntile&#x51FD;&#x6570;&#x7684;&#x5206;&#x7EC4;&#x4F9D;&#x636E;&#xFF08;&#x7EA6;&#x5B9A;&#xFF09;</a></li></ul><li><a href="#&#x4E94;&#x3001;rank-denserank-rownumber&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x5462;&#xFF1F;">&#x4E94;&#x3001;rank, dense_rank, row_number&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x5462;&#xFF1F;</a></li><li><a href="#&#x516D;&#x3001;&#x603B;&#x7ED3;">&#x516D;&#x3001;&#x603B;&#x7ED3;</a></li></ul></ul></div><a href="#&#x56DB;&#x5927;&#x6392;&#x540D;&#x51FD;&#x6570;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x56DB;&#x5927;&#x6392;&#x540D;&#x51FD;&#x6570;"><a name="&#x56DB;&#x5927;&#x6392;&#x540D;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x5927;&#x6392;&#x540D;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x5927;&#x6392;&#x540D;&#x51FD;&#x6570;</h1>
+<p>Sql&#x56DB;&#x5927;&#x6392;&#x540D;&#x51FD;&#x6570;(<code>ROW_NUMBER</code>&#x3001;<code>RANK</code>&#x3001;<code>DENSE_RANK</code>&#x3001;<code>NTILE</code>)</p>
+<p>&#x521B;&#x5EFA;&#x6570;&#x636E;&#x8868;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> rk
+<span class="token punctuation">(</span>
+    ID         <span class="token keyword">int</span>  <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    UserId     <span class="token keyword">int</span>      <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    TotalPrice <span class="token keyword">int</span>      <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    SubTime    <span class="token keyword">datetime</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> rk <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token string">&apos;2015-01-07 17:18:22.450&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token string">&apos;2015-01-07 17:18:34.433&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token string">&apos;2015-01-07 17:18:39.150&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token string">&apos;2015-01-07 17:18:43.580&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        <span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">520</span><span class="token punctuation">,</span> <span class="token string">&apos;2015-01-07 17:18:48.277&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        <span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">,</span> <span class="token string">&apos;2015-01-07 17:22:26.590&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200602212356.png" data-lightbox="f53a79df-dcbc-4f7a-aef7-13105f2711be" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200602212356.png" alt="undefined"></a></center>
+
+<h2 id="&#x4E00;&#x3001;rank"><a name="&#x4E00;&#x3001;rank" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x3001;rank"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x3001;RANK</h2>
+<p><code>rank</code>&#x51FD;&#x6570;&#x7528;&#x4E8E;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x96C6;&#x7684;&#x5206;&#x533A;&#x5185;&#x6BCF;&#x884C;&#x7684;&#x6392;&#x540D;&#xFF0C; &#x884C;&#x7684;&#x6392;&#x540D;&#x662F;&#x76F8;&#x5173;&#x884C;&#x4E4B;&#x524D;&#x7684;&#x6392;&#x540D;&#x6570;&#x52A0;&#x4E00;&#x3002;</p>
+<p>&#x7B80;&#x5355;&#x6765;&#x8BF4; <code>rank</code> &#x51FD;&#x6570;&#x5C31;&#x662F;&#x5BF9;&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x7684;&#x8BB0;&#x5F55;&#x8FDB;&#x884C;&#x6392;&#x540D;&#xFF0C;&#x4E0E; <code>row_number</code> &#x51FD;&#x6570;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;<code>rank</code> &#x51FD;&#x6570;&#x8003;&#x8651;&#x5230;&#x4E86;<code>over</code> &#x5B50;&#x53E5;&#x4E2D;&#x6392;&#x5E8F;&#x5B57;&#x6BB5;&#x503C;&#x76F8;&#x540C;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;rank&#x51FD;&#x6570;&#x6765;&#x751F;&#x6210;&#x5E8F;&#x53F7;&#xFF0C;over&#x5B50;&#x53E5;&#x4E2D;&#x6392;&#x5E8F;&#x5B57;&#x6BB5;&#x503C;&#x76F8;&#x540C;&#x7684;&#x5E8F;&#x53F7;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x540E;&#x9762;&#x5B57;&#x6BB5;&#x503C;&#x4E0D;&#x76F8;&#x540C;&#x7684;&#x5E8F;&#x53F7;&#x5C06;&#x8DF3;&#x8FC7;&#x76F8;&#x540C;&#x7684;&#x6392;&#x540D;&#x53F7;&#x6392;&#x4E0B;&#x4E00;&#x4E2A;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x76F8;&#x5173;&#x884C;&#x4E4B;&#x524D;&#x7684;&#x6392;&#x540D;&#x6570;&#x52A0;&#x4E00;&#xFF0C;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x6839;&#x636E;&#x5F53;&#x524D;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x751F;&#x6210;&#x5E8F;&#x53F7;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x8BB0;&#x5F55;&#x4F9D;&#x6B64;&#x7C7B;&#x63A8;&#x3002;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span>  <span class="token operator">*</span><span class="token punctuation">,</span> rank<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span> <span class="token punctuation">(</span><span class="token keyword">order</span> <span class="token keyword">by</span> UserId<span class="token punctuation">)</span> rankk
+<span class="token keyword">from</span> rk<span class="token punctuation">;</span>
+</code></pre>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200602214007.png" data-lightbox="e01836db-6c10-4d30-8b32-18bc85863b4e" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200602214007.png" alt="undefined"></a></center>
+
+<p>&#x7531;&#x4E0A;&#x56FE;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;<code>rank</code>&#x51FD;&#x6570;&#x5728;&#x8FDB;&#x884C;&#x6392;&#x540D;&#x65F6;&#xFF0C;&#x540C;&#x4E00;&#x7EC4;&#x7684;&#x5E8F;&#x53F7;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x800C;&#x540E;&#x9762;&#x7684;&#x5219;&#x662F;&#x6839;&#x636E;&#x5F53;&#x524D;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x4F9D;&#x6B21;&#x7C7B;&#x63A8;&#xFF0C;&#x56FE;&#x4E2D;&#x7B2C;&#x4E00;&#x3001;&#x4E8C;&#x6761;&#x8BB0;&#x5F55;&#x7684;&#x7528;&#x6237;Id&#x76F8;&#x540C;&#xFF0C;&#x6240;&#x4EE5;&#x4ED6;&#x4EEC;&#x7684;&#x5E8F;&#x53F7;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x7B2C;&#x4E09;&#x6761;&#x8BB0;&#x5F55;&#x7684;&#x5E8F;&#x53F7;&#x5219;&#x662F;3&#x3002;&#x3000;</p>
+<h2 id="&#x4E8C;&#x3001;denserank"><a name="&#x4E8C;&#x3001;denserank" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;denserank"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;DENSE_RANK</h2>
+<p><code>dense_rank</code>&#x51FD;&#x6570;&#x7684;&#x529F;&#x80FD;&#x4E0E; <code>rank</code> &#x51FD;&#x6570;&#x7C7B;&#x4F3C;&#xFF0C;<code>dense_rank</code> &#x51FD;&#x6570;&#x5728;&#x751F;&#x6210;&#x5E8F;&#x53F7;&#x65F6;&#x662F;&#x8FDE;&#x7EED;&#x7684;&#xFF0C;&#x800C;<code>rank</code> &#x51FD;&#x6570;&#x751F;&#x6210;&#x7684;&#x5E8F;&#x53F7;&#x6709;&#x53EF;&#x80FD;&#x4E0D;&#x8FDE;&#x7EED;&#x3002;<code>dense_rank</code> &#x51FD;&#x6570;&#x51FA;&#x73B0;&#x76F8;&#x540C;&#x6392;&#x540D;&#x65F6;&#xFF0C;&#x5C06;&#x4E0D;&#x8DF3;&#x8FC7;&#x76F8;&#x540C;&#x6392;&#x540D;&#x53F7;&#xFF0C;<code>rank</code>&#x503C;&#x7D27;&#x63A5;&#x4E0A;&#x4E00;&#x6B21;&#x7684;rank&#x503C;&#x3002;&#x5728;&#x5404;&#x4E2A;&#x5206;&#x7EC4;&#x5185;&#xFF0C;rank()&#x662F;&#x8DF3;&#x8DC3;&#x6392;&#x5E8F;&#xFF0C;&#x6709;&#x4E24;&#x4E2A;&#x7B2C;&#x4E00;&#x540D;&#x65F6;&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x662F;&#x7B2C;&#x56DB;&#x540D;&#xFF0C;<code>dense_rank()</code>&#x662F;&#x8FDE;&#x7EED;&#x6392;&#x5E8F;&#xFF0C;&#x6709;&#x4E24;&#x4E2A;&#x7B2C;&#x4E00;&#x540D;&#x65F6;&#x4ECD;&#x7136;&#x8DDF;&#x7740;&#x7B2C;&#x4E8C;&#x540D;&#x3002;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token operator">*</span><span class="token punctuation">,</span> dense_rank<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span> <span class="token punctuation">(</span><span class="token keyword">order</span> <span class="token keyword">by</span> UserId<span class="token punctuation">)</span> dk
+<span class="token keyword">from</span> rk<span class="token punctuation">;</span>
+</code></pre>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200602214329.png" data-lightbox="a622689c-a621-4ef3-bcdf-f8520e4a8924" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200602214329.png" alt="undefined"></a></center>
+
+<p>&#x56FE;&#x4E2D;&#x7B2C;&#x4E00;&#x3001;&#x4E8C;&#x6761;&#x8BB0;&#x5F55;&#x7684;&#x7528;&#x6237;Id&#x76F8;&#x540C;&#xFF0C;&#x6240;&#x4EE5;&#x4ED6;&#x4EEC;&#x7684;&#x5E8F;&#x53F7;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x7B2C;&#x4E09;&#x6761;&#x8BB0;&#x5F55;&#x7684;&#x5E8F;&#x53F7;&#x7D27;&#x63A5;&#x4E0A;&#x4E00;&#x4E2A;&#x7684;&#x5E8F;&#x53F7;&#xFF0C;&#x6240;&#x4EE5;&#x4E3A;2&#x4E0D;&#x4E3A;3&#xFF0C;&#x540E;&#x9762;&#x7684;&#x4F9D;&#x6B64;&#x7C7B;&#x63A8;</p>
+<h2 id="&#x4E09;&#x3001;rownumber"><a name="&#x4E09;&#x3001;rownumber" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;rownumber"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;ROW_NUMBER</h2>
+<p><code>row_number</code> &#x7684;&#x7528;&#x9014;&#x7684;&#x975E;&#x5E38;&#x5E7F;&#x6CDB;&#xFF0C;&#x6392;&#x5E8F;&#x6700;&#x597D;&#x7528;&#x4ED6;&#xFF0C;&#x4E00;&#x822C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5B9E;&#x73B0;web&#x7A0B;&#x5E8F;&#x7684;&#x5206;&#x9875;&#xFF0C;&#x4ED6;&#x4F1A;&#x4E3A;&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x7684;&#x6BCF;&#x4E00;&#x884C;&#x8BB0;&#x5F55;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5E8F;&#x53F7;&#xFF0C;&#x4F9D;&#x6B21;&#x6392;&#x5E8F;&#x4E14;&#x4E0D;&#x4F1A;&#x91CD;&#x590D;&#xFF0C;&#x6CE8;&#x610F;&#x4F7F;&#x7528;<code>row_number</code> &#x51FD;&#x6570;&#x65F6;&#x5FC5;&#x987B;&#x8981;&#x7528;<code>over</code> &#x5B50;&#x53E5;&#x9009;&#x62E9;&#x5BF9;&#x67D0;&#x4E00;&#x5217;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x624D;&#x80FD;&#x751F;&#x6210;&#x5E8F;&#x53F7;&#x3002;row_number&#x7528;&#x6CD5;&#x5B9E;&#x4F8B;:</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token punctuation">,</span>row_number<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span> <span class="token punctuation">(</span><span class="token keyword">order</span> <span class="token keyword">by</span> SubTime <span class="token keyword">desc</span> <span class="token punctuation">)</span> row_num 
+<span class="token keyword">from</span> rk<span class="token punctuation">;</span>
+</code></pre>
+<p>&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200602212937.png" data-lightbox="ae2dc76b-2946-4318-8143-df36e6c728a8" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200602212937.png" alt="undefined"></a></center>
+
+<p>&#x56FE;&#x4E2D;&#x7684; row_num &#x5217;&#x5C31;&#x662F; <code>row_number</code> &#x51FD;&#x6570;&#x751F;&#x6210;&#x7684;&#x5E8F;&#x53F7;&#x5217;&#xFF0C;&#x5176;&#x57FA;&#x672C;&#x539F;&#x7406;&#x662F;&#x5148;&#x4F7F;&#x7528;<code>over</code>&#x5B50;&#x53E5;&#x4E2D;&#x7684;&#x6392;&#x5E8F;&#x8BED;&#x53E5;&#x5BF9;&#x8BB0;&#x5F55;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x7136;&#x540E;&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x987A;&#x5E8F;&#x751F;&#x6210;&#x5E8F;&#x53F7;&#x3002;over&#x5B50;&#x53E5;&#x4E2D;&#x7684;<code>order by</code>&#x5B50;&#x53E5;&#x4E0E;SQL&#x8BED;&#x53E5;&#x4E2D;&#x7684;<code>order by</code>&#x5B50;&#x53E5;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5173;&#x7CFB;&#xFF0C;&#x8FD9;&#x4E24;&#x5904;&#x7684;<code>order by</code>&#x53EF;&#x4EE5;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#xFF0C;&#x5982;&#x4EE5;&#x4E0B;sql&#xFF0C;over&#x5B50;&#x53E5;&#x4E2D;&#x6839;&#x636E;SubTime&#x964D;&#x5E8F;&#x6392;&#x5217;&#xFF0C;Sql&#x8BED;&#x53E5;&#x4E2D;&#x5219;&#x6309;TotalPrice&#x964D;&#x5E8F;&#x6392;&#x5217;&#x3002;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token punctuation">,</span>row_number<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span> <span class="token punctuation">(</span><span class="token keyword">order</span> <span class="token keyword">by</span> SubTime <span class="token keyword">desc</span> <span class="token punctuation">)</span> row_num
+<span class="token keyword">from</span> rk
+<span class="token keyword">order</span> <span class="token keyword">by</span> TotalPrice <span class="token keyword">desc</span> <span class="token punctuation">;</span>
+</code></pre>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200602213404.png" data-lightbox="ab8f707c-00a3-47df-9d86-bcf5b6870de0" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200602213404.png" alt="undefined"></a></center>
+
+<p>&#x4E24;&#x6B21;&#x6267;&#x884C;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x4E0D;&#x540C;&#x4E3B;&#x8981;&#x662F;&#x8BED;&#x53E5;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x95EE;&#x9898;&#xFF0C;row_number &#x6240;&#x5BF9;&#x5E94;&#x7684;&#x884C;&#x7684;&#x6570;&#x636E;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+<h2 id="&#x56DB;&#x3001;ntile"><a name="&#x56DB;&#x3001;ntile" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x3001;ntile"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;NTILE</h2>
+<p><code>ntile</code> &#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5BF9;&#x5E8F;&#x53F7;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#x5904;&#x7406;&#xFF0C;&#x5C06;&#x6709;&#x5E8F;&#x5206;&#x533A;&#x4E2D;&#x7684;&#x884C;&#x5206;&#x53D1;&#x5230;&#x6307;&#x5B9A;&#x6570;&#x76EE;&#x7684;&#x7EC4;&#x4E2D;&#x3002; &#x5404;&#x4E2A;&#x7EC4;&#x6709;&#x7F16;&#x53F7;&#xFF0C;&#x7F16;&#x53F7;&#x4ECE;&#x4E00;&#x5F00;&#x59CB;&#x3002; &#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A;&#x884C;&#xFF0C;<code>ntile</code> &#x5C06;&#x8FD4;&#x56DE;&#x6B64;&#x884C;&#x6240;&#x5C5E;&#x7684;&#x7EC4;&#x7684;&#x7F16;&#x53F7;&#x3002;&#x8FD9;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x5C06;&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x7684;&#x8BB0;&#x5F55;&#x96C6;&#x653E;&#x5230;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x5B58;&#x653E;&#x4E00;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x8BB0;&#x5F55;&#x3002;<code>ntile</code> &#x51FD;&#x6570;&#x4E3A;&#x6BCF;&#x6761;&#x8BB0;&#x5F55;&#x751F;&#x6210;&#x7684;&#x5E8F;&#x53F7;&#x5C31;&#x662F;&#x8FD9;&#x6761;&#x8BB0;&#x5F55;&#x6240;&#x6709;&#x7684;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x7684;&#x7D22;&#x5F15;&#xFF08;&#x4ECE;1&#x5F00;&#x59CB;&#xFF09;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;&#x6BCF;&#x4E00;&#x4E2A;&#x5206;&#x914D;&#x8BB0;&#x5F55;&#x7684;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x79F0;&#x4E3A;&#x201C;&#x6876;&#x201D;&#x3002;<code>ntile</code>&#x51FD;&#x6570;&#x6709;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x6876;&#x6570;&#x3002;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token operator">*</span><span class="token punctuation">,</span> ntile<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">over</span> <span class="token punctuation">(</span><span class="token keyword">order</span> <span class="token keyword">by</span> SubTime <span class="token keyword">desc</span> <span class="token punctuation">)</span> nt
+<span class="token keyword">from</span> rk<span class="token punctuation">;</span>
+</code></pre>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200602215051.png" data-lightbox="f0d9554c-7da7-4a49-b997-4540c03d3d3b" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200602215051.png" alt="undefined"></a></center>
+
+<p>&#x8868;&#x7684;&#x603B;&#x8BB0;&#x5F55;&#x6570;&#x662F;6&#x6761;&#xFF0C;&#x800C;&#x4E0A;&#x9762;&#x7684;Sql&#x8BED;&#x53E5;ntile&#x51FD;&#x6570;&#x6307;&#x5B9A;&#x7684;&#x7EC4;&#x6570;&#x662F;4&#xFF0C;&#x90A3;&#x4E48;Sql Server2005&#x662F;&#x600E;&#x4E48;&#x6765;&#x51B3;&#x5B9A;&#x6BCF;&#x4E00;&#x7EC4;&#x5E94;&#x8BE5;&#x5206;&#x591A;&#x5C11;&#x6761;&#x8BB0;&#x5F55;&#x5462;&#xFF1F;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C31;&#x9700;&#x8981;&#x4E86;&#x89E3;ntile&#x51FD;&#x6570;&#x7684;&#x5206;&#x7EC4;&#x4F9D;&#x636E;&#xFF08;&#x7EA6;&#x5B9A;&#xFF09;&#x3002;</p>
+<h3 id="ntile&#x51FD;&#x6570;&#x7684;&#x5206;&#x7EC4;&#x4F9D;&#x636E;&#xFF08;&#x7EA6;&#x5B9A;&#xFF09;"><a name="ntile&#x51FD;&#x6570;&#x7684;&#x5206;&#x7EC4;&#x4F9D;&#x636E;&#xFF08;&#x7EA6;&#x5B9A;&#xFF09;" class="anchor-navigation-ex-anchor" href="#ntile&#x51FD;&#x6570;&#x7684;&#x5206;&#x7EC4;&#x4F9D;&#x636E;&#xFF08;&#x7EA6;&#x5B9A;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>ntile&#x51FD;&#x6570;&#x7684;&#x5206;&#x7EC4;&#x4F9D;&#x636E;&#xFF08;&#x7EA6;&#x5B9A;&#xFF09;</h3>
+<p>&#x3000;&#x3000;<strong>1&#x3001;&#x6BCF;&#x7EC4;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x4E0D;&#x80FD;&#x5927;&#x4E8E;&#x5B83;&#x4E0A;&#x4E00;&#x7EC4;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#xFF0C;&#x5373;&#x7F16;&#x53F7;&#x5C0F;&#x7684;&#x6876;&#x653E;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x4E0D;&#x80FD;&#x5C0F;&#x4E8E;&#x7F16;&#x53F7;&#x5927;&#x7684;&#x6876;&#x3002; </strong> <strong>&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x7B2C;1&#x7EC4;&#x4E2D;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x53EA;&#x80FD;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x7B2C;2&#x7EC4;&#x53CA;&#x4EE5;&#x540E;&#x5404;&#x7EC4;&#x4E2D;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x3002;</strong></p>
+<p>&#x3000;&#x3000;<strong>2&#x3001;&#x6240;&#x6709;&#x7EC4;&#x4E2D;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x8981;&#x4E48;&#x90FD;&#x76F8;&#x540C;&#xFF0C;&#x8981;&#x4E48;&#x4ECE;&#x67D0;&#x4E00;&#x4E2A;&#x8BB0;&#x5F55;&#x8F83;&#x5C11;&#x7684;&#x7EC4;&#xFF08;&#x547D;&#x540D;&#x4E3A;X&#xFF09;&#x5F00;&#x59CB;&#x540E;&#x9762;&#x6240;&#x6709;&#x7EC4;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x90FD;&#x4E0E;&#x8BE5;&#x7EC4;&#xFF08;X&#x7EC4;&#xFF09;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x76F8;&#x540C;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4E2A;&#x7EC4;&#xFF0C;&#x524D;&#x4E09;&#x7EC4;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x90FD;&#x662F;9&#xFF0C;&#x800C;&#x7B2C;&#x56DB;&#x7EC4;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x662F;8&#xFF0C;&#x90A3;&#x4E48;&#x7B2C;&#x4E94;&#x7EC4;&#x548C;&#x7B2C;&#x516D;&#x7EC4;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x4E5F;&#x5FC5;&#x987B;&#x662F;8&#x3002;</strong></p>
+<p>&#x3000;&#x3000;&#x8FD9;&#x91CC;&#x5BF9;&#x7EA6;&#x5B9A;2&#x8FDB;&#x884C;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E;&#x66F4;&#x597D;&#x7684;&#x7406;&#x89E3;&#x3002;</p>
+<p>&#x3000;&#x3000;&#x9996;&#x5148;&#x7CFB;&#x7EDF;&#x4F1A;&#x53BB;&#x68C0;&#x67E5;&#x80FD;&#x4E0D;&#x80FD;&#x5BF9;&#x6240;&#x6709;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x8BB0;&#x5F55;&#x8FDB;&#x884C;&#x5E73;&#x5747;&#x5206;&#x7EC4;&#xFF0C;&#x82E5;&#x80FD;&#x5219;&#x76F4;&#x63A5;&#x5E73;&#x5747;&#x5206;&#x914D;&#x5C31;&#x5B8C;&#x6210;&#x5206;&#x7EC4;&#x4E86;&#xFF1B;&#x82E5;&#x4E0D;&#x80FD;&#xFF0C;&#x5219;&#x4F1A;&#x5148;&#x5206;&#x51FA;&#x4E00;&#x4E2A;&#x7EC4;&#xFF0C;&#x8FD9;&#x4E2A;&#x7EC4;&#x5206;&#x591A;&#x5C11;&#x6761;&#x8BB0;&#x5F55;&#x5462;&#xFF1F;&#x5C31;&#x662F; &#xFF08;&#x603B;&#x8BB0;&#x5F55;&#x6570;/&#x603B;&#x7EC4;&#x6570;&#xFF09;+1 &#x6761;&#xFF0C;&#x4E4B;&#x6240;&#x4EE5;&#x5206;&#x914D; &#xFF08;&#x603B;&#x8BB0;&#x5F55;&#x6570;/&#x603B;&#x7EC4;&#x6570;&#xFF09;+1 &#x6761;&#x662F;&#x56E0;&#x4E3A;&#x5F53;&#x4E0D;&#x80FD;&#x8FDB;&#x884C;&#x5E73;&#x5747;&#x5206;&#x7EC4;&#x65F6;&#xFF0C;&#x603B;&#x8BB0;&#x5F55;&#x6570;%&#x603B;&#x7EC4;&#x6570;&#x80AF;&#x5B9A;&#x662F;&#x6709;&#x4F59;&#x7684;&#xFF0C;&#x53C8;&#x56E0;&#x4E3A;&#x5206;&#x7EC4;&#x7EA6;&#x5B9A;1&#xFF0C;&#x6240;&#x4EE5;&#x5148;&#x5206;&#x51FA;&#x53BB;&#x7684;&#x7EC4;&#x9700;&#x8981;+1&#x6761;&#x3002;</p>
+<p>&#x3000;&#x3000;&#x5206;&#x5B8C;&#x4E4B;&#x540E;&#x7CFB;&#x7EDF;&#x4F1A;&#x7EE7;&#x7EED;&#x53BB;&#x6BD4;&#x8F83;&#x4F59;&#x4E0B;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x548C;&#x672A;&#x5206;&#x914D;&#x7684;&#x7EC4;&#x6570;&#x80FD;&#x4E0D;&#x80FD;&#x8FDB;&#x884C;&#x5E73;&#x5747;&#x5206;&#x914D;&#xFF0C;&#x82E5;&#x80FD;&#xFF0C;&#x5219;&#x5E73;&#x5747;&#x5206;&#x914D;&#x4F59;&#x4E0B;&#x7684;&#x8BB0;&#x5F55;&#xFF1B;&#x82E5;&#x4E0D;&#x80FD;&#xFF0C;&#x5219;&#x518D;&#x5206;&#x51FA;&#x53BB;&#x4E00;&#x7EC4;&#xFF0C;&#x8FD9;&#x4E2A;&#x7EC4;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x4E5F;&#x662F;&#xFF08;&#x603B;&#x8BB0;&#x5F55;&#x6570;/&#x603B;&#x7EC4;&#x6570;&#xFF09;+1&#x6761;&#x3002;</p>
+<p>&#x3000;&#x3000;&#x7136;&#x540E;&#x7CFB;&#x7EDF;&#x7EE7;&#x7EED;&#x53BB;&#x6BD4;&#x8F83;&#x4F59;&#x4E0B;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x548C;&#x672A;&#x5206;&#x914D;&#x7684;&#x7EC4;&#x6570;&#x80FD;&#x4E0D;&#x80FD;&#x8FDB;&#x884C;&#x5E73;&#x5747;&#x5206;&#x914D;&#xFF0C;&#x82E5;&#x80FD;&#xFF0C;&#x5219;&#x5E73;&#x5747;&#x5206;&#x914D;&#x4F59;&#x4E0B;&#x7684;&#x8BB0;&#x5F55;&#xFF1B;&#x82E5;&#x8FD8;&#x662F;&#x4E0D;&#x80FD;&#xFF0C;&#x5219;&#x518D;&#x5206;&#x914D;&#x51FA;&#x53BB;&#x4E00;&#x7EC4;&#xFF0C;&#x7EE7;&#x7EED;&#x6BD4;&#x8F83;&#x4F59;&#x4E0B;&#x7684;......&#x8FD9;&#x6837;&#x4E00;&#x76F4;&#x8FDB;&#x884C;&#x4E0B;&#x53BB;&#xFF0C;&#x76F4;&#x81F3;&#x5206;&#x7EC4;&#x5B8C;&#x6210;&#x3002;</p>
+<p>&#x3000;&#x3000;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5C06;51&#x6761;&#x8BB0;&#x5F55;&#x5206;&#x914D;&#x6210;5&#x7EC4;&#xFF0C;51%5==1&#x4E0D;&#x80FD;&#x5E73;&#x5747;&#x5206;&#x914D;&#xFF0C;&#x5219;&#x5148;&#x5206;&#x51FA;&#x53BB;&#x4E00;&#x7EC4;&#xFF08;51/5&#xFF09;+1=11&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x7136;&#x540E;&#x6BD4;&#x8F83;&#x4F59;&#x4E0B;&#x7684; 51-11=40 &#x6761;&#x8BB0;&#x5F55;&#x80FD;&#x5426;&#x5E73;&#x5747;&#x5206;&#x914D;&#x7ED9;&#x672A;&#x5206;&#x914D;&#x7684;4&#x7EC4;&#xFF0C;&#x80FD;&#x5E73;&#x5747;&#x5206;&#x914D;&#xFF0C;&#x5219;&#x5269;&#x4E0B;&#x7684;4&#x7EC4;&#xFF0C;&#x6BCF;&#x7EC4;&#x5404;40/4=10 &#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x5206;&#x914D;&#x5B8C;&#x6210;&#xFF0C;&#x5206;&#x914D;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;11&#xFF0C;10&#xFF0C;10&#xFF0C;10&#xFF0C;10&#xFF0C;</p>
+<p>&#x9A8C;&#x8BC1;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> nt<span class="token punctuation">,</span><span class="token function">count</span><span class="token punctuation">(</span>ID<span class="token punctuation">)</span> recordCount
+<span class="token keyword">from</span> <span class="token punctuation">(</span>
+     <span class="token keyword">select</span> <span class="token operator">*</span><span class="token punctuation">,</span> ntile<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">over</span> <span class="token punctuation">(</span><span class="token keyword">order</span> <span class="token keyword">by</span> SubTime <span class="token keyword">desc</span><span class="token punctuation">)</span> nt
+    <span class="token keyword">from</span> rk
+         <span class="token punctuation">)</span> <span class="token keyword">as</span> t
+<span class="token keyword">group</span> <span class="token keyword">by</span> t<span class="token punctuation">.</span>nt<span class="token punctuation">;</span>
+</code></pre>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200602215758.png" data-lightbox="988e54a8-cce3-4735-9348-47db5676c5ce" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200602215758.png" alt="undefined"></a></center>
+
+
+<h2 id="&#x4E94;&#x3001;rank-denserank-rownumber&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x5462;&#xFF1F;"><a name="&#x4E94;&#x3001;rank-denserank-rownumber&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x5462;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#&#x4E94;&#x3001;rank-denserank-rownumber&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x5462;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94;&#x3001;rank, dense_rank, row_number&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x5462;&#xFF1F;</h2>
+<p>&#x539F;&#x59CB;&#x8868;&#xFF1A;</p>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200817142335.png" data-lightbox="423ec407-6cc7-4313-95b5-d8e83e1d65ae" data-title="df106cff81cd06569e1e616cde5f69a693d646b2e2fb4ed06fcd3bfe8faa903d-1" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200817142335.png" alt="df106cff81cd06569e1e616cde5f69a693d646b2e2fb4ed06fcd3bfe8faa903d-1"></a></center>
+
+
+
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token operator">*</span><span class="token punctuation">,</span>
+   rank<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span> <span class="token punctuation">(</span><span class="token keyword">order</span> <span class="token keyword">by</span> &#x6210;&#x7EE9; <span class="token keyword">desc</span><span class="token punctuation">)</span> <span class="token keyword">as</span> ranking<span class="token punctuation">,</span>
+   dense_rank<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span> <span class="token punctuation">(</span><span class="token keyword">order</span> <span class="token keyword">by</span> &#x6210;&#x7EE9; <span class="token keyword">desc</span><span class="token punctuation">)</span> <span class="token keyword">as</span> dese_rank<span class="token punctuation">,</span>
+   row_number<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span> <span class="token punctuation">(</span><span class="token keyword">order</span> <span class="token keyword">by</span> &#x6210;&#x7EE9; <span class="token keyword">desc</span><span class="token punctuation">)</span> <span class="token keyword">as</span> row_num
+<span class="token keyword">from</span> &#x73ED;&#x7EA7;<span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5F97;&#x5230;&#x7ED3;&#x679C;&#xFF1A;</p>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200817142503.png" data-lightbox="c3f3e53c-dc70-402c-aa7a-5ad1230bbc83" data-title="07f68cabafcde24758904c92ed7ce5f614562d9ffa4885348463dac99c04cd26-1" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200817142503.png" alt="07f68cabafcde24758904c92ed7ce5f614562d9ffa4885348463dac99c04cd26-1"></a></center>
+
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF1A;
+1)rank&#x51FD;&#x6570;&#xFF1A;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x662F;5&#x4F4D;&#xFF0C;5&#x4F4D;&#xFF0C;5&#x4F4D;&#xFF0C;8&#x4F4D;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5982;&#x679C;&#x6709;&#x5E76;&#x5217;&#x540D;&#x6B21;&#x7684;&#x884C;&#xFF0C;&#x4F1A;&#x5360;&#x7528;&#x4E0B;&#x4E00;&#x540D;&#x6B21;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x6BD4;&#x5982;&#x6B63;&#x5E38;&#x6392;&#x540D;&#x662F;1&#xFF0C;2&#xFF0C;3&#xFF0C;4&#xFF0C;&#x4F46;&#x662F;&#x73B0;&#x5728;&#x524D;3&#x540D;&#x662F;&#x5E76;&#x5217;&#x7684;&#x540D;&#x6B21;&#xFF0C;&#x7ED3;&#x679C;&#x662F;&#xFF1A;1&#xFF0C;1&#xFF0C;1&#xFF0C;4&#x3002;</p>
+<p>2)dense_rank&#x51FD;&#x6570;&#xFF1A;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x662F;5&#x4F4D;&#xFF0C;5&#x4F4D;&#xFF0C;5&#x4F4D;&#xFF0C;6&#x4F4D;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5982;&#x679C;&#x6709;&#x5E76;&#x5217;&#x540D;&#x6B21;&#x7684;&#x884C;&#xFF0C;&#x4E0D;&#x5360;&#x7528;&#x4E0B;&#x4E00;&#x540D;&#x6B21;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x6BD4;&#x5982;&#x6B63;&#x5E38;&#x6392;&#x540D;&#x662F;1&#xFF0C;2&#xFF0C;3&#xFF0C;4&#xFF0C;&#x4F46;&#x662F;&#x73B0;&#x5728;&#x524D;3&#x540D;&#x662F;&#x5E76;&#x5217;&#x7684;&#x540D;&#x6B21;&#xFF0C;&#x7ED3;&#x679C;&#x662F;&#xFF1A;1&#xFF0C;1&#xFF0C;1&#xFF0C;2&#x3002;</p>
+<p>3)row_number&#x51FD;&#x6570;&#xFF1A;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x662F;5&#x4F4D;&#xFF0C;6&#x4F4D;&#xFF0C;7&#x4F4D;&#xFF0C;8&#x4F4D;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x8003;&#x8651;&#x5E76;&#x5217;&#x540D;&#x6B21;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x6BD4;&#x5982;&#x524D;3&#x540D;&#x662F;&#x5E76;&#x5217;&#x7684;&#x540D;&#x6B21;&#xFF0C;&#x6392;&#x540D;&#x662F;&#x6B63;&#x5E38;&#x7684;1&#xFF0C;2&#xFF0C;3&#xFF0C;4&#x3002;</p>
+<p>&#x8FD9;&#x4E09;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x533A;&#x522B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200817142550.png" data-lightbox="f32d6ed0-c6cb-42bd-afc3-7b8bfb09a805" data-title="d6f89b608476612c0e70ebc9c2ce521f29342be6d466270bd4e13827c37dc2bd-1" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200817142550.png" alt="d6f89b608476612c0e70ebc9c2ce521f29342be6d466270bd4e13827c37dc2bd-1"></a></center>
+
+<h2 id="&#x516D;&#x3001;&#x603B;&#x7ED3;"><a name="&#x516D;&#x3001;&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x516D;&#x3001;&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x516D;&#x3001;&#x603B;&#x7ED3;</h2>
+<p>&#x5728;&#x4F7F;&#x7528;&#x6392;&#x540D;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4EE5;&#x4E0B;&#x4E09;&#x70B9;&#xFF1A;</p>
+<p>&#x3000;&#x3000;1&#x3001;&#x6392;&#x540D;&#x51FD;&#x6570;&#x5FC5;&#x987B;&#x6709; OVER &#x5B50;&#x53E5;&#x3002;</p>
+<p>&#x3000;&#x3000;2&#x3001;&#x6392;&#x540D;&#x51FD;&#x6570;&#x5FC5;&#x987B;&#x6709;&#x5305;&#x542B; ORDER BY &#x7684; OVER &#x5B50;&#x53E5;&#x3002;</p>
+<p>&#x3000;&#x3000;3&#x3001;&#x5206;&#x7EC4;&#x5185;&#x4ECE;1&#x5F00;&#x59CB;&#x6392;&#x5E8F;&#x3002;</p>
+<p>&#x53C2;&#x8003;</p>
+<ul>
+<li><a href="https://www.cnblogs.com/52xf/p/4209211.html" target="_blank">Sql &#x56DB;&#x5927;&#x6392;&#x540D;&#x51FD;&#x6570;&#xFF08;ROW_NUMBER&#x3001;RANK&#x3001;DENSE_RANK&#x3001;NTILE&#xFF09;&#x7B80;&#x4ECB;</a> </li>
+</ul>
+<footer class="page-footer"><span class="copyright">  </span><span class="footer-modification">Update time&#xFF1A;
+2020-08-18 
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="窗口函数.html" class="navigation navigation-prev " aria-label="Previous page: 窗口函数">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="分区函数Partition By.html" class="navigation navigation-next " aria-label="Next page: 分区函数Partition By">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"四大排名函数","level":"2.3.1","depth":2,"next":{"title":"分区函数Partition By","level":"2.3.2","depth":2,"path":"MySQL/窗口函数/分区函数Partition By.md","ref":"MySQL/窗口函数/分区函数Partition By.md","articles":[]},"previous":{"title":"窗口函数","level":"2.3","depth":1,"path":"MySQL/窗口函数/窗口函数.md","ref":"MySQL/窗口函数/窗口函数.md","articles":[{"title":"四大排名函数","level":"2.3.1","depth":2,"path":"MySQL/窗口函数/四大排名函数.md","ref":"MySQL/窗口函数/四大排名函数.md","articles":[]},{"title":"分区函数Partition By","level":"2.3.2","depth":2,"path":"MySQL/窗口函数/分区函数Partition By.md","ref":"MySQL/窗口函数/分区函数Partition By.md","articles":[]},{"title":"PERCENT_RANK 函数","level":"2.3.3","depth":2,"path":"MySQL/窗口函数/PERCENT_RANK 函数.md","ref":"MySQL/窗口函数/PERCENT_RANK 函数.md","articles":[]},{"title":"CUME_DIST函数","level":"2.3.4","depth":2,"path":"MySQL/窗口函数/CUME_DIST函数.md","ref":"MySQL/窗口函数/CUME_DIST函数.md","articles":[]},{"title":"FIRST_VALUE","level":"2.3.5","depth":2,"path":"MySQL/窗口函数/FIRST_VALUE.md","ref":"MySQL/窗口函数/FIRST_VALUE.md","articles":[]},{"title":"LAST_VALUE","level":"2.3.6","depth":2,"path":"MySQL/窗口函数/LAST_VALUE.md","ref":"MySQL/窗口函数/LAST_VALUE.md","articles":[]},{"title":"LAG、LEAD函数","level":"2.3.7","depth":2,"path":"MySQL/窗口函数/LAG、LEAD函数.md","ref":"MySQL/窗口函数/LAG、LEAD函数.md","articles":[]},{"title":"NTH_VALUE函数","level":"2.3.8","depth":2,"path":"MySQL/窗口函数/NTH_VALUE函数.md","ref":"MySQL/窗口函数/NTH_VALUE函数.md","articles":[]},{"title":"聚合函数作为窗口函数","level":"2.3.9","depth":2,"path":"MySQL/窗口函数/聚合函数作为窗口函数.md","ref":"MySQL/窗口函数/聚合函数作为窗口函数.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","expandable-chapters","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","advanced-emoji","lightbox","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD "},"prism":{"css":["prism-themes/themes/prism-vs.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"prism-themes":{},"custom-favicon":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HHG","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MySQL 学习记录","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"。"},"file":{"path":"MySQL/窗口函数/四大排名函数.md","mtime":"2020-08-18T13:33:53.747Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-20T03:28:54.336Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

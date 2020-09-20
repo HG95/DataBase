@@ -1,0 +1,1389 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>NTH_VALUE函数 · MySQL 学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="HHG">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-vs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="聚合函数作为窗口函数.html" />
+    
+    
+    <link rel="prev" href="LAG、LEAD函数.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../MySQL基础/">
+            
+                <a href="../MySQL基础/">
+            
+                    
+                    MySQL基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../MySQL基础/MySQL介绍.html">
+            
+                <a href="../MySQL基础/MySQL介绍.html">
+            
+                    
+                    MySQL介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../MySQL基础/MySQL书写规范及注释.html">
+            
+                <a href="../MySQL基础/MySQL书写规范及注释.html">
+            
+                    
+                    MySQL书写规范及注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../MySQL基础/创建、查看、切换及删除数据库.html">
+            
+                <a href="../MySQL基础/创建、查看、切换及删除数据库.html">
+            
+                    
+                    创建、查看、切换及删除数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../MySQL基础/修改数据库：ALTER DATABASE.html">
+            
+                <a href="../MySQL基础/修改数据库：ALTER DATABASE.html">
+            
+                    
+                    修改数据库：ALTER DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../MySQL基础/数据表管理.html">
+            
+                <a href="../MySQL基础/数据表管理.html">
+            
+                    
+                    数据表管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../MySQL基础/添加字段.html">
+            
+                <a href="../MySQL基础/添加字段.html">
+            
+                    
+                    添加字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../MySQL基础/数据类型.html">
+            
+                <a href="../MySQL基础/数据类型.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../MySQL基础/MySQL 约束.html">
+            
+                <a href="../MySQL基础/MySQL 约束.html">
+            
+                    
+                    MySQL 约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../MySQL基础/索引的创建与使用.html">
+            
+                <a href="../MySQL基础/索引的创建与使用.html">
+            
+                    
+                    索引的创建与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../MySQL基础/不存在则插入，存在则更新或忽略.html">
+            
+                <a href="../MySQL基础/不存在则插入，存在则更新或忽略.html">
+            
+                    
+                    不存在则插入，存在则更新或忽略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../语句/MySQL 查询执行顺序.html">
+            
+                <a href="../语句/MySQL 查询执行顺序.html">
+            
+                    
+                    MySQL 查询执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../语句/">
+            
+                <a href="../语句/">
+            
+                    
+                    语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../语句/INSERT语句.html">
+            
+                <a href="../语句/INSERT语句.html">
+            
+                    
+                    INSERT语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../语句/UPDATE语句.html">
+            
+                <a href="../语句/UPDATE语句.html">
+            
+                    
+                    UPDATE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../语句/SELECT语句.html">
+            
+                <a href="../语句/SELECT语句.html">
+            
+                    
+                    SELECT语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../语句/DISTINCT子句.html">
+            
+                <a href="../语句/DISTINCT子句.html">
+            
+                    
+                    DISTINCT子句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../语句/LIMIT语句.html">
+            
+                <a href="../语句/LIMIT语句.html">
+            
+                    
+                    LIMIT语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="../语句/OFFSET FETCH语句.html">
+            
+                <a href="../语句/OFFSET FETCH语句.html">
+            
+                    
+                    OFFSET FETCH语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="../语句/limit 与 limit，offset连用的区别.html">
+            
+                <a href="../语句/limit 与 limit，offset连用的区别.html">
+            
+                    
+                    limit 与 limit，offset连用的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="../语句/ORDER BY语句.html">
+            
+                <a href="../语句/ORDER BY语句.html">
+            
+                    
+                    ORDER BY语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="../语句/WHERE语句.html">
+            
+                <a href="../语句/WHERE语句.html">
+            
+                    
+                    WHERE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.10" data-path="../语句/GROUP BY语句.html">
+            
+                <a href="../语句/GROUP BY语句.html">
+            
+                    
+                    GROUP BY语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.11" data-path="../语句/HAVING语句.html">
+            
+                <a href="../语句/HAVING语句.html">
+            
+                    
+                    HAVING语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.12" data-path="../语句/BETWEEN AND语句.html">
+            
+                <a href="../语句/BETWEEN AND语句.html">
+            
+                    
+                    BETWEEN AND语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.13" data-path="../语句/LIKE语句.html">
+            
+                <a href="../语句/LIKE语句.html">
+            
+                    
+                    LIKE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.14" data-path="../语句/IS NULL语句.html">
+            
+                <a href="../语句/IS NULL语句.html">
+            
+                    
+                    IS NULL语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.15" data-path="../语句/CROSS JOIN语句.html">
+            
+                <a href="../语句/CROSS JOIN语句.html">
+            
+                    
+                    CROSS JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.16" data-path="../语句/INNER JOIN语句.html">
+            
+                <a href="../语句/INNER JOIN语句.html">
+            
+                    
+                    INNER JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.17" data-path="../语句/LEFT JOIN语句.html">
+            
+                <a href="../语句/LEFT JOIN语句.html">
+            
+                    
+                    LEFT JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.18" data-path="../语句/RIGHT JOIN语句.html">
+            
+                <a href="../语句/RIGHT JOIN语句.html">
+            
+                    
+                    RIGHT JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.19" data-path="../语句/JOIN总结.html">
+            
+                <a href="../语句/JOIN总结.html">
+            
+                    
+                    JOIN总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.20" data-path="../语句/UNION[ALL]运算符.html">
+            
+                <a href="../语句/UNION[ALL]运算符.html">
+            
+                    
+                    UNION[ALL]运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.21" data-path="../语句/IN[NOT]IN语句.html">
+            
+                <a href="../语句/IN[NOT]IN语句.html">
+            
+                    
+                    IN[NOT] IN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.22" data-path="../语句/IN[NOT]EXISTS语句.html">
+            
+                <a href="../语句/IN[NOT]EXISTS语句.html">
+            
+                    
+                    IN[NOT] EXISTS语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.23" data-path="../语句/REGEXP：正则表达式.html">
+            
+                <a href="../语句/REGEXP：正则表达式.html">
+            
+                    
+                    REGEXP：正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.24" data-path="../语句/DELETE语句.html">
+            
+                <a href="../语句/DELETE语句.html">
+            
+                    
+                    DELETE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.25" data-path="../语句/TRUNCATE语句.html">
+            
+                <a href="../语句/TRUNCATE语句.html">
+            
+                    
+                    TRUNCATE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.26" data-path="../语句/ANY和ALL运算符.html">
+            
+                <a href="../语句/ANY和ALL运算符.html">
+            
+                    
+                    ANY和ALL运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.27" data-path="../语句/DECLARE定义变量.html">
+            
+                <a href="../语句/DECLARE定义变量.html">
+            
+                    
+                    DECLARE定义变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.28" data-path="../语句/创建临时表TEMPORARY.html">
+            
+                <a href="../语句/创建临时表TEMPORARY.html">
+            
+                    
+                    创建临时表TEMPORARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.29" data-path="../语句/创建视图VIEW.html">
+            
+                <a href="../语句/创建视图VIEW.html">
+            
+                    
+                    创建视图VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="窗口函数.html">
+            
+                <a href="窗口函数.html">
+            
+                    
+                    窗口函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="四大排名函数.html">
+            
+                <a href="四大排名函数.html">
+            
+                    
+                    四大排名函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="分区函数Partition By.html">
+            
+                <a href="分区函数Partition By.html">
+            
+                    
+                    分区函数Partition By
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="PERCENT_RANK 函数.html">
+            
+                <a href="PERCENT_RANK 函数.html">
+            
+                    
+                    PERCENT_RANK 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="CUME_DIST函数.html">
+            
+                <a href="CUME_DIST函数.html">
+            
+                    
+                    CUME_DIST函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="FIRST_VALUE.html">
+            
+                <a href="FIRST_VALUE.html">
+            
+                    
+                    FIRST_VALUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="LAST_VALUE.html">
+            
+                <a href="LAST_VALUE.html">
+            
+                    
+                    LAST_VALUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="LAG、LEAD函数.html">
+            
+                <a href="LAG、LEAD函数.html">
+            
+                    
+                    LAG、LEAD函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3.8" data-path="NTH_VALUE函数.html">
+            
+                <a href="NTH_VALUE函数.html">
+            
+                    
+                    NTH_VALUE函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="聚合函数作为窗口函数.html">
+            
+                <a href="聚合函数作为窗口函数.html">
+            
+                    
+                    聚合函数作为窗口函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../函数/函数.html">
+            
+                <a href="../函数/函数.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../函数/日期函数.html">
+            
+                <a href="../函数/日期函数.html">
+            
+                    
+                    日期函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../函数/日期函数timediff.html">
+            
+                <a href="../函数/日期函数timediff.html">
+            
+                    
+                    日期函数timediff
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../函数/日期函数timestampdiff.html">
+            
+                <a href="../函数/日期函数timestampdiff.html">
+            
+                    
+                    日期函数timestampdiff
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../函数/条件表达式.html">
+            
+                <a href="../函数/条件表达式.html">
+            
+                    
+                    条件表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="../函数/聚合函数.html">
+            
+                <a href="../函数/聚合函数.html">
+            
+                    
+                    聚合函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="../函数/case when 与 max等聚合函数联合使用.html">
+            
+                <a href="../函数/case when 与 max等聚合函数联合使用.html">
+            
+                    
+                    case when 与 max等聚合函数联合使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="../函数/数学函数.html">
+            
+                <a href="../函数/数学函数.html">
+            
+                    
+                    数学函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="../函数/GROUP_CONCAT函数.html">
+            
+                <a href="../函数/GROUP_CONCAT函数.html">
+            
+                    
+                    GROUP_CONCAT函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.9" data-path="../函数/CONCAT函数.html">
+            
+                <a href="../函数/CONCAT函数.html">
+            
+                    
+                    CONCAT函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.10" data-path="../函数/CONCAT_WS函数.html">
+            
+                <a href="../函数/CONCAT_WS函数.html">
+            
+                    
+                    CONCAT_WS函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.11" data-path="../函数/substring_index函数.html">
+            
+                <a href="../函数/substring_index函数.html">
+            
+                    
+                    substring_index函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.12" data-path="../函数/convert函数.html">
+            
+                <a href="../函数/convert函数.html">
+            
+                    
+                    convert函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../notebooks/notebooks.html">
+            
+                <a href="../notebooks/notebooks.html">
+            
+                    
+                    notebooks
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../notebooks/WHERE和HAVING、ON有什么区别？.html">
+            
+                <a href="../notebooks/WHERE和HAVING、ON有什么区别？.html">
+            
+                    
+                    WHERE和HAVING、ON有什么区别？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../notebooks/mysql的分组排序和变量赋值顺序.html">
+            
+                <a href="../notebooks/mysql的分组排序和变量赋值顺序.html">
+            
+                    
+                    mysql的分组排序和变量赋值顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../notebooks/累加计算.html">
+            
+                <a href="../notebooks/累加计算.html">
+            
+                    
+                    累加计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../notebooks/MYSQL列转行、行转列.html">
+            
+                <a href="../notebooks/MYSQL列转行、行转列.html">
+            
+                    
+                    MYSQL列转行、行转列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../笔试/笔试题集合.html">
+            
+                <a href="../笔试/笔试题集合.html">
+            
+                    
+                    笔试题集合
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../笔试/阿里数据分析岗的秋招SQL题20190828.html">
+            
+                <a href="../笔试/阿里数据分析岗的秋招SQL题20190828.html">
+            
+                    
+                    阿里数据分析岗的秋招SQL题(2019.8.28)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >NTH_VALUE函数</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#nthvalue&#x51FD;&#x6570;">NTH_VALUE&#x51FD;&#x6570;</a></li><ul><li><a href="#nthvalue-&#x51FD;&#x6570;">NTH_VALUE &#x51FD;&#x6570;</a></li><li><a href="#nthvalue-&#x51FD;&#x6570;&#x793A;&#x4F8B;">NTH_VALUE() &#x51FD;&#x6570;&#x793A;&#x4F8B;</a></li><li><a href="#nthvalue&#x51FD;&#x6570;&#x5728;&#x7ED3;&#x679C;&#x96C6;&#x4E0A;">NTH_VALUE()&#x51FD;&#x6570;&#x5728;&#x7ED3;&#x679C;&#x96C6;&#x4E0A;</a></li><li><a href="#nthvalue-&#x51FD;&#x6570;&#x5206;&#x533A;&#x793A;&#x4F8B;">NTH_VALUE() &#x51FD;&#x6570;&#x5206;&#x533A;&#x793A;&#x4F8B;</a></li></ul></ul></div><a href="#nthvalue&#x51FD;&#x6570;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="nthvalue&#x51FD;&#x6570;"><a name="nthvalue&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#nthvalue&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>NTH_VALUE&#x51FD;&#x6570;</h1>
+<h2 id="nthvalue-&#x51FD;&#x6570;"><a name="nthvalue-&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#nthvalue-&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>NTH_VALUE &#x51FD;&#x6570;</h2>
+<p>&#x8FD9;<code>NTH_VALUE()</code>&#x662F;&#x4E00;&#x4E2A;<a href="https://www.begtut.com/mysql/mysql-window-functions.html" target="_blank">&#x7A97;&#x53E3;&#x51FD;&#x6570;</a>&#xFF0C;&#x5141;&#x8BB8;&#x60A8;&#x4ECE;&#x6709;&#x5E8F;&#x884C;&#x96C6;&#x4E2D;&#x7684;&#x7B2C;N&#x884C;&#x83B7;&#x53D6;&#x503C;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x663E;&#x793A;&#x4E86;<code>NTH_VALUE()</code>&#x51FD;&#x6570;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql">NTH_VALUE<span class="token punctuation">(</span>expression<span class="token punctuation">,</span> N<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> <span class="token keyword">FIRST</span>
+<span class="token keyword">OVER</span> <span class="token punctuation">(</span>
+    partition_clause
+    order_clause
+    frame_clause
+<span class="token punctuation">)</span>
+</code></pre>
+<p><code>NTH_VALUE()</code>&#x51FD;&#x6570;&#x8FD4;&#x56DE;<code>expression</code>&#x7A97;&#x53E3;&#x6846;&#x67B6;&#x7B2C;N&#x884C;&#x7684;&#x503C;&#x3002;&#x5982;&#x679C;&#x7B2C;N&#x884C;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x51FD;&#x6570;&#x8FD4;&#x56DE;<code>NULL</code>&#x3002;N&#x5FC5;&#x987B;&#x662F;&#x6B63;&#x6574;&#x6570;&#xFF0C;&#x4F8B;&#x5982;1,2&#x548C;3&#x3002;</p>
+<p><code>FROM FIRST</code>&#x6307;&#x793A;<code>NTH_VALUE()</code>&#x529F;&#x80FD;&#x5728;&#x7A97;&#x53E3;&#x5E27;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x5F00;&#x59CB;&#x8BA1;&#x7B97;&#x3002;</p>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;SQL&#x6807;&#x51C6;&#x652F;&#x6301;<code>FROM FIRST</code>&#x548C;<code>FROM LAST</code>&#x3002;&#x4F46;&#x662F;&#xFF0C;MySQL&#x53EA;&#x652F;&#x6301;<code>FROM FIRST</code>&#x3002;&#x5982;&#x679C;&#x8981;&#x6A21;&#x62DF;&#x6548;&#x679C;<code>FROM LAST</code>&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x4E2D;<code>ORDER BY</code>&#x7684;<code>over_clause</code>&#x76F8;&#x53CD;&#x987A;&#x5E8F;&#x5BF9;&#x7ED3;&#x679C;&#x96C6;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;</p>
+<h2 id="nthvalue-&#x51FD;&#x6570;&#x793A;&#x4F8B;"><a name="nthvalue-&#x51FD;&#x6570;&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#nthvalue-&#x51FD;&#x6570;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>NTH_VALUE() &#x51FD;&#x6570;&#x793A;&#x4F8B;</h2>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4EE5;<code>basic_pay</code>&#x6F14;&#x793A;&#x547D;&#x540D;&#x7684;&#x65B0;&#x8868;&#x3002;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> basic_pays
+<span class="token punctuation">(</span>
+    employee_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    department    <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    salary        <span class="token keyword">INT</span>         <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>employee_name<span class="token punctuation">,</span> department<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> basic_pays<span class="token punctuation">(</span>employee_name<span class="token punctuation">,</span>
+                       department<span class="token punctuation">,</span>
+                       salary<span class="token punctuation">)</span>
+<span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">&apos;Diane Murphy&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Accounting&apos;</span><span class="token punctuation">,</span> <span class="token number">8435</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;Mary Patterson&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Accounting&apos;</span><span class="token punctuation">,</span> <span class="token number">9998</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;Jeff Firrelli&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Accounting&apos;</span><span class="token punctuation">,</span> <span class="token number">8992</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;William Patterson&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Accounting&apos;</span><span class="token punctuation">,</span> <span class="token number">8870</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;Gerard Bondur&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Accounting&apos;</span><span class="token punctuation">,</span> <span class="token number">11472</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;Anthony Bow&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Accounting&apos;</span><span class="token punctuation">,</span> <span class="token number">6627</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;Leslie Jennings&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;IT&apos;</span><span class="token punctuation">,</span> <span class="token number">8113</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;Leslie Thompson&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;IT&apos;</span><span class="token punctuation">,</span> <span class="token number">5186</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;Julie Firrelli&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Sales&apos;</span><span class="token punctuation">,</span> <span class="token number">9181</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;Steve Patterson&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Sales&apos;</span><span class="token punctuation">,</span> <span class="token number">9441</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;Foon Yue Tseng&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Sales&apos;</span><span class="token punctuation">,</span> <span class="token number">6660</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;George Vanauf&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Sales&apos;</span><span class="token punctuation">,</span> <span class="token number">10563</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;Loui Bondur&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;SCM&apos;</span><span class="token punctuation">,</span> <span class="token number">10449</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;Gerard Hernandez&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;SCM&apos;</span><span class="token punctuation">,</span> <span class="token number">6949</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;Pamela Castillo&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;SCM&apos;</span><span class="token punctuation">,</span> <span class="token number">11303</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;Larry Bott&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;SCM&apos;</span><span class="token punctuation">,</span> <span class="token number">11798</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">&apos;Barry Jones&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;SCM&apos;</span><span class="token punctuation">,</span> <span class="token number">10586</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200604150401.png" data-lightbox="0937c7f6-8f16-4dce-83ec-040087b488b1" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200604150401.png" alt="undefined"></a></center>
+
+<h2 id="nthvalue&#x51FD;&#x6570;&#x5728;&#x7ED3;&#x679C;&#x96C6;&#x4E0A;"><a name="nthvalue&#x51FD;&#x6570;&#x5728;&#x7ED3;&#x679C;&#x96C6;&#x4E0A;" class="anchor-navigation-ex-anchor" href="#nthvalue&#x51FD;&#x6570;&#x5728;&#x7ED3;&#x679C;&#x96C6;&#x4E0A;"><i class="fa fa-link" aria-hidden="true"></i></a>NTH_VALUE()&#x51FD;&#x6570;&#x5728;&#x7ED3;&#x679C;&#x96C6;&#x4E0A;</h2>
+<p>&#x4EE5;&#x4E0B;&#x8BED;&#x53E5;&#x4F7F;&#x7528;<code>NTH_VALUE()</code>&#x51FD;&#x6570;&#x67E5;&#x627E;&#x85AA;&#x6C34;&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x5458;&#x5DE5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> employee_name<span class="token punctuation">,</span>
+       salary<span class="token punctuation">,</span>
+       nth_value<span class="token punctuation">(</span>employee_name<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">over</span> <span class="token punctuation">(</span>
+           <span class="token keyword">order</span> <span class="token keyword">by</span> salary <span class="token keyword">desc</span>
+           <span class="token punctuation">)</span> second_highest_salary
+<span class="token keyword">from</span> basic_pays<span class="token punctuation">;</span>
+</code></pre>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200604151229.png" data-lightbox="e0b63cc0-29d1-4bff-9450-b6c76face6b7" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200604151229.png" alt="undefined"></a></center>
+
+<h2 id="nthvalue-&#x51FD;&#x6570;&#x5206;&#x533A;&#x793A;&#x4F8B;"><a name="nthvalue-&#x51FD;&#x6570;&#x5206;&#x533A;&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#nthvalue-&#x51FD;&#x6570;&#x5206;&#x533A;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>NTH_VALUE() &#x51FD;&#x6570;&#x5206;&#x533A;&#x793A;&#x4F8B;</h2>
+<p>&#x4EE5;&#x4E0B;&#x67E5;&#x8BE2;&#x67E5;&#x627E;&#x6BCF;&#x4E2A;&#x90E8;&#x95E8;&#x4E2D;&#x85AA;&#x6C34;&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x5458;&#x5DE5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> employee_name<span class="token punctuation">,</span>
+       department<span class="token punctuation">,</span>
+       salary<span class="token punctuation">,</span>
+       nth_value<span class="token punctuation">(</span>employee_name<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">over</span> <span class="token punctuation">(</span>
+           <span class="token keyword">partition</span> <span class="token keyword">by</span> department
+           <span class="token keyword">order</span> <span class="token keyword">by</span> salary <span class="token keyword">desc</span>
+           range <span class="token operator">between</span> <span class="token keyword">unbounded</span> <span class="token keyword">preceding</span> <span class="token operator">and</span> <span class="token keyword">unbounded</span> <span class="token keyword">following</span>
+           <span class="token punctuation">)</span> second_highest_salary
+<span class="token keyword">from</span> basic_pays<span class="token punctuation">;</span>
+</code></pre>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200604152127.png" data-lightbox="cb94a4d1-1a24-41f1-83c6-b3177c6bc925" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200604152127.png" alt="undefined"></a></center> 
+
+<footer class="page-footer"><span class="copyright">  </span><span class="footer-modification">Update time&#xFF1A;
+2020-08-18 
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="LAG、LEAD函数.html" class="navigation navigation-prev " aria-label="Previous page: LAG、LEAD函数">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="聚合函数作为窗口函数.html" class="navigation navigation-next " aria-label="Next page: 聚合函数作为窗口函数">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"NTH_VALUE函数","level":"2.3.8","depth":2,"next":{"title":"聚合函数作为窗口函数","level":"2.3.9","depth":2,"path":"MySQL/窗口函数/聚合函数作为窗口函数.md","ref":"MySQL/窗口函数/聚合函数作为窗口函数.md","articles":[]},"previous":{"title":"LAG、LEAD函数","level":"2.3.7","depth":2,"path":"MySQL/窗口函数/LAG、LEAD函数.md","ref":"MySQL/窗口函数/LAG、LEAD函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","expandable-chapters","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","advanced-emoji","lightbox","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD "},"prism":{"css":["prism-themes/themes/prism-vs.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"prism-themes":{},"custom-favicon":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HHG","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MySQL 学习记录","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"。"},"file":{"path":"MySQL/窗口函数/NTH_VALUE函数.md","mtime":"2020-08-18T13:39:09.131Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-20T03:28:54.336Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

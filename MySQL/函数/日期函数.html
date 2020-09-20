@@ -1,0 +1,1996 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>日期函数 · MySQL 学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="HHG">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-vs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="日期函数timediff.html" />
+    
+    
+    <link rel="prev" href="函数.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../MySQL基础/">
+            
+                <a href="../MySQL基础/">
+            
+                    
+                    MySQL基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../MySQL基础/MySQL介绍.html">
+            
+                <a href="../MySQL基础/MySQL介绍.html">
+            
+                    
+                    MySQL介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../MySQL基础/MySQL书写规范及注释.html">
+            
+                <a href="../MySQL基础/MySQL书写规范及注释.html">
+            
+                    
+                    MySQL书写规范及注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../MySQL基础/创建、查看、切换及删除数据库.html">
+            
+                <a href="../MySQL基础/创建、查看、切换及删除数据库.html">
+            
+                    
+                    创建、查看、切换及删除数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../MySQL基础/修改数据库：ALTER DATABASE.html">
+            
+                <a href="../MySQL基础/修改数据库：ALTER DATABASE.html">
+            
+                    
+                    修改数据库：ALTER DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../MySQL基础/数据表管理.html">
+            
+                <a href="../MySQL基础/数据表管理.html">
+            
+                    
+                    数据表管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../MySQL基础/添加字段.html">
+            
+                <a href="../MySQL基础/添加字段.html">
+            
+                    
+                    添加字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../MySQL基础/数据类型.html">
+            
+                <a href="../MySQL基础/数据类型.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../MySQL基础/MySQL 约束.html">
+            
+                <a href="../MySQL基础/MySQL 约束.html">
+            
+                    
+                    MySQL 约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../MySQL基础/索引的创建与使用.html">
+            
+                <a href="../MySQL基础/索引的创建与使用.html">
+            
+                    
+                    索引的创建与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../MySQL基础/不存在则插入，存在则更新或忽略.html">
+            
+                <a href="../MySQL基础/不存在则插入，存在则更新或忽略.html">
+            
+                    
+                    不存在则插入，存在则更新或忽略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../语句/MySQL 查询执行顺序.html">
+            
+                <a href="../语句/MySQL 查询执行顺序.html">
+            
+                    
+                    MySQL 查询执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../语句/">
+            
+                <a href="../语句/">
+            
+                    
+                    语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../语句/INSERT语句.html">
+            
+                <a href="../语句/INSERT语句.html">
+            
+                    
+                    INSERT语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../语句/UPDATE语句.html">
+            
+                <a href="../语句/UPDATE语句.html">
+            
+                    
+                    UPDATE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../语句/SELECT语句.html">
+            
+                <a href="../语句/SELECT语句.html">
+            
+                    
+                    SELECT语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../语句/DISTINCT子句.html">
+            
+                <a href="../语句/DISTINCT子句.html">
+            
+                    
+                    DISTINCT子句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../语句/LIMIT语句.html">
+            
+                <a href="../语句/LIMIT语句.html">
+            
+                    
+                    LIMIT语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="../语句/OFFSET FETCH语句.html">
+            
+                <a href="../语句/OFFSET FETCH语句.html">
+            
+                    
+                    OFFSET FETCH语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="../语句/limit 与 limit，offset连用的区别.html">
+            
+                <a href="../语句/limit 与 limit，offset连用的区别.html">
+            
+                    
+                    limit 与 limit，offset连用的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="../语句/ORDER BY语句.html">
+            
+                <a href="../语句/ORDER BY语句.html">
+            
+                    
+                    ORDER BY语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="../语句/WHERE语句.html">
+            
+                <a href="../语句/WHERE语句.html">
+            
+                    
+                    WHERE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.10" data-path="../语句/GROUP BY语句.html">
+            
+                <a href="../语句/GROUP BY语句.html">
+            
+                    
+                    GROUP BY语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.11" data-path="../语句/HAVING语句.html">
+            
+                <a href="../语句/HAVING语句.html">
+            
+                    
+                    HAVING语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.12" data-path="../语句/BETWEEN AND语句.html">
+            
+                <a href="../语句/BETWEEN AND语句.html">
+            
+                    
+                    BETWEEN AND语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.13" data-path="../语句/LIKE语句.html">
+            
+                <a href="../语句/LIKE语句.html">
+            
+                    
+                    LIKE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.14" data-path="../语句/IS NULL语句.html">
+            
+                <a href="../语句/IS NULL语句.html">
+            
+                    
+                    IS NULL语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.15" data-path="../语句/CROSS JOIN语句.html">
+            
+                <a href="../语句/CROSS JOIN语句.html">
+            
+                    
+                    CROSS JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.16" data-path="../语句/INNER JOIN语句.html">
+            
+                <a href="../语句/INNER JOIN语句.html">
+            
+                    
+                    INNER JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.17" data-path="../语句/LEFT JOIN语句.html">
+            
+                <a href="../语句/LEFT JOIN语句.html">
+            
+                    
+                    LEFT JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.18" data-path="../语句/RIGHT JOIN语句.html">
+            
+                <a href="../语句/RIGHT JOIN语句.html">
+            
+                    
+                    RIGHT JOIN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.19" data-path="../语句/JOIN总结.html">
+            
+                <a href="../语句/JOIN总结.html">
+            
+                    
+                    JOIN总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.20" data-path="../语句/UNION[ALL]运算符.html">
+            
+                <a href="../语句/UNION[ALL]运算符.html">
+            
+                    
+                    UNION[ALL]运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.21" data-path="../语句/IN[NOT]IN语句.html">
+            
+                <a href="../语句/IN[NOT]IN语句.html">
+            
+                    
+                    IN[NOT] IN语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.22" data-path="../语句/IN[NOT]EXISTS语句.html">
+            
+                <a href="../语句/IN[NOT]EXISTS语句.html">
+            
+                    
+                    IN[NOT] EXISTS语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.23" data-path="../语句/REGEXP：正则表达式.html">
+            
+                <a href="../语句/REGEXP：正则表达式.html">
+            
+                    
+                    REGEXP：正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.24" data-path="../语句/DELETE语句.html">
+            
+                <a href="../语句/DELETE语句.html">
+            
+                    
+                    DELETE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.25" data-path="../语句/TRUNCATE语句.html">
+            
+                <a href="../语句/TRUNCATE语句.html">
+            
+                    
+                    TRUNCATE语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.26" data-path="../语句/ANY和ALL运算符.html">
+            
+                <a href="../语句/ANY和ALL运算符.html">
+            
+                    
+                    ANY和ALL运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.27" data-path="../语句/DECLARE定义变量.html">
+            
+                <a href="../语句/DECLARE定义变量.html">
+            
+                    
+                    DECLARE定义变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.28" data-path="../语句/创建临时表TEMPORARY.html">
+            
+                <a href="../语句/创建临时表TEMPORARY.html">
+            
+                    
+                    创建临时表TEMPORARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.29" data-path="../语句/创建视图VIEW.html">
+            
+                <a href="../语句/创建视图VIEW.html">
+            
+                    
+                    创建视图VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../窗口函数/窗口函数.html">
+            
+                <a href="../窗口函数/窗口函数.html">
+            
+                    
+                    窗口函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../窗口函数/四大排名函数.html">
+            
+                <a href="../窗口函数/四大排名函数.html">
+            
+                    
+                    四大排名函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../窗口函数/分区函数Partition By.html">
+            
+                <a href="../窗口函数/分区函数Partition By.html">
+            
+                    
+                    分区函数Partition By
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../窗口函数/PERCENT_RANK 函数.html">
+            
+                <a href="../窗口函数/PERCENT_RANK 函数.html">
+            
+                    
+                    PERCENT_RANK 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../窗口函数/CUME_DIST函数.html">
+            
+                <a href="../窗口函数/CUME_DIST函数.html">
+            
+                    
+                    CUME_DIST函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../窗口函数/FIRST_VALUE.html">
+            
+                <a href="../窗口函数/FIRST_VALUE.html">
+            
+                    
+                    FIRST_VALUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="../窗口函数/LAST_VALUE.html">
+            
+                <a href="../窗口函数/LAST_VALUE.html">
+            
+                    
+                    LAST_VALUE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="../窗口函数/LAG、LEAD函数.html">
+            
+                <a href="../窗口函数/LAG、LEAD函数.html">
+            
+                    
+                    LAG、LEAD函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="../窗口函数/NTH_VALUE函数.html">
+            
+                <a href="../窗口函数/NTH_VALUE函数.html">
+            
+                    
+                    NTH_VALUE函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="../窗口函数/聚合函数作为窗口函数.html">
+            
+                <a href="../窗口函数/聚合函数作为窗口函数.html">
+            
+                    
+                    聚合函数作为窗口函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="函数.html">
+            
+                <a href="函数.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.4.1" data-path="日期函数.html">
+            
+                <a href="日期函数.html">
+            
+                    
+                    日期函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="日期函数timediff.html">
+            
+                <a href="日期函数timediff.html">
+            
+                    
+                    日期函数timediff
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="日期函数timestampdiff.html">
+            
+                <a href="日期函数timestampdiff.html">
+            
+                    
+                    日期函数timestampdiff
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="条件表达式.html">
+            
+                <a href="条件表达式.html">
+            
+                    
+                    条件表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="聚合函数.html">
+            
+                <a href="聚合函数.html">
+            
+                    
+                    聚合函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="case when 与 max等聚合函数联合使用.html">
+            
+                <a href="case when 与 max等聚合函数联合使用.html">
+            
+                    
+                    case when 与 max等聚合函数联合使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="数学函数.html">
+            
+                <a href="数学函数.html">
+            
+                    
+                    数学函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="GROUP_CONCAT函数.html">
+            
+                <a href="GROUP_CONCAT函数.html">
+            
+                    
+                    GROUP_CONCAT函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.9" data-path="CONCAT函数.html">
+            
+                <a href="CONCAT函数.html">
+            
+                    
+                    CONCAT函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.10" data-path="CONCAT_WS函数.html">
+            
+                <a href="CONCAT_WS函数.html">
+            
+                    
+                    CONCAT_WS函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.11" data-path="substring_index函数.html">
+            
+                <a href="substring_index函数.html">
+            
+                    
+                    substring_index函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.12" data-path="convert函数.html">
+            
+                <a href="convert函数.html">
+            
+                    
+                    convert函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../notebooks/notebooks.html">
+            
+                <a href="../notebooks/notebooks.html">
+            
+                    
+                    notebooks
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../notebooks/WHERE和HAVING、ON有什么区别？.html">
+            
+                <a href="../notebooks/WHERE和HAVING、ON有什么区别？.html">
+            
+                    
+                    WHERE和HAVING、ON有什么区别？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../notebooks/mysql的分组排序和变量赋值顺序.html">
+            
+                <a href="../notebooks/mysql的分组排序和变量赋值顺序.html">
+            
+                    
+                    mysql的分组排序和变量赋值顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../notebooks/累加计算.html">
+            
+                <a href="../notebooks/累加计算.html">
+            
+                    
+                    累加计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../notebooks/MYSQL列转行、行转列.html">
+            
+                <a href="../notebooks/MYSQL列转行、行转列.html">
+            
+                    
+                    MYSQL列转行、行转列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../笔试/笔试题集合.html">
+            
+                <a href="../笔试/笔试题集合.html">
+            
+                    
+                    笔试题集合
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../笔试/阿里数据分析岗的秋招SQL题20190828.html">
+            
+                <a href="../笔试/阿里数据分析岗的秋招SQL题20190828.html">
+            
+                    
+                    阿里数据分析岗的秋招SQL题(2019.8.28)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >日期函数</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#&#x65E5;&#x671F;&#x51FD;&#x6570;">&#x65E5;&#x671F;&#x51FD;&#x6570;</a></li><ul><li><a href="#now-&#x51FD;&#x6570;">NOW() &#x51FD;&#x6570;</a></li><li><a href="#curdate-&#x51FD;&#x6570;">CURDATE() &#x51FD;&#x6570;</a></li><li><a href="#curtime-&#x51FD;&#x6570;">CURTIME() &#x51FD;&#x6570;</a></li><li><a href="#dateadd-&#x51FD;&#x6570;">DATE_ADD() &#x51FD;&#x6570;</a></li><li><a href="#datesub-&#x51FD;&#x6570;">DATE_SUB() &#x51FD;&#x6570;</a></li><li><a href="#datediff-&#x51FD;&#x6570;">DATEDIFF() &#x51FD;&#x6570;</a></li><li><a href="#dateformat-&#x51FD;&#x6570;">DATE_FORMAT() &#x51FD;&#x6570;</a></li><li><a href="#day&#x51FD;&#x6570;">day()&#x51FD;&#x6570;</a></li><li><a href="#date-&#x51FD;&#x6570;">DATE() &#x51FD;&#x6570;</a></li><li><a href="#extract-&#x51FD;&#x6570;">EXTRACT() &#x51FD;&#x6570;</a></li><li><a href="#format-&#x89C4;&#x5B9A;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x7684;&#x8F93;&#x51FA;&#x683C;&#x5F0F;&#x3002;">format &#x89C4;&#x5B9A;&#x65E5;&#x671F;/&#x65F6;&#x95F4;&#x7684;&#x8F93;&#x51FA;&#x683C;&#x5F0F;&#x3002;</a></li><li><a href="#type-&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x4E0B;&#x5217;&#x503C;&#xFF1A;">type &#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x4E0B;&#x5217;&#x503C;&#xFF1A;</a></li><li><a href="#unit-&#x53C2;&#x6570;">unit &#x53C2;&#x6570;</a></li><li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li></ul></ul></div><a href="#&#x65E5;&#x671F;&#x51FD;&#x6570;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x65E5;&#x671F;&#x51FD;&#x6570;"><a name="&#x65E5;&#x671F;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x65E5;&#x671F;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E5;&#x671F;&#x51FD;&#x6570;</h1>
+<h2 id="now-&#x51FD;&#x6570;"><a name="now-&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#now-&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>NOW() &#x51FD;&#x6570;</h2>
+<p>&#x5B9A;&#x4E49;&#x548C;&#x7528;&#x6CD5;</p>
+<p><code>NOW()</code> &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x7684;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#x3002;</p>
+<p><strong>&#x8BED;&#x6CD5;</strong></p>
+<pre class="language-"><code class="lang-sql"> <span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5B9E;&#x4F8B;</p>
+<p>&#x4E0B;&#x9762;&#x662F; SELECT &#x8BED;&#x53E5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"> <span class="token keyword">SELECT</span> <span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>CURDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>CURTIME<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">NOW()</th>
+<th style="text-align:left">CURDATE()</th>
+<th style="text-align:left">CURTIME()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">2008-11-11 12:45:34</td>
+<td style="text-align:left">2008-11-11</td>
+<td style="text-align:left">12:45:34</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5B9E;&#x4F8B;</p>
+<p>&#x4E0B;&#x9762;&#x7684; SQL &#x521B;&#x5EFA;&#x5E26;&#x6709;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x5217;&#xFF08;OrderDate&#xFF09;&#x7684; &quot;Orders&quot; &#x8868;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"> <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> Orders
+ <span class="token punctuation">(</span>
+ OrderId <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+ ProductName <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+ OrderDate <span class="token keyword">datetime</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>OrderId<span class="token punctuation">)</span>
+ <span class="token punctuation">)</span>
+</code></pre>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;OrderDate &#x5217;&#x89C4;&#x5B9A;<code>NOW()</code>&#x4F5C;&#x4E3A;&#x9ED8;&#x8BA4;&#x503C;&#x3002;&#x4F5C;&#x4E3A;&#x7ED3;&#x679C;&#xFF0C;&#x5F53;&#x60A8;&#x5411;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x884C;&#x65F6;&#xFF0C;&#x5F53;&#x524D;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#x81EA;&#x52A8;&#x63D2;&#x5165;&#x5217;&#x4E2D;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5728; &quot;Orders&quot; &#x8868;&#x4E2D;&#x63D2;&#x5165;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"> <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> Orders <span class="token punctuation">(</span>ProductName<span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">&apos;Jarlsberg Cheese&apos;</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&quot;Orders&quot; &#x8868;&#x5C06;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OrderId</th>
+<th style="text-align:left">ProductName</th>
+<th style="text-align:left">OrderDate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">Jarlsberg Cheese</td>
+<td style="text-align:left">2008-11-11 13:23:44.657</td>
+</tr>
+</tbody>
+</table>
+<h2 id="curdate-&#x51FD;&#x6570;"><a name="curdate-&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#curdate-&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>CURDATE() &#x51FD;&#x6570;</h2>
+<p>&#x5B9A;&#x4E49;&#x548C;&#x7528;&#x6CD5;</p>
+<p><code>CURDATE()</code> &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x7684;&#x65E5;&#x671F;&#x3002;</p>
+<p>&#x8BED;&#x6CD5;</p>
+<pre class="language-"><code class="lang-sql">CURDATE<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5B9E;&#x4F8B;</p>
+<p>&#x4E0B;&#x9762;&#x662F; SELECT &#x8BED;&#x53E5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">SELECT</span> <span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>CURDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>CURTIME<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">NOW()</th>
+<th style="text-align:left">CURDATE()</th>
+<th style="text-align:left">CURTIME()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">2008-11-11 12:45:34</td>
+<td style="text-align:left">2008-11-11</td>
+<td style="text-align:left">12:45:34</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5B9E;&#x4F8B;</p>
+<p>&#x4E0B;&#x9762;&#x7684; SQL &#x521B;&#x5EFA;&#x5E26;&#x6709;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x5217;&#xFF08;OrderDate&#xFF09;&#x7684; &quot;Orders&quot; &#x8868;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"> <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> Orders
+ <span class="token punctuation">(</span>
+ OrderId <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+ ProductName <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+ OrderDate <span class="token keyword">datetime</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> CURDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>OrderId<span class="token punctuation">)</span>
+ <span class="token punctuation">)</span>
+</code></pre>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;OrderDate &#x5217;&#x89C4;&#x5B9A; CURDATE() &#x4F5C;&#x4E3A;&#x9ED8;&#x8BA4;&#x503C;&#x3002;&#x4F5C;&#x4E3A;&#x7ED3;&#x679C;&#xFF0C;&#x5F53;&#x60A8;&#x5411;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x884C;&#x65F6;&#xFF0C;&#x5F53;&#x524D;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#x81EA;&#x52A8;&#x63D2;&#x5165;&#x5217;&#x4E2D;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5728; &quot;Orders&quot; &#x8868;&#x4E2D;&#x63D2;&#x5165;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"> <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> Orders <span class="token punctuation">(</span>ProductName<span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">&apos;Jarlsberg Cheese&apos;</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&quot;Orders&quot; &#x8868;&#x5C06;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OrderId</th>
+<th style="text-align:left">ProductName</th>
+<th style="text-align:left">OrderDate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">Jarlsberg Cheese</td>
+<td style="text-align:left">2008-11-11</td>
+</tr>
+</tbody>
+</table>
+<h2 id="curtime-&#x51FD;&#x6570;"><a name="curtime-&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#curtime-&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>CURTIME() &#x51FD;&#x6570;</h2>
+<p>&#x5B9A;&#x4E49;&#x548C;&#x7528;&#x6CD5;</p>
+<p><code>CURTIME()</code>&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x7684;&#x65F6;&#x95F4;&#x3002;</p>
+<p><strong>&#x8BED;&#x6CD5;</strong></p>
+<pre class="language-"><code class="lang-sql"> CURTIME<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5B9E;&#x4F8B;</p>
+<p>&#x4E0B;&#x9762;&#x662F; SELECT &#x8BED;&#x53E5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">SELECT</span> <span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>CURDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>CURTIME<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">NOW()</th>
+<th style="text-align:left">CURDATE()</th>
+<th style="text-align:left">CURTIME()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">2008-11-11 12:45:34</td>
+<td style="text-align:left">2008-11-11</td>
+<td style="text-align:left">12:45:34</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dateadd-&#x51FD;&#x6570;"><a name="dateadd-&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#dateadd-&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>DATE_ADD() &#x51FD;&#x6570;</h2>
+<p><strong>&#x5B9A;&#x4E49;&#x548C;&#x7528;&#x6CD5;</strong></p>
+<p><code>DATE_ADD()</code>&#x51FD;&#x6570;&#x5411;&#x65E5;&#x671F;&#x6DFB;&#x52A0;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x3002;</p>
+<p><strong>&#x8BED;&#x6CD5;</strong></p>
+<pre class="language-"><code class="lang-sql">DATE_ADD<span class="token punctuation">(</span><span class="token keyword">date</span><span class="token punctuation">,</span><span class="token keyword">INTERVAL</span> expr <span class="token keyword">type</span><span class="token punctuation">)</span>
+</code></pre>
+<p>date &#x53C2;&#x6570;&#x662F;&#x5408;&#x6CD5;&#x7684;&#x65E5;&#x671F;&#x8868;&#x8FBE;&#x5F0F;&#x3002;<code>expr</code> &#x53C2;&#x6570;&#x662F;&#x60A8;&#x5E0C;&#x671B;&#x6DFB;&#x52A0;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x3002;</p>
+<p>type &#x53C2;&#x6570;: &#x65E5;&#x671F;&#x7C7B;&#x578B;</p>
+<hr>
+<p><strong>&#x5B9E;&#x4F8B;</strong></p>
+<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x5982;&#x4E0B;&#x7684; &quot;Orders&quot; &#x8868;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OrderId</th>
+<th style="text-align:left">ProductName</th>
+<th style="text-align:left">OrderDate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">Jarlsberg Cheese</td>
+<td style="text-align:left">2008-11-11 13:23:44.657</td>
+</tr>
+</tbody>
+</table>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5411; &quot;OrderDate&quot; &#x6DFB;&#x52A0; 45 &#x5929;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x4ED8;&#x6B3E;&#x65E5;&#x671F;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684; SELECT &#x8BED;&#x53E5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"> <span class="token keyword">SELECT</span> OrderId<span class="token punctuation">,</span>DATE_ADD<span class="token punctuation">(</span>OrderDate<span class="token punctuation">,</span><span class="token keyword">INTERVAL</span> <span class="token number">45</span> <span class="token keyword">DAY</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> OrderPayDate
+ <span class="token keyword">FROM</span> Orders
+</code></pre>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OrderId</th>
+<th style="text-align:left">OrderPayDate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">2008-12-26 13:23:44.657</td>
+</tr>
+</tbody>
+</table>
+<h2 id="datesub-&#x51FD;&#x6570;"><a name="datesub-&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#datesub-&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>DATE_SUB() &#x51FD;&#x6570;</h2>
+<p><strong>&#x5B9A;&#x4E49;&#x548C;&#x7528;&#x6CD5;</strong></p>
+<p><code>DATE_SUB()</code> &#x51FD;&#x6570;&#x4ECE;&#x65E5;&#x671F;&#x51CF;&#x53BB;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x3002;</p>
+<p><strong>&#x8BED;&#x6CD5;</strong></p>
+<pre class="language-"><code class="lang-sql"> DATE_SUB<span class="token punctuation">(</span><span class="token keyword">date</span><span class="token punctuation">,</span><span class="token keyword">INTERVAL</span> expr <span class="token keyword">type</span><span class="token punctuation">)</span>
+</code></pre>
+<p>date &#x53C2;&#x6570;&#x662F;&#x5408;&#x6CD5;&#x7684;&#x65E5;&#x671F;&#x8868;&#x8FBE;&#x5F0F;&#x3002;expr &#x53C2;&#x6570;&#x662F;&#x60A8;&#x5E0C;&#x671B;&#x6DFB;&#x52A0;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x3002;</p>
+<p>type &#x53C2;&#x6570;: &#x65E5;&#x671F;&#x7C7B;&#x578B;</p>
+<p><strong>&#x5B9E;&#x4F8B;</strong></p>
+<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x5982;&#x4E0B;&#x7684; &quot;Orders&quot; &#x8868;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OrderId</th>
+<th style="text-align:left">ProductName</th>
+<th style="text-align:left">OrderDate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">Jarlsberg Cheese</td>
+<td style="text-align:left">2008-11-11 13:23:44.657</td>
+</tr>
+</tbody>
+</table>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5411; &quot;OrderDate&quot; &#x51CF;&#x53BB; 5 &#x5929;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684; SELECT &#x8BED;&#x53E5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"> <span class="token keyword">SELECT</span> OrderId<span class="token punctuation">,</span>DATE_SUB<span class="token punctuation">(</span>OrderDate<span class="token punctuation">,</span><span class="token keyword">INTERVAL</span> <span class="token number">5</span> <span class="token keyword">DAY</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> SubtractDate
+ <span class="token keyword">FROM</span> Orders
+</code></pre>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OrderId</th>
+<th style="text-align:left">SubtractDate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">2008-11-06 13:23:44.657</td>
+</tr>
+</tbody>
+</table>
+<h2 id="datediff-&#x51FD;&#x6570;"><a name="datediff-&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#datediff-&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>DATEDIFF() &#x51FD;&#x6570;</h2>
+<p><strong>&#x5B9A;&#x4E49;&#x548C;&#x7528;&#x6CD5;</strong></p>
+<p><code>DATEDIFF()</code> &#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x4E4B;&#x95F4;&#x7684;&#x5929;&#x6570;&#x3002;</p>
+<p><strong>&#x8BED;&#x6CD5;</strong></p>
+<pre class="language-"><code class="lang-sql"> DATEDIFF<span class="token punctuation">(</span>date1<span class="token punctuation">,</span>date2<span class="token punctuation">)</span>
+</code></pre>
+<p>date1 &#x548C; date2 &#x53C2;&#x6570;&#x662F;&#x5408;&#x6CD5;&#x7684;&#x65E5;&#x671F;&#x6216;&#x65E5;&#x671F;/&#x65F6;&#x95F4;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<p><strong>&#x6CE8;&#x91CA;&#xFF1A;</strong>&#x53EA;&#x6709;&#x503C;&#x7684;&#x65E5;&#x671F;&#x90E8;&#x5206;&#x53C2;&#x4E0E;&#x8BA1;&#x7B97;&#x3002;</p>
+<hr>
+<p><strong>&#x5B9E;&#x4F8B;</strong></p>
+<p>&#x4E0B;&#x9762;&#x662F; SELECT &#x8BED;&#x53E5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"> <span class="token keyword">SELECT</span> DATEDIFF<span class="token punctuation">(</span><span class="token string">&apos;2008-11-30&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;2008-11-29&apos;</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> DiffDate
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">DiffDate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x5B9E;&#x4F8B;</strong></p>
+<p>&#x4E0B;&#x9762;&#x662F; SELECT &#x8BED;&#x53E5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"> <span class="token keyword">SELECT</span> DATEDIFF<span class="token punctuation">(</span><span class="token string">&apos;2008-11-29&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;2008-11-30&apos;</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> DiffDate
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">DiffDate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dateformat-&#x51FD;&#x6570;"><a name="dateformat-&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#dateformat-&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>DATE_FORMAT() &#x51FD;&#x6570;</h2>
+<p>&#x5B9A;&#x4E49;&#x548C;&#x7528;&#x6CD5;</p>
+<p><code>DATE_FORMAT()</code>&#x51FD;&#x6570;&#x7528;&#x4E8E;&#x4EE5;&#x4E0D;&#x540C;&#x7684;&#x683C;&#x5F0F;&#x663E;&#x793A;&#x65E5;&#x671F;/&#x65F6;&#x95F4;&#x6570;&#x636E;&#x3002;</p>
+<p><strong>&#x8BED;&#x6CD5;</strong></p>
+<pre class="language-"><code class="lang-sql"> DATE_FORMAT<span class="token punctuation">(</span><span class="token keyword">date</span><span class="token punctuation">,</span>format<span class="token punctuation">)</span>
+</code></pre>
+<p>date &#x53C2;&#x6570;&#x662F;&#x5408;&#x6CD5;&#x7684;&#x65E5;&#x671F;&#x3002;format &#x89C4;&#x5B9A;&#x65E5;&#x671F;/&#x65F6;&#x95F4;&#x7684;&#x8F93;&#x51FA;&#x683C;&#x5F0F;&#x3002;</p>
+<p>&#x5B9E;&#x4F8B;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x811A;&#x672C;&#x4F7F;&#x7528; DATE_FORMAT() &#x51FD;&#x6570;&#x6765;&#x663E;&#x793A;&#x4E0D;&#x540C;&#x7684;&#x683C;&#x5F0F;&#x3002;&#x6211;&#x4EEC;&#x4F7F;&#x7528; NOW() &#x6765;&#x83B7;&#x5F97;&#x5F53;&#x524D;&#x7684;&#x65E5;&#x671F;/&#x65F6;&#x95F4;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span>  
+DATE_FORMAT<span class="token punctuation">(</span><span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">&apos;%b %d %Y %h:%i %p&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+DATE_FORMAT<span class="token punctuation">(</span><span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">&apos;%m-%d-%Y&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+DATE_FORMAT<span class="token punctuation">(</span><span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">&apos;%d %b %y&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+DATE_FORMAT<span class="token punctuation">(</span><span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">&apos;%d %b %Y %T:%f&apos;</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code> Nov 04 2008 11:45 PM
+ 11-04-2008
+ 04 Nov 08
+ 04 Nov 2008 11:45:34:243
+</code></pre><h2 id="day&#x51FD;&#x6570;"><a name="day&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#day&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>day()&#x51FD;&#x6570;</h2>
+<p><code>DAY</code>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x65E5;&#x671F;&#x7684;&#x6708;&#x4EFD;&#x7684;<a href="http://www.yiibai.com/mysql/date/" target="_blank">&#x65E5;&#x671F;</a>&#x90E8;&#x5206;&#x3002;&#x4E0B;&#x9762;&#x663E;&#x793A;<code>DAY</code>&#x51FD;&#x6570;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">DAY</span><span class="token punctuation">(</span><span class="token keyword">date</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><code>DAY</code>&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5B83;&#x662F;&#x60A8;&#x8981;&#x83B7;&#x53D6;&#x6708;&#x4EFD;&#x65E5;&#x671F;&#x7684;&#x65E5;&#x671F;&#x503C;&#x3002;&#x5982;&#x679C;<code>date</code>&#x53C2;&#x6570;&#x4E3A;&#x96F6;&#xFF0C;&#x4F8B;&#x5982;<code>&apos;0000-00-00&apos;</code>&#xFF0C;&#x5219;<code>DAY</code>&#x51FD;&#x6570;&#x8FD4;&#x56DE;<code>0</code>&#xFF0C;&#x5982;&#x679C;&#x65E5;&#x671F;&#x4E3A;<a href="http://www.yiibai.com/mysql/null.html" target="_blank">NULL</a>&#xFF0C;&#x5219;<code>DAY</code>&#x51FD;&#x6570;&#x8FD4;&#x56DE;<code>NULL</code>&#x503C;&#x3002;</p>
+<p>DAY&#x51FD;&#x6570;&#x793A;&#x4F8B;</p>
+<p>&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x8FD4;&#x56DE;<code>2018-01-15</code>&#x7684;&#x5F53;&#x5929;&#x7684;&#x65E5;&#x671F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql">mysql<span class="token operator">&gt;</span> <span class="token keyword">SELECT</span> <span class="token keyword">DAY</span><span class="token punctuation">(</span><span class="token string">&apos;2018-01-15&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">DAY</span><span class="token punctuation">(</span><span class="token string">&apos;2018-01-15&apos;</span><span class="token punctuation">)</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------------+</span>
+<span class="token operator">|</span>                <span class="token number">15</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-------------------+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span>
+</code></pre>
+<p>&#x8981;&#x6839;&#x636E;&#x6307;&#x5B9A;&#x7684;&#x65E5;&#x671F;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x6708;&#x4E2D;&#x7684;&#x5929;&#x6570;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;<code>LAST_DAY</code>&#x548C;<code>DAY</code>&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql">mysql<span class="token operator">&gt;</span> <span class="token keyword">SELECT</span> <span class="token keyword">DAY</span><span class="token punctuation">(</span>LAST_DAY<span class="token punctuation">(</span><span class="token string">&apos;2018-02-03&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">DAY</span><span class="token punctuation">(</span>LAST_DAY<span class="token punctuation">(</span><span class="token string">&apos;2018-02-03&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------------------------+</span>
+<span class="token operator">|</span>                          <span class="token number">28</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------------------------+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span>
+</code></pre>
+<p><code>LAST_DAY</code>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x6708;&#x7684;&#x6700;&#x540E;&#x4E00;&#x5929;&#xFF0C;&#x4F8B;&#x5982;<code>2016-02-29</code>&#xFF0C;<code>DAY</code>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x6700;&#x540E;&#x4E00;&#x5929;&#x7684;&#x90A3;&#x4E2A;&#x6708;&#x7684;&#x65E5;&#x671F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BE5;&#x6708;&#x4EFD;&#x7684;&#x5929;&#x6570;&#x3002;</p>
+<h2 id="date-&#x51FD;&#x6570;"><a name="date-&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#date-&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>DATE() &#x51FD;&#x6570;</h2>
+<p>&#x5B9A;&#x4E49;&#x548C;&#x7528;&#x6CD5;</p>
+<p><code>DATE()</code> &#x51FD;&#x6570;&#x63D0;&#x53D6;&#x65E5;&#x671F;&#x6216;&#x65E5;&#x671F;/&#x65F6;&#x95F4;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x65E5;&#x671F;&#x90E8;&#x5206;&#x3002;</p>
+<p><strong>&#x8BED;&#x6CD5;</strong></p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">DATE</span><span class="token punctuation">(</span><span class="token keyword">date</span><span class="token punctuation">)</span>
+</code></pre>
+<p>date &#x53C2;&#x6570;&#x662F;&#x5408;&#x6CD5;&#x7684;&#x65E5;&#x671F;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<hr>
+<p>&#x5B9E;&#x4F8B;</p>
+<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x5982;&#x4E0B;&#x7684; &quot;Orders&quot; &#x8868;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OrderId</th>
+<th style="text-align:left">ProductName</th>
+<th style="text-align:left">OrderDate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">Jarlsberg Cheese</td>
+<td style="text-align:left">2008-11-11 13:23:44.657</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4E0B;&#x9762;&#x662F; SELECT &#x8BED;&#x53E5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"> <span class="token keyword">SELECT</span> ProductName<span class="token punctuation">,</span> <span class="token keyword">DATE</span><span class="token punctuation">(</span>OrderDate<span class="token punctuation">)</span> <span class="token keyword">AS</span> OrderDate
+ <span class="token keyword">FROM</span> Orders
+ <span class="token keyword">WHERE</span> OrderId<span class="token operator">=</span><span class="token number">1</span>
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">ProductName</th>
+<th style="text-align:left">OrderDate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Jarlsberg Cheese</td>
+<td style="text-align:left">2008-11-11</td>
+</tr>
+</tbody>
+</table>
+<h2 id="extract-&#x51FD;&#x6570;"><a name="extract-&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#extract-&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>EXTRACT() &#x51FD;&#x6570;</h2>
+<p>&#x5B9A;&#x4E49;&#x548C;&#x7528;&#x6CD5;</p>
+<p><code>EXTRACT()</code> &#x51FD;&#x6570;&#x7528;&#x4E8E;&#x8FD4;&#x56DE;&#x65E5;&#x671F;/&#x65F6;&#x95F4;&#x7684;&#x5355;&#x72EC;&#x90E8;&#x5206;&#xFF0C;&#x6BD4;&#x5982;&#x5E74;&#x3001;&#x6708;&#x3001;&#x65E5;&#x3001;&#x5C0F;&#x65F6;&#x3001;&#x5206;&#x949F;&#x7B49;&#x7B49;&#x3002;</p>
+<p><strong>&#x8BED;&#x6CD5;</strong></p>
+<pre class="language-"><code class="lang-sql">EXTRACT<span class="token punctuation">(</span>unit <span class="token keyword">FROM</span> <span class="token keyword">date</span><span class="token punctuation">)</span>
+</code></pre>
+<p>date &#x53C2;&#x6570;&#x662F;&#x5408;&#x6CD5;&#x7684;&#x65E5;&#x671F;&#x8868;&#x8FBE;&#x5F0F;&#x3002;unit &#x53C2;&#x6570;&#x89C1;&#x6700;&#x540E;&#x3002;</p>
+<p>&#x5B9E;&#x4F8B;</p>
+<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x5982;&#x4E0B;&#x7684; &quot;Orders&quot; &#x8868;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OrderId</th>
+<th style="text-align:left">ProductName</th>
+<th style="text-align:left">OrderDate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">Jarlsberg Cheese</td>
+<td style="text-align:left">2008-11-11 13:23:44.657</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4E0B;&#x9762;&#x662F; SELECT &#x8BED;&#x53E5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sql"> <span class="token keyword">SELECT</span> EXTRACT<span class="token punctuation">(</span><span class="token keyword">YEAR</span> <span class="token keyword">FROM</span> OrderDate<span class="token punctuation">)</span> <span class="token keyword">AS</span> OrderYear<span class="token punctuation">,</span>
+         EXTRACT<span class="token punctuation">(</span><span class="token keyword">MONTH</span> <span class="token keyword">FROM</span> OrderDate<span class="token punctuation">)</span> <span class="token keyword">AS</span> OrderMonth<span class="token punctuation">,</span>
+         EXTRACT<span class="token punctuation">(</span><span class="token keyword">DAY</span> <span class="token keyword">FROM</span> OrderDate<span class="token punctuation">)</span> <span class="token keyword">AS</span> OrderDay<span class="token punctuation">,</span>
+ <span class="token keyword">FROM</span> Orders
+ <span class="token keyword">WHERE</span> OrderId<span class="token operator">=</span><span class="token number">1</span>
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OrderYear</th>
+<th style="text-align:left">OrderMonth</th>
+<th style="text-align:left">OrderDay</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">2008</td>
+<td style="text-align:left">11</td>
+<td style="text-align:left">11</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format-&#x89C4;&#x5B9A;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x7684;&#x8F93;&#x51FA;&#x683C;&#x5F0F;&#x3002;"><a name="format-&#x89C4;&#x5B9A;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x7684;&#x8F93;&#x51FA;&#x683C;&#x5F0F;&#x3002;" class="anchor-navigation-ex-anchor" href="#format-&#x89C4;&#x5B9A;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x7684;&#x8F93;&#x51FA;&#x683C;&#x5F0F;&#x3002;"><i class="fa fa-link" aria-hidden="true"></i></a>format &#x89C4;&#x5B9A;&#x65E5;&#x671F;/&#x65F6;&#x95F4;&#x7684;&#x8F93;&#x51FA;&#x683C;&#x5F0F;&#x3002;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x683C;&#x5F0F;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%a</td>
+<td>&#x7F29;&#x5199;&#x661F;&#x671F;&#x540D;</td>
+</tr>
+<tr>
+<td>%b</td>
+<td>&#x7F29;&#x5199;&#x6708;&#x540D;</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>&#x6708;&#xFF0C;&#x6570;&#x503C;</td>
+</tr>
+<tr>
+<td>%D</td>
+<td>&#x5E26;&#x6709;&#x82F1;&#x6587;&#x524D;&#x7F00;&#x7684;&#x6708;&#x4E2D;&#x7684;&#x5929;</td>
+</tr>
+<tr>
+<td>%d</td>
+<td>&#x6708;&#x7684;&#x5929;&#xFF0C;&#x6570;&#x503C;(00-31)</td>
+</tr>
+<tr>
+<td>%e</td>
+<td>&#x6708;&#x7684;&#x5929;&#xFF0C;&#x6570;&#x503C;(0-31)</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>&#x5FAE;&#x79D2;</td>
+</tr>
+<tr>
+<td>%H</td>
+<td>&#x5C0F;&#x65F6; (00-23)</td>
+</tr>
+<tr>
+<td>%I</td>
+<td>&#x5C0F;&#x65F6; (01-12)</td>
+</tr>
+<tr>
+<td>%M</td>
+<td>&#x6708;&#x540D;</td>
+</tr>
+<tr>
+<td>%m</td>
+<td>&#x6708;&#xFF0C;&#x6570;&#x503C;(00-12)</td>
+</tr>
+<tr>
+<td>%p</td>
+<td>AM &#x6216; PM</td>
+</tr>
+<tr>
+<td>%r</td>
+<td>&#x65F6;&#x95F4;&#xFF0C;12-&#x5C0F;&#x65F6;&#xFF08;hh:mm:ss AM &#x6216; PM&#xFF09;</td>
+</tr>
+<tr>
+<td>%S</td>
+<td>&#x79D2;(00-59)</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>&#x79D2;(00-59)</td>
+</tr>
+<tr>
+<td>%T</td>
+<td>&#x65F6;&#x95F4;, 24-&#x5C0F;&#x65F6; (hh:mm:ss)</td>
+</tr>
+<tr>
+<td>%U</td>
+<td>&#x5468; (00-53) &#x661F;&#x671F;&#x65E5;&#x662F;&#x4E00;&#x5468;&#x7684;&#x7B2C;&#x4E00;&#x5929;</td>
+</tr>
+<tr>
+<td>%u</td>
+<td>&#x5468; (00-53) &#x661F;&#x671F;&#x4E00;&#x662F;&#x4E00;&#x5468;&#x7684;&#x7B2C;&#x4E00;&#x5929;</td>
+</tr>
+<tr>
+<td>%V</td>
+<td>&#x5468; (01-53) &#x661F;&#x671F;&#x65E5;&#x662F;&#x4E00;&#x5468;&#x7684;&#x7B2C;&#x4E00;&#x5929;&#xFF0C;&#x4E0E; %X &#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td>%v</td>
+<td>&#x5468; (01-53) &#x661F;&#x671F;&#x4E00;&#x662F;&#x4E00;&#x5468;&#x7684;&#x7B2C;&#x4E00;&#x5929;&#xFF0C;&#x4E0E; %x &#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td>%W</td>
+<td>&#x661F;&#x671F;&#x540D;</td>
+</tr>
+<tr>
+<td>%w</td>
+<td>&#x5468;&#x7684;&#x5929; &#xFF08;0=&#x661F;&#x671F;&#x65E5;, 6=&#x661F;&#x671F;&#x516D;&#xFF09;</td>
+</tr>
+<tr>
+<td>%X</td>
+<td>&#x5E74;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x661F;&#x671F;&#x65E5;&#x662F;&#x5468;&#x7684;&#x7B2C;&#x4E00;&#x5929;&#xFF0C;4 &#x4F4D;&#xFF0C;&#x4E0E; %V &#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>&#x5E74;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x661F;&#x671F;&#x4E00;&#x662F;&#x5468;&#x7684;&#x7B2C;&#x4E00;&#x5929;&#xFF0C;4 &#x4F4D;&#xFF0C;&#x4E0E; %v &#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td>%Y</td>
+<td>&#x5E74;&#xFF0C;4 &#x4F4D;</td>
+</tr>
+<tr>
+<td>%y</td>
+<td>&#x5E74;&#xFF0C;2 &#x4F4D;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="type-&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x4E0B;&#x5217;&#x503C;&#xFF1A;"><a name="type-&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x4E0B;&#x5217;&#x503C;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#type-&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x4E0B;&#x5217;&#x503C;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>type &#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x4E0B;&#x5217;&#x503C;&#xFF1A;</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type &#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">MICROSECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">SECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">MINUTE</td>
+</tr>
+<tr>
+<td style="text-align:left">HOUR</td>
+</tr>
+<tr>
+<td style="text-align:left">DAY</td>
+</tr>
+<tr>
+<td style="text-align:left">WEEK</td>
+</tr>
+<tr>
+<td style="text-align:left">MONTH</td>
+</tr>
+<tr>
+<td style="text-align:left">QUARTER</td>
+</tr>
+<tr>
+<td style="text-align:left">YEAR</td>
+</tr>
+<tr>
+<td style="text-align:left">SECOND_MICROSECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">MINUTE_MICROSECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">MINUTE_SECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">HOUR_MICROSECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">HOUR_SECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">HOUR_MINUTE</td>
+</tr>
+<tr>
+<td style="text-align:left">DAY_MICROSECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">DAY_SECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">DAY_MINUTE</td>
+</tr>
+<tr>
+<td style="text-align:left">DAY_HOUR</td>
+</tr>
+<tr>
+<td style="text-align:left">YEAR_MONTH</td>
+</tr>
+</tbody>
+</table>
+<h2 id="unit-&#x53C2;&#x6570;"><a name="unit-&#x53C2;&#x6570;" class="anchor-navigation-ex-anchor" href="#unit-&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>unit &#x53C2;&#x6570;</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Unit &#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">MICROSECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">SECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">MINUTE</td>
+</tr>
+<tr>
+<td style="text-align:left">HOUR</td>
+</tr>
+<tr>
+<td style="text-align:left">DAY</td>
+</tr>
+<tr>
+<td style="text-align:left">WEEK</td>
+</tr>
+<tr>
+<td style="text-align:left">MONTH</td>
+</tr>
+<tr>
+<td style="text-align:left">QUARTER</td>
+</tr>
+<tr>
+<td style="text-align:left">YEAR</td>
+</tr>
+<tr>
+<td style="text-align:left">SECOND_MICROSECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">MINUTE_MICROSECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">MINUTE_SECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">HOUR_MICROSECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">HOUR_SECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">HOUR_MINUTE</td>
+</tr>
+<tr>
+<td style="text-align:left">DAY_MICROSECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">DAY_SECOND</td>
+</tr>
+<tr>
+<td style="text-align:left">DAY_MINUTE</td>
+</tr>
+<tr>
+<td style="text-align:left">DAY_HOUR</td>
+</tr>
+<tr>
+<td style="text-align:left">YEAR_MONTH</td>
+</tr>
+</tbody>
+</table>
+<h3 id=""><a name="" class="plugin-anchor" href="#"><i class="fa fa-link" aria-hidden="true"></i></a> </h3>
+<h2 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;</h2>
+<ul>
+<li><a href="https://wiki.jikexueyuan.com/project/mysql/useful-functions/time-functions.html" target="_blank">MySQL &#x65E5;&#x671F;&#x4E0E;&#x65F6;&#x95F4;&#x65B9;&#x9762;&#x7684;&#x51FD;&#x6570;</a> </li>
+</ul>
+<footer class="page-footer"><span class="copyright">  </span><span class="footer-modification">Update time&#xFF1A;
+2020-09-04 
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="函数.html" class="navigation navigation-prev " aria-label="Previous page: 函数">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="日期函数timediff.html" class="navigation navigation-next " aria-label="Next page: 日期函数timediff">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"日期函数","level":"2.4.1","depth":2,"next":{"title":"日期函数timediff","level":"2.4.2","depth":2,"path":"MySQL/函数/日期函数timediff.md","ref":"MySQL/函数/日期函数timediff.md","articles":[]},"previous":{"title":"函数","level":"2.4","depth":1,"path":"MySQL/函数/函数.md","ref":"MySQL/函数/函数.md","articles":[{"title":"日期函数","level":"2.4.1","depth":2,"path":"MySQL/函数/日期函数.md","ref":"MySQL/函数/日期函数.md","articles":[]},{"title":"日期函数timediff","level":"2.4.2","depth":2,"path":"MySQL/函数/日期函数timediff.md","ref":"MySQL/函数/日期函数timediff.md","articles":[]},{"title":"日期函数timestampdiff","level":"2.4.3","depth":2,"path":"MySQL/函数/日期函数timestampdiff.md","ref":"MySQL/函数/日期函数timestampdiff.md","articles":[]},{"title":"条件表达式","level":"2.4.4","depth":2,"path":"MySQL/函数/条件表达式.md","ref":"MySQL/函数/条件表达式.md","articles":[]},{"title":"聚合函数","level":"2.4.5","depth":2,"path":"MySQL/函数/聚合函数.md","ref":"MySQL/函数/聚合函数.md","articles":[]},{"title":"case when 与 max等聚合函数联合使用","level":"2.4.6","depth":2,"path":"MySQL/函数/case when 与 max等聚合函数联合使用.md","ref":"MySQL/函数/case when 与 max等聚合函数联合使用.md","articles":[]},{"title":"数学函数","level":"2.4.7","depth":2,"path":"MySQL/函数/数学函数.md","ref":"MySQL/函数/数学函数.md","articles":[]},{"title":"GROUP_CONCAT函数","level":"2.4.8","depth":2,"path":"MySQL/函数/GROUP_CONCAT函数.md","ref":"MySQL/函数/GROUP_CONCAT函数.md","articles":[]},{"title":"CONCAT函数","level":"2.4.9","depth":2,"path":"MySQL/函数/CONCAT函数.md","ref":"MySQL/函数/CONCAT函数.md","articles":[]},{"title":"CONCAT_WS函数","level":"2.4.10","depth":2,"path":"MySQL/函数/CONCAT_WS函数.md","ref":"MySQL/函数/CONCAT_WS函数.md","articles":[]},{"title":"substring_index函数","level":"2.4.11","depth":2,"path":"MySQL/函数/substring_index函数.md","ref":"MySQL/函数/substring_index函数.md","articles":[]},{"title":"convert函数","level":"2.4.12","depth":2,"path":"MySQL/函数/convert函数.md","ref":"MySQL/函数/convert函数.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","expandable-chapters","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","advanced-emoji","lightbox","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD "},"prism":{"css":["prism-themes/themes/prism-vs.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"prism-themes":{},"custom-favicon":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HHG","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MySQL 学习记录","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"。"},"file":{"path":"MySQL/函数/日期函数.md","mtime":"2020-09-04T02:58:38.591Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-20T03:28:54.336Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
